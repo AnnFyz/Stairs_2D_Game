@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CardManager : MonoBehaviour
     public Transform prefabCard;
     [SerializeField] CardGroup_SO[] CardGroups;
     int AmountOfCardsToInstantiate = 0;
+    List <CardController> createdCards = new List<CardController>();
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class CardManager : MonoBehaviour
     private void Start()
     {
         CalculateAmountOfCardsToInstantiate();
-        CreateCardsAndDistributeGroups();
+        CreateCards();
     }
     void CalculateAmountOfCardsToInstantiate()
     {
@@ -34,16 +36,25 @@ public class CardManager : MonoBehaviour
             AmountOfCardsToInstantiate += group.currentAmountOfCardsOfThisType;
         }
     }
-
-    void CreateCardsAndDistributeGroups()
+    void CreateCards()
     {
-        for (int i = 0; i < AmountOfCardsToInstantiate; i++)
+        foreach (var group in CardGroups)
         {
-            CardController card = CardController.Create(prefabCard, GetRandomGroup(), transform);
-            
+            for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+            {
+                CardController card = CardController.Create(prefabCard, group, transform);
+                Canvas.ForceUpdateCanvases();
 
+                createdCards.Add(card);
+            }
         }
     }
+
+    void ReorganizePlaceForCards()
+    {
+
+    }
+
 
     CardGroup_SO GetRandomGroup()
     {

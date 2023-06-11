@@ -11,10 +11,10 @@ public enum Assignment
 public class CardGroup_SO : ScriptableObject
 {
     [SerializeField] string Title;
-    [SerializeField] int numberOfAssignmentGroup;
+    public int numberOfAssignmentGroup;
     [Range(0, 100)]
     public int Weight = 0;
-    public Color color;
+    public Color groupColor;
     public Assignment currentTypeOfAssignment;
     public int currentAmountOfCardsOfThisType;
 }

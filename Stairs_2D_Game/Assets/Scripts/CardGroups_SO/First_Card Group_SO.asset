@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: 
   numberOfAssignmentGroup: 0
-  prefabCard: {fileID: 2345773748757280356, guid: 6f2e9d36e862d154bb06895c9ae22c90, type: 3}
   Weight: 80
-  color: {r: 1, g: 0.7488646, b: 0.033018887, a: 0}
+  groupColor: {r: 0.8490566, g: 0.69441247, b: 0, a: 1}
   currentTypeOfAssignment: 0
   currentAmountOfCardsOfThisType: 5

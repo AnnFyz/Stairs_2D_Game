@@ -15,6 +15,6 @@ MonoBehaviour:
   Title: 
   numberOfAssignmentGroup: 1
   Weight: 42
-  color: {r: 1, g: 0.031372547, b: 0.33338043, a: 0}
+  groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
   currentTypeOfAssignment: 0
   currentAmountOfCardsOfThisType: 9
