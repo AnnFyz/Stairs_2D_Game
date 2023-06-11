@@ -39,9 +39,33 @@ public class CardManager : MonoBehaviour
     {
         for (int i = 0; i < AmountOfCardsToInstantiate; i++)
         {
-            CardController card = CardController.Create(prefabCard, CardGroups[Random.Range(0, CardGroups.Length)], transform);
+            CardController card = CardController.Create(prefabCard, GetRandomGroup(), transform);
             
 
         }
+    }
+
+    CardGroup_SO GetRandomGroup()
+    {
+        CardGroup_SO group = null;
+        var totalWeight = 0;
+        foreach (var item in CardGroups)
+        {
+            totalWeight += item.Weight;
+        }
+        var rndWeightGroup = UnityEngine.Random.Range(0, totalWeight);
+        var processedWeight = 0;
+        foreach (var item in CardGroups)
+        {
+            processedWeight += item.Weight;
+            if (rndWeightGroup <= processedWeight)
+            {
+                group = item;
+                break;
+            }
+        }
+
+        Debug.Log("Group: " + group.name);
+        return group;
     }
 }
