@@ -17,7 +17,7 @@ MonoBehaviour:
   Weight: 42
   groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
   currentTypeOfAssignment: 0
-  currentAmountOfCardsOfThisType: 9
-  AssignmentsArrays:
+  currentAmountOfCardsOfThisType: 0
+  AssignmentsArray:
   - {fileID: 11400000, guid: 9f05cb2ff0c928746913fd9056a67b91, type: 2}
   - {fileID: 11400000, guid: 87520fa8405b8584e9c92788669c37cb, type: 2}

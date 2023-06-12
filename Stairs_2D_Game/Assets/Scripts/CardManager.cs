@@ -26,8 +26,18 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
         CreateCards();
+
+    }
+    void CalculateCurrentAmountOfCardsInTheGroup()
+    {
+       
+        for (int i = 0; i < CardGroups.Length; i++)
+        {
+            CardGroups[i].CalculateCurrentAmountOfCardsOfThisType();
+        }
     }
     void CalculateAmountOfCardsToInstantiate()
     {
@@ -43,7 +53,9 @@ public class CardManager : MonoBehaviour
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
                 CardController card = CardController.Create(prefabCard, group, transform);
-                Canvas.ForceUpdateCanvases();
+                group.SelectRandomAssignment();
+                card.Setup(group);
+                //Canvas.ForceUpdateCanvases();
 
                 createdCards.Add(card);
             }
