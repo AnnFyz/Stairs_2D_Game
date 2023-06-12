@@ -17,4 +17,5 @@ public class CardGroup_SO : ScriptableObject
     public Color groupColor;
     public Assignment currentTypeOfAssignment;
     public int currentAmountOfCardsOfThisType;
+    public Object[] AssignmentsArrays; 
 }
