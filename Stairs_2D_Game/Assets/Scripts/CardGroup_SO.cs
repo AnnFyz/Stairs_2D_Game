@@ -9,6 +9,16 @@ public enum Assignment
     Assignment_With_Answer_Options,
     Assignment_With_Number_Input
 }
+
+[System.Serializable]
+public struct DiffAssignments
+{
+    public AssignmentWithAnswers_SO[] AssignmentsWithAnswers;
+    public AssignmentWithUserInput_Numbers_SO[] AssignmentsWithUserInput;
+
+    public AssignmentWithAnswers_SO assignmentWithAnswers;
+    public AssignmentWithUserInput_Numbers_SO assignmentWithUserInput;
+}
 [CreateAssetMenu]
 public class CardGroup_SO : ScriptableObject
 {
@@ -17,43 +27,73 @@ public class CardGroup_SO : ScriptableObject
     [Range(0, 100)]
     public int Weight = 0;
     public Color groupColor;
-    public Assignment currentTypeOfAssignment; // STATIC??
+    public Assignment currentTypeOfAssignment;
     public int currentAmountOfCardsOfThisType = 0;
-    public System.Object[] AssignmentsArray;
-    public UnityEngine.Object[] AssignmentArrayUnity;
+    public DiffAssignments assignments;
+    public List<AssignmentWithAnswers_SO> givenAssignmentsWithAnswers;
+    public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput;
+    public bool allCardWithAnswersWereCreated = false;
+    public bool allCardWithUserInputWereCreated = false;
+    public bool allCardsWereCreated = false;
 
-   
-    public void CalculateCurrentAmountOfCardsOfThisType ()
+    public void CalculateCurrentAmountOfCardsOfThisType()
     {
-        AssignmentsArray = AssignmentArrayUnity;
-        for (int i = 0; i < AssignmentArrayUnity.Length; i++)
-        {
-            AssignmentsArray[i] = AssignmentArrayUnity[i];
-        }
-        for (int i = 0; i < AssignmentsArray.Length; i++)
-        {
-           
-                Array array = AssignmentsArray[i] as Array;
-
-                currentAmountOfCardsOfThisType += array.Length;
-            
-
-        }
+        currentAmountOfCardsOfThisType = assignments.AssignmentsWithAnswers.Length + assignments.AssignmentsWithUserInput.Length;
     }
+
+
     public void SelectRandomAssignment()
     {
-        System.Object assignmentArray = AssignmentArrayUnity[UnityEngine.Random.Range(0, AssignmentArrayUnity.Length)];
-
-        if(Types.Equals(assignmentArray.GetType(), typeof(Assignments_Array_WithAnswers_SO)))
+        SelectRandomlyTypeOfAssignment();
+        DiffAssignments randomAssingnment;
+        if (currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {
-            currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
-            Debug.Log("Was selected Assignment with Answers");
+            for (int i = 0; i < assignments.AssignmentsWithAnswers.Length; i++)
+            {
+
+                randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
+                if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers))
+                {
+                    continue;
+                }
+
+                else if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
+                {
+                    allCardWithAnswersWereCreated = true;
+                }
+
+                else
+                {
+                    assignments.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
+                    givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
+                    break;
+                }
+                
+            }
+           
+
         }
 
-        if (Types.Equals(assignmentArray.GetType(), typeof(Assignments_Array_WithUserInput_Numbers_SO)))
+        if (currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
         {
-            currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
-            Debug.Log("Was selected Assignment with Numbers");
+            assignments.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
+
         }
+        Debug.Log("Select random assignment");
+    }
+
+    public void SelectRandomlyTypeOfAssignment()
+    {
+        int randomType = UnityEngine.Random.Range(0, 2);
+        switch (randomType)
+        {
+            case 0:
+                currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+                break;
+            case 1:
+                currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
+                break;
+        }
+
     }
 }

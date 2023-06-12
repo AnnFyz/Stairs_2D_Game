@@ -52,8 +52,8 @@ public class CardManager : MonoBehaviour
         {
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
-                CardController card = CardController.Create(prefabCard, group, transform);
                 group.SelectRandomAssignment();
+                CardController card = CardController.Create(prefabCard, group, transform);
                 card.Setup(group);
                 //Canvas.ForceUpdateCanvases();
 
