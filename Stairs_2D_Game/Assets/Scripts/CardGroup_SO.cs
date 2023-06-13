@@ -74,7 +74,7 @@ public class CardGroup_SO : ScriptableObject
             SelectRandomAssignmentWithUserInput(randomAssingnment);
 
             Debug.Log("allCardsWithAnswersWereCreated");
-           
+
         }
 
         if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
@@ -83,7 +83,7 @@ public class CardGroup_SO : ScriptableObject
             currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
             SelectRandomAssignmentWithAnswers(randomAssingnment);
             Debug.Log("allCardsWithUserInputWereCreated");
-            
+
         }
 
 
@@ -120,19 +120,22 @@ public class CardGroup_SO : ScriptableObject
 
                 randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
                 Debug.Log("(currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options");
-                if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers) && !allCardsWithAnswersWereCreated)
+                
+
+                if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
                 {
-                    i--;
-                    continue;
+                    allCardsWithAnswersWereCreated = true;
+                    //currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
+                    //Debug.Log("allCardsWithAnswersWereCreated");
+                    //break;
                 }
 
-                //if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
-                //{
-                //    allCardsWithAnswersWereCreated = true;
-                //    currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
-                //    Debug.Log("allCardsWithAnswersWereCreated");
-                //    break;
-                //}
+                if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers) && !allCardsWithAnswersWereCreated)
+                {
+                    // i--; // endless loop crushes the programm 
+                    continue;
+                    //SelectRandomAssignmentWithAnswers(randomAssingnment);
+                }
 
                 if (!allCardsWithAnswersWereCreated)
                 {
@@ -140,6 +143,8 @@ public class CardGroup_SO : ScriptableObject
                     givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
                     break;
                 }
+
+
 
             }
 
@@ -156,19 +161,21 @@ public class CardGroup_SO : ScriptableObject
 
                 randomAssingnment.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
                 Debug.Log("currentTypeOfAssignment == Assignment.Assignment_With_Number_Input");
-                if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput) && !allCardsWithUserInputWereCreated)
+
+                if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
                 {
-                    i--;
-                    continue;
+                    allCardsWithUserInputWereCreated = true;
+                    //currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+                    //Debug.Log("allCardsWithUserInputWereCreated");
+                    // break;
                 }
 
-                //if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
-                //{
-                //    allCardsWithUserInputWereCreated = true;
-                //    currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
-                //    Debug.Log("allCardsWithUserInputWereCreated");
-                //    break;
-                //}
+                if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput) && !allCardsWithUserInputWereCreated)
+                {
+                    //i--;
+                    continue;
+                    //SelectRandomAssignmentWithUserInput(randomAssingnment);
+                }
 
                 if (!allCardsWithUserInputWereCreated)
                 {
@@ -179,4 +186,5 @@ public class CardGroup_SO : ScriptableObject
 
             }
         }
+    }
 }
