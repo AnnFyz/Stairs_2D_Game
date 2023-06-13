@@ -30,8 +30,7 @@ public class CardGroup_SO : ScriptableObject
     public Assignment TypeOfAssignment;
     public int currentAmountOfCardsOfThisType = 0;
     public DiffAssignments assignments;
-    public DiffAssignments currentAssignment;
-    public Assignment currentTypeOfAssignment;
+    public DiffAssignments randomAssignment;
     public List<AssignmentWithAnswers_SO> givenAssignmentsWithAnswers;
     public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput;
     public bool allCardsWithAnswersWereCreated = false;
@@ -54,7 +53,7 @@ public class CardGroup_SO : ScriptableObject
         currentAmountOfCardsOfThisType = assignments.AssignmentsWithAnswers.Length + assignments.AssignmentsWithUserInput.Length;
     }
 
-    public void SelectRandomAssignment()
+    public void SetRandomAssignments()
     {
         SelectRandomlyTypeOfAssignment();
         DiffAssignments randomAssingnment = new DiffAssignments();
@@ -73,7 +72,6 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithAnswersWereCreated = true;
             TypeOfAssignment = Assignment.Assignment_With_Number_Input;
-            currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
             SelectRandomAssignmentWithUserInput(randomAssingnment);
 
         }
@@ -82,7 +80,6 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithUserInputWereCreated = true;
             TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
-            currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
             SelectRandomAssignmentWithAnswers(randomAssingnment);
 
         }
@@ -119,7 +116,7 @@ public class CardGroup_SO : ScriptableObject
             {
 
                 randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
-                
+
 
                 if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
                 {
@@ -140,8 +137,6 @@ public class CardGroup_SO : ScriptableObject
                 {
                     assignments.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
                     givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
-                    currentAssignment.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
-                    currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
                     break;
                 }
 
@@ -181,8 +176,6 @@ public class CardGroup_SO : ScriptableObject
                 {
                     assignments.assignmentWithUserInput = randomAssingnment.assignmentWithUserInput;
                     givenAssignmentsUserInput.Add(randomAssingnment.assignmentWithUserInput);
-                    currentAssignment.assignmentWithUserInput = randomAssingnment.assignmentWithUserInput;
-                    currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
                     break;
                 }
 
@@ -190,8 +183,64 @@ public class CardGroup_SO : ScriptableObject
         }
     }
 
-    public void StoreDistributedData()
+    public void GetRandomAssignment()
     {
+        SelectRandomlyTypeOfAssignment();
+        if (TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        {
+            GetRandomAssignmentWithAnswers();
+        }
 
+        if (TypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        {
+            GetRandomAssignmentUserInput();
+        }
+
+        if(givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput.Count == 0)
+        {
+            Debug.Log("All Data was sent");
+        }
+
+        Debug.Log("TypeOfAssignment: " + TypeOfAssignment);
     }
+
+    public void GetRandomAssignmentWithAnswers()
+    {
+        if (TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        {          
+            if (givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput.Count != 0)
+            {
+                TypeOfAssignment = Assignment.Assignment_With_Number_Input;
+                GetRandomAssignmentUserInput();
+            }
+            else if(givenAssignmentsWithAnswers.Count > 0)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, givenAssignmentsWithAnswers.Count);
+                randomAssignment.assignmentWithAnswers = givenAssignmentsWithAnswers[randomIndex];
+                givenAssignmentsWithAnswers.Remove(givenAssignmentsWithAnswers[randomIndex]);
+            }
+        }
+    }
+
+
+    public void GetRandomAssignmentUserInput()
+    {
+        if (TypeOfAssignment == Assignment.Assignment_With_Number_Input )
+        {
+            if (givenAssignmentsUserInput.Count == 0 && givenAssignmentsWithAnswers.Count != 0)
+            {
+                TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+                GetRandomAssignmentWithAnswers();
+            }
+            else if(givenAssignmentsUserInput.Count > 0)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, givenAssignmentsUserInput.Count);
+                randomAssignment.assignmentWithUserInput = givenAssignmentsUserInput[randomIndex];
+                givenAssignmentsUserInput.Remove(givenAssignmentsUserInput[randomIndex]);
+            }
+            
+            
+        }
+    }
+   
 }

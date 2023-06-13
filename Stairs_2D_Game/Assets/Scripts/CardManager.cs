@@ -48,18 +48,24 @@ public class CardManager : MonoBehaviour
     }
     void CreateCards()
     {
+        CardController card;
         foreach (var group in CardGroups)
         {
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
-                group.SelectRandomAssignment();
-                CardController card = CardController.Create(prefabCard, group, transform);
-                //card.Setup(group, group.currentAssignment);
-                
-
-                //createdCards.Add(card);
+                group.SetRandomAssignments();
+               
             }
+            for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+            {
+                group.GetRandomAssignment();
+                card = CardController.Create(prefabCard, group, transform);
+                card.Setup(group, group.randomAssignment);
+            }
+
         }
+
+        
     }
 
     void ReorganizePlaceForCards()

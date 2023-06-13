@@ -17,25 +17,30 @@ public class CardController : MonoBehaviour
         return card;
     }
 
-    public void Setup(CardGroup_SO group, DiffAssignments assignments)
+    public void Setup(CardGroup_SO group , DiffAssignments randomAssignment)
     {
-        if(group.currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
-        {
-            // take an assignment and fill ui with data 
-            //group.SelectRandomAssignment();
-            assingnment.assignmentWithAnswers = assignments.assignmentWithAnswers;
-            assignmentType = group.TypeOfAssignment;
-           // Debug.Log("UI of Card: Assignment_With_Answer_Options");
-        }
-
-        if (group.currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
-        {
-            // take an assignment and fill ui with data 
-            //group.SelectRandomAssignment();
-            assingnment.assignmentWithUserInput = assignments.assignmentWithUserInput;
-            assignmentType = group.TypeOfAssignment;
-            //Debug.Log("UI of Card: Assignment_With_Number_Input");
-        }
+        assignmentType = group.TypeOfAssignment;
+        assingnment = randomAssignment;
     }
+    //public void Setup(CardGroup_SO group, DiffAssignments assignments)
+    //{
+    //    if(group.currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+    //    {
+    //        // take an assignment and fill ui with data 
+    //        //group.SelectRandomAssignment();
+    //        assingnment.assignmentWithAnswers = assignments.assignmentWithAnswers;
+    //        assignmentType = group.TypeOfAssignment;
+    //       // Debug.Log("UI of Card: Assignment_With_Answer_Options");
+    //    }
+
+    //    if (group.currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
+    //    {
+    //        // take an assignment and fill ui with data 
+    //        //group.SelectRandomAssignment();
+    //        assingnment.assignmentWithUserInput = assignments.assignmentWithUserInput;
+    //        assignmentType = group.TypeOfAssignment;
+    //        //Debug.Log("UI of Card: Assignment_With_Number_Input");
+    //    }
+    //}
 
 }
