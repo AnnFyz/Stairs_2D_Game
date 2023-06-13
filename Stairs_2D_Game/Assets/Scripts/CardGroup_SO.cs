@@ -133,8 +133,12 @@ public class CardGroup_SO : ScriptableObject
                 if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers) && !allCardsWithAnswersWereCreated)
                 {
                     // i--; // endless loop crushes the programm 
-                    continue;
+                    //continue;
                     //SelectRandomAssignmentWithAnswers(randomAssingnment);
+                    while (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers))
+                    {
+                        randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
+                    }
                 }
 
                 if (!allCardsWithAnswersWereCreated)
@@ -173,8 +177,12 @@ public class CardGroup_SO : ScriptableObject
                 if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput) && !allCardsWithUserInputWereCreated)
                 {
                     //i--;
-                    continue;
+                    //continue;
                     //SelectRandomAssignmentWithUserInput(randomAssingnment);
+                    while (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput))
+                    {
+                        randomAssingnment.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
+                    }
                 }
 
                 if (!allCardsWithUserInputWereCreated)
