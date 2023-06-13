@@ -53,11 +53,11 @@ public class CardManager : MonoBehaviour
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
                 group.SelectRandomAssignment();
-                CardController card = CardController.Create(prefabCard, group, transform);
-                card.Setup(group);
+                //CardController card = CardController.Create(prefabCard, group, transform);
+                //card.Setup(group);
                 //Canvas.ForceUpdateCanvases();
 
-                createdCards.Add(card);
+                //createdCards.Add(card);
             }
         }
     }

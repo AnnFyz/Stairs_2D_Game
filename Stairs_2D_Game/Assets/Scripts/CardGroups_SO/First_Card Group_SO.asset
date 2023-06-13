@@ -22,10 +22,19 @@ MonoBehaviour:
     AssignmentsWithAnswers:
     - {fileID: 11400000, guid: ed7872f67e858294c87fd20c0062388b, type: 2}
     - {fileID: 11400000, guid: 4da1f390c04a1a741a022e4cf0f3d47a, type: 2}
+    - {fileID: 11400000, guid: 757d5f08c7d22794eb01440952b67e71, type: 2}
+    - {fileID: 11400000, guid: 99f2eb4b83f74a645b640c193acb106f, type: 2}
     AssignmentsWithUserInput:
     - {fileID: 11400000, guid: ce595d1efae4485479ad6069c6cba91c, type: 2}
     - {fileID: 11400000, guid: a3d2d140500a5e743b48e648f619328e, type: 2}
     assignmentWithAnswers: {fileID: 11400000, guid: 4da1f390c04a1a741a022e4cf0f3d47a, type: 2}
     assignmentWithUserInput: {fileID: 11400000, guid: a3d2d140500a5e743b48e648f619328e, type: 2}
-  givenAssignmentsWithAnswers: []
-  givenAssignmentsUserInput: []
+  givenAssignmentsWithAnswers:
+  - {fileID: 11400000, guid: ed7872f67e858294c87fd20c0062388b, type: 2}
+  - {fileID: 11400000, guid: 4da1f390c04a1a741a022e4cf0f3d47a, type: 2}
+  givenAssignmentsUserInput:
+  - {fileID: 11400000, guid: ce595d1efae4485479ad6069c6cba91c, type: 2}
+  - {fileID: 11400000, guid: a3d2d140500a5e743b48e648f619328e, type: 2}
+  allCardsWithAnswersWereCreated: 1
+  allCardsWithUserInputWereCreated: 1
+  allCardsWereCreated: 0

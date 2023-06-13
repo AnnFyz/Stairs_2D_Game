@@ -32,53 +32,67 @@ public class CardGroup_SO : ScriptableObject
     public DiffAssignments assignments;
     public List<AssignmentWithAnswers_SO> givenAssignmentsWithAnswers;
     public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput;
-    public bool allCardWithAnswersWereCreated = false;
-    public bool allCardWithUserInputWereCreated = false;
+    public bool allCardsWithAnswersWereCreated = false;
+    public bool allCardsWithUserInputWereCreated = false;
     public bool allCardsWereCreated = false;
+
+    private void OnEnable()
+    {
+        currentAmountOfCardsOfThisType = 0;
+        givenAssignmentsWithAnswers.Clear();
+        givenAssignmentsUserInput.Clear();
+        allCardsWithAnswersWereCreated = false;
+        allCardsWithUserInputWereCreated = false;
+        allCardsWereCreated = false;
+
+    }
 
     public void CalculateCurrentAmountOfCardsOfThisType()
     {
         currentAmountOfCardsOfThisType = assignments.AssignmentsWithAnswers.Length + assignments.AssignmentsWithUserInput.Length;
     }
 
-
     public void SelectRandomAssignment()
     {
         SelectRandomlyTypeOfAssignment();
-        DiffAssignments randomAssingnment;
-        if (currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        DiffAssignments randomAssingnment = new DiffAssignments();
+
+        if (!allCardsWithAnswersWereCreated)
         {
-            for (int i = 0; i < assignments.AssignmentsWithAnswers.Length; i++)
-            {
+            SelectRandomAssignmentWithAnswers(randomAssingnment);
+        }
 
-                randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
-                if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers))
-                {
-                    continue;
-                }
+        if (!allCardsWithUserInputWereCreated)
+        {
+            SelectRandomAssignmentWithUserInput(randomAssingnment);
+        }
 
-                else if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
-                {
-                    allCardWithAnswersWereCreated = true;
-                }
+        if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
+        {
+            allCardsWithAnswersWereCreated = true;
+            currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
+            SelectRandomAssignmentWithUserInput(randomAssingnment);
 
-                else
-                {
-                    assignments.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
-                    givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
-                    break;
-                }
-                
-            }
+            Debug.Log("allCardsWithAnswersWereCreated");
            
-
         }
 
-        if (currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
         {
-            assignments.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
-
+            allCardsWithUserInputWereCreated = true;
+            currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+            SelectRandomAssignmentWithAnswers(randomAssingnment);
+            Debug.Log("allCardsWithUserInputWereCreated");
+            
         }
+
+
+        if (allCardsWithUserInputWereCreated && allCardsWithAnswersWereCreated)
+        {
+            Debug.Log("All assignments were distributed");
+            allCardsWereCreated = true;
+        }
+
         Debug.Log("Select random assignment");
     }
 
@@ -96,4 +110,73 @@ public class CardGroup_SO : ScriptableObject
         }
 
     }
+
+    void SelectRandomAssignmentWithAnswers(DiffAssignments randomAssingnment)
+    {
+        if (currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        {
+            for (int i = 0; i < assignments.AssignmentsWithAnswers.Length; i++)
+            {
+
+                randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
+                Debug.Log("(currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options");
+                if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers) && !allCardsWithAnswersWereCreated)
+                {
+                    i--;
+                    continue;
+                }
+
+                //if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
+                //{
+                //    allCardsWithAnswersWereCreated = true;
+                //    currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
+                //    Debug.Log("allCardsWithAnswersWereCreated");
+                //    break;
+                //}
+
+                if (!allCardsWithAnswersWereCreated)
+                {
+                    assignments.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
+                    givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
+                    break;
+                }
+
+            }
+
+
+        }
+    }
+
+    void SelectRandomAssignmentWithUserInput(DiffAssignments randomAssingnment)
+    {
+        if (currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        {
+            for (int i = 0; i < assignments.AssignmentsWithUserInput.Length; i++)
+            {
+
+                randomAssingnment.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
+                Debug.Log("currentTypeOfAssignment == Assignment.Assignment_With_Number_Input");
+                if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput) && !allCardsWithUserInputWereCreated)
+                {
+                    i--;
+                    continue;
+                }
+
+                //if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
+                //{
+                //    allCardsWithUserInputWereCreated = true;
+                //    currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+                //    Debug.Log("allCardsWithUserInputWereCreated");
+                //    break;
+                //}
+
+                if (!allCardsWithUserInputWereCreated)
+                {
+                    assignments.assignmentWithUserInput = randomAssingnment.assignmentWithUserInput;
+                    givenAssignmentsUserInput.Add(randomAssingnment.assignmentWithUserInput);
+                    break;
+                }
+
+            }
+        }
 }

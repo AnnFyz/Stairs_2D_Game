@@ -26,7 +26,7 @@ public class CardController : MonoBehaviour
             //group.SelectRandomAssignment();
             assignmentWithAnswers = group.assignments.assignmentWithAnswers;
             //assignmentType = group.currentTypeOfAssignment;
-            Debug.Log("UI of Card: Assignment_With_Answer_Options");
+           // Debug.Log("UI of Card: Assignment_With_Answer_Options");
         }
 
         if (group.currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
@@ -35,7 +35,7 @@ public class CardController : MonoBehaviour
             //group.SelectRandomAssignment();
             assignmentWithUserInput = group.assignments.assignmentWithUserInput;
             //assignmentType = group.currentTypeOfAssignment;
-            Debug.Log("UI of Card: Assignment_With_Number_Input");
+            //Debug.Log("UI of Card: Assignment_With_Number_Input");
         }
     }
 
