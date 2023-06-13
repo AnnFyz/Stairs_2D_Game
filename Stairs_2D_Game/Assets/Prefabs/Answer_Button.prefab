@@ -317,5 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignmentType: 0
-  assignmentWithAnswers: {fileID: 0}
-  assignmentWithUserInput: {fileID: 0}
+  assingnment:
+    AssignmentsWithAnswers: []
+    AssignmentsWithUserInput: []
+    assignmentWithAnswers: {fileID: 0}
+    assignmentWithUserInput: {fileID: 0}

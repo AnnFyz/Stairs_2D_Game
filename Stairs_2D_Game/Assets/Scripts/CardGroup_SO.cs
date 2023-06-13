@@ -27,9 +27,11 @@ public class CardGroup_SO : ScriptableObject
     [Range(0, 100)]
     public int Weight = 0;
     public Color groupColor;
-    public Assignment currentTypeOfAssignment;
+    public Assignment TypeOfAssignment;
     public int currentAmountOfCardsOfThisType = 0;
     public DiffAssignments assignments;
+    public DiffAssignments currentAssignment;
+    public Assignment currentTypeOfAssignment;
     public List<AssignmentWithAnswers_SO> givenAssignmentsWithAnswers;
     public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput;
     public bool allCardsWithAnswersWereCreated = false;
@@ -70,26 +72,24 @@ public class CardGroup_SO : ScriptableObject
         if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
         {
             allCardsWithAnswersWereCreated = true;
+            TypeOfAssignment = Assignment.Assignment_With_Number_Input;
             currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
             SelectRandomAssignmentWithUserInput(randomAssingnment);
-
-            Debug.Log("allCardsWithAnswersWereCreated");
 
         }
 
         if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
         {
             allCardsWithUserInputWereCreated = true;
+            TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
             currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
             SelectRandomAssignmentWithAnswers(randomAssingnment);
-            Debug.Log("allCardsWithUserInputWereCreated");
 
         }
 
 
         if (allCardsWithUserInputWereCreated && allCardsWithAnswersWereCreated)
         {
-            Debug.Log("All assignments were distributed");
             allCardsWereCreated = true;
         }
 
@@ -102,10 +102,10 @@ public class CardGroup_SO : ScriptableObject
         switch (randomType)
         {
             case 0:
-                currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
+                TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
                 break;
             case 1:
-                currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
+                TypeOfAssignment = Assignment.Assignment_With_Number_Input;
                 break;
         }
 
@@ -113,28 +113,23 @@ public class CardGroup_SO : ScriptableObject
 
     void SelectRandomAssignmentWithAnswers(DiffAssignments randomAssingnment)
     {
-        if (currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        if (TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {
             for (int i = 0; i < assignments.AssignmentsWithAnswers.Length; i++)
             {
 
                 randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
-                Debug.Log("(currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options");
                 
 
                 if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
                 {
                     allCardsWithAnswersWereCreated = true;
-                    //currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
-                    //Debug.Log("allCardsWithAnswersWereCreated");
-                    //break;
+
                 }
 
                 if (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers) && !allCardsWithAnswersWereCreated)
                 {
-                    // i--; // endless loop crushes the programm 
-                    //continue;
-                    //SelectRandomAssignmentWithAnswers(randomAssingnment);
+
                     while (givenAssignmentsWithAnswers.Contains(randomAssingnment.assignmentWithAnswers))
                     {
                         randomAssingnment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[UnityEngine.Random.Range(0, assignments.AssignmentsWithAnswers.Length)];
@@ -145,6 +140,8 @@ public class CardGroup_SO : ScriptableObject
                 {
                     assignments.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
                     givenAssignmentsWithAnswers.Add(randomAssingnment.assignmentWithAnswers);
+                    currentAssignment.assignmentWithAnswers = randomAssingnment.assignmentWithAnswers;
+                    currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
                     break;
                 }
 
@@ -158,27 +155,22 @@ public class CardGroup_SO : ScriptableObject
 
     void SelectRandomAssignmentWithUserInput(DiffAssignments randomAssingnment)
     {
-        if (currentTypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        if (TypeOfAssignment == Assignment.Assignment_With_Number_Input)
         {
             for (int i = 0; i < assignments.AssignmentsWithUserInput.Length; i++)
             {
 
                 randomAssingnment.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
-                Debug.Log("currentTypeOfAssignment == Assignment.Assignment_With_Number_Input");
 
                 if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput.Length)
                 {
                     allCardsWithUserInputWereCreated = true;
-                    //currentTypeOfAssignment = Assignment.Assignment_With_Answer_Options;
-                    //Debug.Log("allCardsWithUserInputWereCreated");
-                    // break;
+
                 }
 
                 if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput) && !allCardsWithUserInputWereCreated)
                 {
-                    //i--;
-                    //continue;
-                    //SelectRandomAssignmentWithUserInput(randomAssingnment);
+
                     while (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput))
                     {
                         randomAssingnment.assignmentWithUserInput = assignments.AssignmentsWithUserInput[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput.Length)];
@@ -189,10 +181,17 @@ public class CardGroup_SO : ScriptableObject
                 {
                     assignments.assignmentWithUserInput = randomAssingnment.assignmentWithUserInput;
                     givenAssignmentsUserInput.Add(randomAssingnment.assignmentWithUserInput);
+                    currentAssignment.assignmentWithUserInput = randomAssingnment.assignmentWithUserInput;
+                    currentTypeOfAssignment = Assignment.Assignment_With_Number_Input;
                     break;
                 }
 
             }
         }
+    }
+
+    public void StoreDistributedData()
+    {
+
     }
 }

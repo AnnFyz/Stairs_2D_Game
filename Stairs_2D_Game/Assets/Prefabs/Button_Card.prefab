@@ -182,8 +182,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignmentType: 0
-  assignmentWithAnswers: {fileID: 11400000, guid: 4da1f390c04a1a741a022e4cf0f3d47a, type: 2}
-  assignmentWithUserInput: {fileID: 11400000, guid: ce595d1efae4485479ad6069c6cba91c, type: 2}
+  assingnment:
+    AssignmentsWithAnswers: []
+    AssignmentsWithUserInput: []
+    assignmentWithAnswers: {fileID: 11400000, guid: 4da1f390c04a1a741a022e4cf0f3d47a, type: 2}
+    assignmentWithUserInput: {fileID: 11400000, guid: ce595d1efae4485479ad6069c6cba91c, type: 2}
 --- !u!1 &2345773749446824631
 GameObject:
   m_ObjectHideFlags: 0

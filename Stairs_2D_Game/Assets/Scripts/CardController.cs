@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class CardController : MonoBehaviour
 {
     public Assignment assignmentType;
-    public AssignmentWithAnswers_SO assignmentWithAnswers;
-    public AssignmentWithUserInput_Numbers_SO assignmentWithUserInput;
-    DiffAssignments assingnment;
+    public DiffAssignments assingnment;
     public static CardController Create(Transform prefabCard, CardGroup_SO cardGroup, Transform parent)
     {
         Transform cardObj = Instantiate(prefabCard);
@@ -19,14 +17,14 @@ public class CardController : MonoBehaviour
         return card;
     }
 
-    public void Setup(CardGroup_SO group)
+    public void Setup(CardGroup_SO group, DiffAssignments assignments)
     {
         if(group.currentTypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {
             // take an assignment and fill ui with data 
             //group.SelectRandomAssignment();
-            assignmentWithAnswers = group.assignments.assignmentWithAnswers;
-            //assignmentType = group.currentTypeOfAssignment;
+            assingnment.assignmentWithAnswers = assignments.assignmentWithAnswers;
+            assignmentType = group.TypeOfAssignment;
            // Debug.Log("UI of Card: Assignment_With_Answer_Options");
         }
 
@@ -34,8 +32,8 @@ public class CardController : MonoBehaviour
         {
             // take an assignment and fill ui with data 
             //group.SelectRandomAssignment();
-            assignmentWithUserInput = group.assignments.assignmentWithUserInput;
-            //assignmentType = group.currentTypeOfAssignment;
+            assingnment.assignmentWithUserInput = assignments.assignmentWithUserInput;
+            assignmentType = group.TypeOfAssignment;
             //Debug.Log("UI of Card: Assignment_With_Number_Input");
         }
     }
