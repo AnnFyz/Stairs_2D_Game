@@ -8,6 +8,7 @@ public class CardController : MonoBehaviour
     public Assignment assignmentType;
     public AssignmentWithAnswers_SO assignmentWithAnswers;
     public AssignmentWithUserInput_Numbers_SO assignmentWithUserInput;
+    DiffAssignments assingnment;
     public static CardController Create(Transform prefabCard, CardGroup_SO cardGroup, Transform parent)
     {
         Transform cardObj = Instantiate(prefabCard);
