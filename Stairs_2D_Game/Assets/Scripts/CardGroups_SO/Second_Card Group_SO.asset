@@ -16,8 +16,26 @@ MonoBehaviour:
   numberOfAssignmentGroup: 1
   Weight: 42
   groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
-  currentTypeOfAssignment: 0
+  TypeOfAssignment: 0
   currentAmountOfCardsOfThisType: 0
-  AssignmentsArray:
-  - {fileID: 11400000, guid: 9f05cb2ff0c928746913fd9056a67b91, type: 2}
-  - {fileID: 11400000, guid: 87520fa8405b8584e9c92788669c37cb, type: 2}
+  assignments:
+    AssignmentsWithAnswers:
+    - {fileID: 11400000, guid: a9a9359455b1b0f4e8af8765d5e48a94, type: 2}
+    - {fileID: 11400000, guid: 102b4ee8d64c16e4b9dd74e213598f01, type: 2}
+    - {fileID: 11400000, guid: 2d1293f38d3e76a448d12639b30a5fd5, type: 2}
+    AssignmentsWithUserInput:
+    - {fileID: 11400000, guid: 3f283728768ca9145ba187df704f0674, type: 2}
+    - {fileID: 11400000, guid: 9728542f78cc6174996de2028165200c, type: 2}
+    - {fileID: 11400000, guid: 1771cb10e0440e542b1b903901471a2f, type: 2}
+    assignmentWithAnswers: {fileID: 0}
+    assignmentWithUserInput: {fileID: 0}
+  randomAssignment:
+    AssignmentsWithAnswers: []
+    AssignmentsWithUserInput: []
+    assignmentWithAnswers: {fileID: 0}
+    assignmentWithUserInput: {fileID: 0}
+  givenAssignmentsWithAnswers: []
+  givenAssignmentsUserInput: []
+  allCardsWithAnswersWereCreated: 0
+  allCardsWithUserInputWereCreated: 0
+  allCardsWereCreated: 0
