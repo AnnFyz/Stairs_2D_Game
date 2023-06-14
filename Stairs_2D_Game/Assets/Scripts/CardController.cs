@@ -30,7 +30,7 @@ public class CardController : MonoBehaviour
     {
         if(assignmentType == Assignment.Assignment_With_Answer_Options)
         {
-            UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2]);
+            UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2], assingnment.assignmentWithAnswers.sprite);
         }
         if (assignmentType == Assignment.Assignment_With_Number_Input)
         {

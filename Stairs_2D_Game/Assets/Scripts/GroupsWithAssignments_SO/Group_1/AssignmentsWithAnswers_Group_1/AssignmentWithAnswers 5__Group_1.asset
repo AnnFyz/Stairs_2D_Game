@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: AssignmentWithAnswers 5__Group_1
   m_EditorClassIdentifier: 
   currentAssignment: 0
-  Question: fbsdoflap?
+  Question: 'Was bedeutet dieses Symbol? '
   Answers:
   - yes
   - no
   - I don't know
   IndexOfRightAnswer: 0
+  sprite: {fileID: 0}

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: AssignmentWithAnswers 3__Group_1
   m_EditorClassIdentifier: 
   currentAssignment: 0
-  Question: DHDJD?
+  Question: 'Was bedeutet dieses Symbol? '
   Answers:
   - yes
   - no
   - I don't know
   IndexOfRightAnswer: 0
+  sprite: {fileID: 21300000, guid: 397977ee6150c664fb8eb0fc4076edf7, type: 3}

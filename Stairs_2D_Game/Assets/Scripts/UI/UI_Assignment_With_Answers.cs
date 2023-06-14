@@ -12,6 +12,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     [SerializeField] GameObject answer_1;
     [SerializeField] GameObject answer_2;
     [SerializeField] GameObject answer_3;
+    [SerializeField] GameObject sprite;
     private void Awake()
     {
 
@@ -38,17 +39,18 @@ public class UI_Assignment_With_Answers : MonoBehaviour
             UIPanel.SetActive(false);
         }
     }
-    public void ActivateUIPanel(string question, string answer_1, string answer_2, string answer_3)
+    public void ActivateUIPanel(string question, string answer_1, string answer_2, string answer_3, Sprite sprite)
     {
         UIPanel.SetActive(true);
-        SetupPanel(question, answer_1, answer_2, answer_3);
+        SetupPanel(question, answer_1, answer_2, answer_3, sprite);
     }
-    void SetupPanel(string question, string answer_1, string answer_2, string answer_3)
+    void SetupPanel(string question, string answer_1, string answer_2, string answer_3, Sprite sprite)
     {
         this.question.GetComponent<TextMeshProUGUI>().text = question;
         this.answer_1.GetComponentInChildren<TextMeshProUGUI>().text = answer_1;
         this.answer_2.GetComponentInChildren<TextMeshProUGUI>().text = answer_2;
         this.answer_3.GetComponentInChildren<TextMeshProUGUI>().text = answer_3;
+        this.sprite.GetComponent<Image>().sprite = sprite;
     }
 
    public void SelectAnswer()

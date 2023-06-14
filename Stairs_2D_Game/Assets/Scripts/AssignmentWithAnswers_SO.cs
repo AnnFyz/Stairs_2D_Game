@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -11,6 +12,9 @@ using UnityEngine;
         public string Question;
         public string[] Answers;
         public int IndexOfRightAnswer;
+       // public Image image;
+        public Sprite sprite;
+         
     }
 
 
