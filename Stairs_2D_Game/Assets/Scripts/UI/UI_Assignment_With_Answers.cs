@@ -65,7 +65,6 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     {
         DeactivateUIPanel();
         RaiseOnAnsweredQuestionEvent();
-       // CheckTheCard();
 
     }
 
@@ -73,18 +72,5 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     {
         OnAnsweredQuestion?.Invoke();
     }
-    public void CheckTheCard()
-    {
-        string text = gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
-        int index = CardManager.selectedCard.assingnment.assignmentWithAnswers.IndexOfRightAnswer;
-        Debug.Log("Text on the button:" + text);
-        if (text == CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
-        {
-            Debug.Log("Right Answer");
-        }
-        else if (text != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
-        {
-            Debug.Log("Wrong Answer");
-        }
-    }
+   
 }
