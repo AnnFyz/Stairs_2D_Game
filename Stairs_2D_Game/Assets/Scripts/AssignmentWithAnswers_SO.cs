@@ -12,9 +12,8 @@ using UnityEngine.UI;
         public string Question;
         public string[] Answers;
         public int IndexOfRightAnswer;
-       // public Image image;
         public Sprite sprite;
-         
+        public int indexOfRightAnswer;
     }
 
 

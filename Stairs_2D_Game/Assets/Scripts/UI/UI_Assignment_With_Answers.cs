@@ -32,7 +32,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
 
     private void Start()
     {
-        UIPanel.SetActive(false);
+        DeactivateUIPanel();
     }
     private void Update()
     {
@@ -47,6 +47,11 @@ public class UI_Assignment_With_Answers : MonoBehaviour
         SetupPanel(question, answer_1, answer_2, answer_3, sprite);
 
     }
+    void DeactivateUIPanel()
+    {
+        UIPanel.SetActive(false);
+    }
+
     void SetupPanel(string question, string answer_1, string answer_2, string answer_3, Sprite sprite)
     {
         this.question.GetComponent<TextMeshProUGUI>().text = question;
@@ -58,19 +63,28 @@ public class UI_Assignment_With_Answers : MonoBehaviour
 
    public void SelectAnswer()
     {
-        UIPanel.SetActive(false);
+        DeactivateUIPanel();
         RaiseOnAnsweredQuestionEvent();
-        CheckUserInput();
+       // CheckTheCard();
 
     }
 
     void RaiseOnAnsweredQuestionEvent()
     {
         OnAnsweredQuestion?.Invoke();
-        Debug.Log("OnAnsweredQuestion?.Invoke();");
     }
-    void CheckUserInput()
+    public void CheckTheCard()
     {
-
+        string text = gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
+        int index = CardManager.selectedCard.assingnment.assignmentWithAnswers.IndexOfRightAnswer;
+        Debug.Log("Text on the button:" + text);
+        if (text == CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
+        {
+            Debug.Log("Right Answer");
+        }
+        else if (text != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
+        {
+            Debug.Log("Wrong Answer");
+        }
     }
 }

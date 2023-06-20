@@ -10,8 +10,10 @@ public class UI_Assignment_WithInput : MonoBehaviour
     public static UI_Assignment_WithInput Instance { get; private set; }
     [SerializeField] GameObject UIPanel;
     [SerializeField] GameObject question; // for TextMeshPro
-    [SerializeField] GameObject inputField; // for InputField
+    [SerializeField] GameObject inputFieldObj; // for InputField
     public Action OnAnsweredQuestion;
+    public float savedUserInput;
+    TMP_InputField tmpInputField;
     private void Awake()
     {
 
@@ -23,10 +25,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
         {
             Instance = this;
         }
+
+        tmpInputField = inputFieldObj.GetComponent<TMP_InputField>();
     }
     private void Start()
     {
-        UIPanel.SetActive(false);
+        DeactivateUIPanel();
     }
     private void Update()
     {
@@ -39,13 +43,24 @@ public class UI_Assignment_WithInput : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UIPanel.SetActive(false);
+            DeactivateUIPanel();
         }
     }
     public void ActivateUIPanel(string question)
     {
         UIPanel.SetActive(true);
+        ClearUIPanel();
         SetupPanel(question);
+    }
+
+    void DeactivateUIPanel()
+    {
+        UIPanel.SetActive(false);
+    }
+
+    void ClearUIPanel()
+    {
+        tmpInputField.text = "";
     }
      void SetupPanel(string question)
     {
@@ -54,9 +69,10 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
     void SaveUserInput()
     {
-        if (inputField.GetComponent<TMP_InputField>().text != null)
+        savedUserInput = float.Parse(tmpInputField.text);
+        if (tmpInputField.text != null)
         {
-            Debug.Log(inputField.GetComponent<TMP_InputField>().text);
+            Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
         }
 
     }
@@ -65,10 +81,16 @@ public class UI_Assignment_WithInput : MonoBehaviour
     void RaiseOnAnsweredQuestionEvent()
     {
         OnAnsweredQuestion?.Invoke();
-        Debug.Log("OnAnsweredQuestion?.Invoke();");
     }
     void CheckUserInput()
     {
-
+        if(savedUserInput == CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        {
+            Debug.Log("Right Answer");
+        }
+        else if (savedUserInput != CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        {
+            Debug.Log("Wrong Answer");
+        }
     }
 }

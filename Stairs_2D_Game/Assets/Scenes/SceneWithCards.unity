@@ -720,6 +720,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3529102560504651181, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
   m_PrefabInstance: {fileID: 3529102560997434163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1658945183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4830858485604024434, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+  m_PrefabInstance: {fileID: 3529102560997434163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d263c4b4850384d981acc38b28f213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1689062858
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +789,8 @@ MonoBehaviour:
   CardGroups:
   - {fileID: 11400000, guid: e040033be05cb7e4282cbed553f1c302, type: 2}
   createdCards: []
+  indexOfSelectedCard: 0
+  wasOpenedAllCards: 0
 --- !u!114 &1689062861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,6 +895,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ba6bfd8020e14a4d8b848d8fd6cf75e, type: 2}
   - {fileID: 11400000, guid: 4f2e619190d0eac4cbd861a7df5aebfe, type: 2}
   createdCards: []
+  indexOfSelectedCard: 0
+  wasOpenedAllCards: 0
 --- !u!1001 &1700281382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -996,6 +1011,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1449583926}
     m_Modifications:
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1658945183}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckTheCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_Assignment_With_Answers, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362079541497566245, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1362079541497566246, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1132,6 +1175,62 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1658945183}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckTheCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_Assignment_With_Answers, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045036709033934, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1658945183}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckTheCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_Assignment_With_Answers, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224045037547100132, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7224045037547100135, guid: 682ea602301d2844da4615fb4c4ae326, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1162,6 +1261,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1449583926}
     m_Modifications:
+    - target: {fileID: 87950623464466020, guid: 4af40baa172e8c0459f5d8d4d345a53b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 282429211960638419, guid: 4af40baa172e8c0459f5d8d4d345a53b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
