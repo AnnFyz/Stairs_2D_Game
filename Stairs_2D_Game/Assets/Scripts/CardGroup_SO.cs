@@ -90,7 +90,7 @@ public class CardGroup_SO : ScriptableObject
             allCardsWereCreated = true;
         }
 
-        Debug.Log("Select random assignment");
+
     }
 
     public void SelectRandomlyTypeOfAssignment()
@@ -201,7 +201,6 @@ public class CardGroup_SO : ScriptableObject
             Debug.Log("All Data was sent");
         }
 
-        Debug.Log("TypeOfAssignment: " + TypeOfAssignment);
     }
 
     public void GetRandomAssignmentWithAnswers()

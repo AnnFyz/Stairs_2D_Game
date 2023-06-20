@@ -311,7 +311,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6104931366010997598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 192bb6f06fd57b14095b0da32e7dfd2d, type: 3}
   m_Name: 
@@ -322,3 +322,6 @@ MonoBehaviour:
     AssignmentsWithUserInput: []
     assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput: {fileID: 0}
+  UIPanel: {fileID: 0}
+  isCardActivated: 0
+  isCardDeactivared: 0

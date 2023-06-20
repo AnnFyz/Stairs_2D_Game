@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UI_Assignment_WithInput : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
     [SerializeField] GameObject UIPanel;
     [SerializeField] GameObject question; // for TextMeshPro
     [SerializeField] GameObject inputField; // for InputField
+    public Action OnAnsweredQuestion;
     private void Awake()
     {
 
@@ -31,6 +33,8 @@ public class UI_Assignment_WithInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SaveUserInput();
+            RaiseOnAnsweredQuestionEvent();
+            CheckUserInput();
             UIPanel.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -54,6 +58,17 @@ public class UI_Assignment_WithInput : MonoBehaviour
         {
             Debug.Log(inputField.GetComponent<TMP_InputField>().text);
         }
+
     }
 
+ 
+    void RaiseOnAnsweredQuestionEvent()
+    {
+        OnAnsweredQuestion?.Invoke();
+        Debug.Log("OnAnsweredQuestion?.Invoke();");
+    }
+    void CheckUserInput()
+    {
+
+    }
 }

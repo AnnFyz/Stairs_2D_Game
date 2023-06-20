@@ -9,8 +9,11 @@ public class CardManager : MonoBehaviour
     public Transform prefabCard;
     [SerializeField] CardGroup_SO[] CardGroups;
     int AmountOfCardsToInstantiate = 0;
-    List <CardController> createdCards = new List<CardController>();
-
+    //public List <CardController> createdCards = new List<CardController>();
+    [SerializeField] CardController[] createdCards;
+    public static CardController selectedCard;
+    [SerializeField] int indexOfSelectedCard = 0;
+    [SerializeField] bool wasOpenedAllCards = false;
     private void Awake()
     {
 
@@ -23,17 +26,25 @@ public class CardManager : MonoBehaviour
             Instance = this;
         }
     }
+    void OnEnable()
+    {
+        UI_Assignment_WithInput.Instance.OnAnsweredQuestion += SelectNextCard;
+        UI_Assignment_With_Answers.Instance.OnAnsweredQuestion += SelectNextCard;
+    }
+
 
     private void Start()
     {
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
         CreateCards();
+        AddAllCreatedCards();
+        selectedCard = createdCards[0];
 
     }
     void CalculateCurrentAmountOfCardsInTheGroup()
     {
-       
+
         for (int i = 0; i < CardGroups.Length; i++)
         {
             CardGroups[i].CalculateCurrentAmountOfCardsOfThisType();
@@ -54,7 +65,7 @@ public class CardManager : MonoBehaviour
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
                 group.SetRandomAssignments();
-               
+
             }
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
@@ -64,10 +75,32 @@ public class CardManager : MonoBehaviour
             }
 
         }
-
-        
     }
 
+    void AddAllCreatedCards()
+    {
+        createdCards = GetComponentsInChildren<CardController>();
+    }
+
+    void SelectNextCard()
+    {
+        indexOfSelectedCard++;
+
+        if (indexOfSelectedCard < createdCards.Length)
+        {
+            selectedCard.DeactivateCard();
+            selectedCard = createdCards[indexOfSelectedCard];
+            selectedCard.ActivateCard();
+        }
+
+        else if (indexOfSelectedCard == createdCards.Length)
+        {
+            selectedCard.DeactivateCard();
+            wasOpenedAllCards = true;
+
+        }
+
+    }
     void ReorganizePlaceForCards()
     {
 
@@ -96,5 +129,15 @@ public class CardManager : MonoBehaviour
 
         Debug.Log("Group: " + group.name);
         return group;
+    }
+
+    public void ActivateCard()
+    {
+
+    }
+
+    public void DeactivateCard()
+    {
+
     }
 }

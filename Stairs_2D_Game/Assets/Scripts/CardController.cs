@@ -8,6 +8,22 @@ public class CardController : MonoBehaviour
     public Assignment assignmentType;
     public DiffAssignments assingnment;
     public GameObject UIPanel;
+    public bool isCardActivated = false;
+    public bool isCardDeactivared = false;
+
+    private void Start()
+    {
+        if (this != CardManager.selectedCard)
+        {
+            gameObject.GetComponent<Button>().interactable = false;
+            isCardActivated = false;
+        }
+        else
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+            isCardActivated = true;
+        }
+    }
     public static CardController Create(Transform prefabCard, CardGroup_SO cardGroup, Transform parent)
     {
         Transform cardObj = Instantiate(prefabCard);
@@ -18,7 +34,7 @@ public class CardController : MonoBehaviour
         return card;
     }
 
-    public void Setup(CardGroup_SO group , DiffAssignments randomAssignment)
+    public void Setup(CardGroup_SO group, DiffAssignments randomAssignment)
     {
         assignmentType = group.TypeOfAssignment;
         assingnment = randomAssignment;
@@ -28,13 +44,34 @@ public class CardController : MonoBehaviour
 
     public void ActivateUIPanel()
     {
-        if(assignmentType == Assignment.Assignment_With_Answer_Options)
+        if (this == CardManager.selectedCard)
         {
-            UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2], assingnment.assignmentWithAnswers.sprite);
+
+            if (assignmentType == Assignment.Assignment_With_Answer_Options)
+            {
+                UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2], assingnment.assignmentWithAnswers.sprite);
+            }
+            if (assignmentType == Assignment.Assignment_With_Number_Input)
+            {
+                UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput.Question);
+            }
         }
-        if (assignmentType == Assignment.Assignment_With_Number_Input)
+    }
+
+    public void ActivateCard()
+    {
+        if (this == CardManager.selectedCard)
         {
-            UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput.Question);
+            gameObject.GetComponent<Button>().interactable = true;
+            isCardActivated = true;
         }
+    }
+
+    public void DeactivateCard()
+    {
+       
+            gameObject.GetComponent<Button>().interactable = false;
+            isCardActivated = false;
+       
     }
 }

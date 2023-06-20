@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UI_Assignment_With_Answers : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     [SerializeField] GameObject answer_2;
     [SerializeField] GameObject answer_3;
     [SerializeField] GameObject sprite;
+    public Action OnAnsweredQuestion;
     private void Awake()
     {
 
@@ -43,6 +45,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     {
         UIPanel.SetActive(true);
         SetupPanel(question, answer_1, answer_2, answer_3, sprite);
+
     }
     void SetupPanel(string question, string answer_1, string answer_2, string answer_3, Sprite sprite)
     {
@@ -56,5 +59,18 @@ public class UI_Assignment_With_Answers : MonoBehaviour
    public void SelectAnswer()
     {
         UIPanel.SetActive(false);
+        RaiseOnAnsweredQuestionEvent();
+        CheckUserInput();
+
+    }
+
+    void RaiseOnAnsweredQuestionEvent()
+    {
+        OnAnsweredQuestion?.Invoke();
+        Debug.Log("OnAnsweredQuestion?.Invoke();");
+    }
+    void CheckUserInput()
+    {
+
     }
 }
