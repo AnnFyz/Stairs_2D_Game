@@ -39,7 +39,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UIPanel.SetActive(false);
+            DeactivateUIPanel();
         }
     }
     public void ActivateUIPanel(string question, string answer_1, string answer_2, string answer_3, Sprite sprite)
