@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +14,10 @@ public class CardManager : MonoBehaviour
     //public List <CardController> createdCards = new List<CardController>();
     [SerializeField] CardController[] createdCards;
     public static CardController selectedCard;
+    public  CardController currentselectedCard;
     [SerializeField] int indexOfSelectedCard = 0;
     [SerializeField] bool wasOpenedAllCards = false;
+    [SerializeField] CardController[] reorginizedCards;
     private void Awake()
     {
 
@@ -30,6 +34,7 @@ public class CardManager : MonoBehaviour
     {
         UI_Assignment_WithInput.Instance.OnAnsweredQuestion += SelectNextCard;
         UI_Assignment_With_Answers.Instance.OnAnsweredQuestion += SelectNextCard;
+        PopUpWindow.Instance.OnClosedPopUpWindow += SelectNextCard;
     }
 
 
@@ -39,8 +44,13 @@ public class CardManager : MonoBehaviour
         CalculateAmountOfCardsToInstantiate();
         CreateCards();
         AddAllCreatedCards();
-        selectedCard = createdCards[0];
+        ReorganizeCreatedCards();
+        selectedCard = reorginizedCards[0];
 
+    }
+    private void Update()
+    {
+        currentselectedCard = selectedCard;
     }
     void CalculateCurrentAmountOfCardsInTheGroup()
     {
@@ -86,14 +96,14 @@ public class CardManager : MonoBehaviour
     {
         indexOfSelectedCard++;
 
-        if (indexOfSelectedCard < createdCards.Length)
+        if (indexOfSelectedCard < reorginizedCards.Length)
         {
             selectedCard.DeactivateCard();
-            selectedCard = createdCards[indexOfSelectedCard];
+            selectedCard = reorginizedCards[indexOfSelectedCard];
             selectedCard.ActivateCard();
         }
 
-        else if (indexOfSelectedCard == createdCards.Length)
+        else if (indexOfSelectedCard == reorginizedCards.Length)
         {
             selectedCard.DeactivateCard();
             wasOpenedAllCards = true;
@@ -101,19 +111,13 @@ public class CardManager : MonoBehaviour
         }
 
     }
-    void ReorganizePlaceForCards()
-    {
-
-    }
-
-
     CardGroup_SO GetRandomGroup()
     {
         CardGroup_SO group = null;
         var totalWeight = 0;
         foreach (var item in CardGroups)
         {
-            totalWeight += item.Weight;
+            totalWeight += (int)Mathf.Round(item.weightCurve.Evaluate(1));
         }
         var rndWeightGroup = UnityEngine.Random.Range(0, totalWeight);
         var processedWeight = 0;
@@ -131,13 +135,19 @@ public class CardManager : MonoBehaviour
         return group;
     }
 
-    public void ActivateCard()
+    void CalculateProgress()
     {
-
+       
+    }
+    public void ReorganizeCreatedCards()
+    {
+        System.Random rnd = new System.Random();
+        reorginizedCards = createdCards.OrderBy(x => rnd.Next()).ToArray();
+        for (int i = 0; i < reorginizedCards.Length; i++)
+        {
+            reorginizedCards[i].transform.SetSiblingIndex(i);
+            
+        }
     }
 
-    public void DeactivateCard()
-    {
-
-    }
 }

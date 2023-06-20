@@ -14,10 +14,12 @@ public class AnswerButtonCheckerForAssignmentsWithAnswers : MonoBehaviour
         if (text == CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
         {
             Debug.Log("Right Answer");
+            UI_Assignment_With_Answers.Instance.RaiseOnAnsweredQuestionEvent();
         }
         else if (text != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
         {
-            Debug.Log("Wrong Answer");
+            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
+            UI_Assignment_With_Answers.Instance.RaiseOnWrongAnswerEvent();
         }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Globalization;
 
 public class UI_Assignment_WithInput : MonoBehaviour
 {
@@ -11,9 +12,10 @@ public class UI_Assignment_WithInput : MonoBehaviour
     [SerializeField] GameObject UIPanel;
     [SerializeField] GameObject question; // for TextMeshPro
     [SerializeField] GameObject inputFieldObj; // for InputField
-    public Action OnAnsweredQuestion;
     public float savedUserInput;
     TMP_InputField tmpInputField;
+    public Action OnAnsweredQuestion;
+    public Action <float> OnWrongAnswer;
     private void Awake()
     {
 
@@ -37,7 +39,6 @@ public class UI_Assignment_WithInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SaveUserInput();
-            RaiseOnAnsweredQuestionEvent();
             CheckUserInput();
             UIPanel.SetActive(false);
         }
@@ -69,7 +70,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
     void SaveUserInput()
     {
-        savedUserInput = float.Parse(tmpInputField.text);
+        savedUserInput = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
         if (tmpInputField.text != null)
         {
             Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
@@ -82,15 +83,24 @@ public class UI_Assignment_WithInput : MonoBehaviour
     {
         OnAnsweredQuestion?.Invoke();
     }
+    void RaiseOnWrongAnswerEvent()
+    {
+        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber);
+    }
+
     void CheckUserInput()
     {
         if(savedUserInput == CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
         {
             Debug.Log("Right Answer");
+            RaiseOnAnsweredQuestionEvent();
         }
         else if (savedUserInput != CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
         {
-            Debug.Log("Wrong Answer");
+            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber);
+            RaiseOnWrongAnswerEvent();
         }
     }
+
+    
 }

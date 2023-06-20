@@ -36,6 +36,7 @@ public class CardGroup_SO : ScriptableObject
     public bool allCardsWithAnswersWereCreated = false;
     public bool allCardsWithUserInputWereCreated = false;
     public bool allCardsWereCreated = false;
+    public AnimationCurve weightCurve;
 
     private void OnEnable()
     {

@@ -39,3 +39,27 @@ MonoBehaviour:
   allCardsWithAnswersWereCreated: 0
   allCardsWithUserInputWereCreated: 0
   allCardsWereCreated: 0
+  weightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0022925977
+      value: 1.0027912
+      inSlope: -0.0028593508
+      outSlope: -0.0028593508
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.30798388
+    - serializedVersion: 3
+      time: 0.9951265
+      value: 0.0013961801
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

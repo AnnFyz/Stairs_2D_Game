@@ -15,6 +15,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     [SerializeField] GameObject answer_3;
     [SerializeField] GameObject sprite;
     public Action OnAnsweredQuestion;
+    public Action<string> OnWrongAnswer;
     private void Awake()
     {
 
@@ -64,13 +65,16 @@ public class UI_Assignment_With_Answers : MonoBehaviour
    public void SelectAnswer()
     {
         DeactivateUIPanel();
-        RaiseOnAnsweredQuestionEvent();
-
     }
 
-    void RaiseOnAnsweredQuestionEvent()
+    public void RaiseOnAnsweredQuestionEvent()
     {
         OnAnsweredQuestion?.Invoke();
     }
-   
+
+   public void RaiseOnWrongAnswerEvent()
+    {
+        int index = CardManager.selectedCard.assingnment.assignmentWithAnswers.IndexOfRightAnswer;
+        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
+    }
 }
