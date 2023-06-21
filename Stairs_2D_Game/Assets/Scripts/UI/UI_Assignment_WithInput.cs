@@ -70,10 +70,20 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
     void SaveUserInput()
     {
-        savedUserInput = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
-        if (tmpInputField.text != null)
+        try
         {
-            Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
+            savedUserInput = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
+            if (tmpInputField.text != null)
+            {
+                Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
+            }
+        }
+
+        catch (Exception e)
+        {
+            savedUserInput = Mathf.Infinity;
+            RaiseOnWrongAnswerEvent();
+            //  Block of code to handle errors
         }
 
     }
