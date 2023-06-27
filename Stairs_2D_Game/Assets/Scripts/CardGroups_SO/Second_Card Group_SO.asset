@@ -17,28 +17,28 @@ MonoBehaviour:
   Weight: 42
   groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
   TypeOfAssignment: 0
-  currentAmountOfCardsOfThisType: 0
+  currentAmountOfCardsOfThisType: 6
   assignments:
-    AssignmentsWithAnswers:
-    - {fileID: 11400000, guid: a9a9359455b1b0f4e8af8765d5e48a94, type: 2}
-    - {fileID: 11400000, guid: 102b4ee8d64c16e4b9dd74e213598f01, type: 2}
-    - {fileID: 11400000, guid: 2d1293f38d3e76a448d12639b30a5fd5, type: 2}
+    AssignmentsWithAnswers: []
     AssignmentsWithUserInput:
-    - {fileID: 11400000, guid: 3f283728768ca9145ba187df704f0674, type: 2}
-    - {fileID: 11400000, guid: 9728542f78cc6174996de2028165200c, type: 2}
-    - {fileID: 11400000, guid: 1771cb10e0440e542b1b903901471a2f, type: 2}
-    assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput: {fileID: 0}
+    - {fileID: 11400000, guid: 4189d55b553aeb441a9ffcb9e6b981fe, type: 2}
+    - {fileID: 11400000, guid: 7a4732803baf90946be34f27f53bf888, type: 2}
+    - {fileID: 11400000, guid: 959861ef8e5672e46bde62a646f656ed, type: 2}
+    - {fileID: 11400000, guid: 53dc26cbc208c614f8d5e9ebd3fdc4e8, type: 2}
+    - {fileID: 11400000, guid: 0a5361544de672443bb53de0b9282b06, type: 2}
+    - {fileID: 11400000, guid: 3acb0b69d82a891408a67fa0fe5b4b06, type: 2}
+    assignmentWithAnswers: {fileID: 11400000, guid: 102b4ee8d64c16e4b9dd74e213598f01, type: 2}
+    assignmentWithUserInput: {fileID: 11400000, guid: 3f283728768ca9145ba187df704f0674, type: 2}
   randomAssignment:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput: []
-    assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput: {fileID: 0}
+    assignmentWithAnswers: {fileID: 11400000, guid: 102b4ee8d64c16e4b9dd74e213598f01, type: 2}
+    assignmentWithUserInput: {fileID: 11400000, guid: 9728542f78cc6174996de2028165200c, type: 2}
   givenAssignmentsWithAnswers: []
   givenAssignmentsUserInput: []
-  allCardsWithAnswersWereCreated: 0
-  allCardsWithUserInputWereCreated: 0
-  allCardsWereCreated: 0
+  allCardsWithAnswersWereCreated: 1
+  allCardsWithUserInputWereCreated: 1
+  allCardsWereCreated: 1
   weightCurve:
     serializedVersion: 2
     m_Curve:
