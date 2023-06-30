@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccbf321712e06194490bb5e24b31a96a, type: 3}
-  m_Name: AssignmentWithUserInput_1_Group_1
+  m_Name: Group_1_AssignmentWithUserInput_3
   m_EditorClassIdentifier: 
   currentAssignment: 1
-  Question: Llal. give me the right number (5.5)
-  RightNumber: 5.5
+  Question: 'Was bedeutet dieses Symbol? '
+  RightNumber: 0
+  sprite: {fileID: 21300000, guid: 8a5d0044a28bf924b9033935aa693f6e, type: 3}

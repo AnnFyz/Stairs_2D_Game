@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e912a3fc4981ed4eb7452367fc314a5, type: 3}
-  m_Name: AssignmentWithAnswers 4__Group_1
+  m_Script: {fileID: 11500000, guid: ccbf321712e06194490bb5e24b31a96a, type: 3}
+  m_Name: Group_1_AssignmentWithUserInput_1
   m_EditorClassIdentifier: 
-  currentAssignment: 0
+  currentAssignment: 1
   Question: 'Was bedeutet dieses Symbol? '
-  Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
-  sprite: {fileID: 21300000, guid: 7ab0622254e4866489b385cf66b3c982, type: 3}
+  RightNumber: 0
+  sprite: {fileID: 21300000, guid: abd9549b9cdc3e84bab2638aa70a4b60, type: 3}

@@ -7,7 +7,9 @@ using System;
 public enum Assignment
 {
     Assignment_With_Answer_Options,
-    Assignment_With_Number_Input
+    Assignment_With_Number_Input,
+    Assignment_With_Text_Input
+
 }
 
 [System.Serializable]

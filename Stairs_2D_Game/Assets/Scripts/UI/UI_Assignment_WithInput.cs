@@ -12,10 +12,11 @@ public class UI_Assignment_WithInput : MonoBehaviour
     [SerializeField] GameObject UIPanel;
     [SerializeField] GameObject question; // for TextMeshPro
     [SerializeField] GameObject inputFieldObj; // for InputField
-    public float savedUserInput;
+    public float savedUserInputNumber;
     TMP_InputField tmpInputField;
     public Action OnAnsweredQuestion;
     public Action <float> OnWrongAnswer;
+    [SerializeField] GameObject sprite;
     private void Awake()
     {
 
@@ -47,11 +48,11 @@ public class UI_Assignment_WithInput : MonoBehaviour
             DeactivateUIPanel();
         }
     }
-    public void ActivateUIPanel(string question)
+    public void ActivateUIPanel(string question, Sprite sprite)
     {
         UIPanel.SetActive(true);
         ClearUIPanel();
-        SetupPanel(question);
+        SetupPanel(question, sprite);
     }
 
     void DeactivateUIPanel()
@@ -63,16 +64,17 @@ public class UI_Assignment_WithInput : MonoBehaviour
     {
         tmpInputField.text = "";
     }
-     void SetupPanel(string question)
+     void SetupPanel(string question, Sprite sprite)
     {
         this.question.GetComponent<TextMeshProUGUI>().text = question;
+        this.sprite.GetComponent<Image>().sprite = sprite;
     }
 
     void SaveUserInput()
     {
         try
         {
-            savedUserInput = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
+            savedUserInputNumber = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
             if (tmpInputField.text != null)
             {
                 Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
@@ -81,7 +83,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
         catch (Exception e)
         {
-            savedUserInput = Mathf.Infinity;
+            savedUserInputNumber = Mathf.Infinity;
             RaiseOnWrongAnswerEvent();
             //  Block of code to handle errors
         }
@@ -100,12 +102,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
     void CheckUserInput()
     {
-        if(savedUserInput == CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        if(savedUserInputNumber == CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
         {
             Debug.Log("Right Answer");
             RaiseOnAnsweredQuestionEvent();
         }
-        else if (savedUserInput != CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        else if (savedUserInputNumber != CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
         {
             Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber);
             RaiseOnWrongAnswerEvent();

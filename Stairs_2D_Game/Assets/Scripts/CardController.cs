@@ -53,7 +53,7 @@ public class CardController : MonoBehaviour
             }
             if (assignmentType == Assignment.Assignment_With_Number_Input)
             {
-                UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput.Question);
+                UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput.Question, assingnment.assignmentWithUserInput.sprite);
             }
         }
     }
