@@ -44,7 +44,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
             {
                 UserInputWithNumbersHandler();
             }
-            if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
+            else if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
             {
                 UserInputWithTextHandler();
             }
@@ -125,12 +125,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
     {
         if(savedUserInputNumber == CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber)
         {
-            Debug.Log("Right Answer");
+            Debug.Log("Right Answer  (numbers)");
             RaiseOnAnsweredQuestionEvent();
         }
         else if (savedUserInputNumber != CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber)
         {
-            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber);
+            Debug.Log("Wrong Answer  (numbers), the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber);
             RaiseOnWrongAnswerEvent();
         }
     }
@@ -150,12 +150,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
     {
         if (savedUserInputText == CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer)
         {
-            Debug.Log("Right Answer");
+            Debug.Log("Right Answer (text)");
             RaiseOnAnsweredQuestionEvent();
         }
         else if (savedUserInputText != CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer)
         {
-            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer);
+            Debug.Log("Wrong Answer (text), the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer);
             RaiseOnWrongAnswerEvent();
         }
     }

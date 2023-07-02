@@ -89,7 +89,6 @@ public class CardGroup_SO : ScriptableObject
     {
         if(indexForAssignmentsWithAnswers < assignments.AssignmentsWithAnswers.Length)
         {
-            Debug.Log("indexForAssignmentsWithAnswers " + indexForAssignmentsWithAnswers);
             randomAssignment.assignmentWithAnswers = assignments.AssignmentsWithAnswers[indexForAssignmentsWithAnswers];
             indexForAssignmentsWithAnswers++;
         }       
@@ -103,7 +102,6 @@ public class CardGroup_SO : ScriptableObject
     {
         if (indexForAssignmentsWithUiserInput_Numbers < assignments.AssignmentsWithUserInput_Number.Length)
         {
-            Debug.Log("indexForAssignmentsWithUiserInput_Numbers " + indexForAssignmentsWithUiserInput_Numbers);
             randomAssignment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[indexForAssignmentsWithUiserInput_Numbers];
             indexForAssignmentsWithUiserInput_Numbers++;
         }
@@ -117,7 +115,6 @@ public class CardGroup_SO : ScriptableObject
     {
         if (indexForAssignmentsWithUiserInput_Text < assignments.AssignmentsWithUserInput_Text.Length)
         {
-            Debug.Log("indexForAssignmentsWithUiserInput_Text " + indexForAssignmentsWithUiserInput_Text);
             randomAssignment.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[indexForAssignmentsWithUiserInput_Text];
             indexForAssignmentsWithUiserInput_Text++;
         }

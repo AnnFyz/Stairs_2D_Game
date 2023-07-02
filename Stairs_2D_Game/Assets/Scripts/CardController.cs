@@ -52,11 +52,11 @@ public class CardController : MonoBehaviour
             {
                 UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2], assingnment.assignmentWithAnswers.sprite);
             }
-            if (assignmentType == Assignment.Assignment_With_Number_Input)
+            else if (assignmentType == Assignment.Assignment_With_Number_Input)
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Number.Question, assingnment.assignmentWithUserInput_Number.sprite);
             }
-            if(assignmentType == Assignment.Assignment_With_Text_Input)
+            else if(assignmentType == Assignment.Assignment_With_Text_Input)
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Text.Question, assingnment.assignmentWithUserInput_Text.sprite);
             }
