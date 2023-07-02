@@ -13,7 +13,6 @@ using UnityEngine.UI;
         public string[] Answers;
         public int IndexOfRightAnswer;
         public Sprite sprite;
-        public int indexOfRightAnswer;
     }
 
 

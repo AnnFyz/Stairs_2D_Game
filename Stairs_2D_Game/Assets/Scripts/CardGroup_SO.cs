@@ -21,7 +21,7 @@ public struct DiffAssignments
 
     public AssignmentWithAnswers_SO assignmentWithAnswers;
     public AssignmentWithUserInput_Numbers_SO assignmentWithUserInput_Number;
-    public AssignmentWithUserInput_Text_SO assignmentsWithUserInput_Text;
+    public AssignmentWithUserInput_Text_SO assignmentWithUserInput_Text;
 
 }
 [CreateAssetMenu]
@@ -37,7 +37,8 @@ public class CardGroup_SO : ScriptableObject
     public DiffAssignments assignments;
     public DiffAssignments randomAssignment;
     public List<AssignmentWithAnswers_SO> givenAssignmentsWithAnswers;
-    public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput;
+    public List<AssignmentWithUserInput_Numbers_SO> givenAssignmentsUserInput_Number;
+    public List<AssignmentWithUserInput_Text_SO> givenAssignmentsUserInput_Text;
     public bool allCardsWithAnswersWereCreated = false;
     public bool allCardsWithUserInputWereCreated = false;
     public bool allCardsWereCreated = false;
@@ -47,7 +48,8 @@ public class CardGroup_SO : ScriptableObject
     {
         currentAmountOfCardsOfThisType = 0;
         givenAssignmentsWithAnswers.Clear();
-        givenAssignmentsUserInput.Clear();
+        givenAssignmentsUserInput_Number.Clear();
+        givenAssignmentsUserInput_Text.Clear();
         allCardsWithAnswersWereCreated = false;
         allCardsWithUserInputWereCreated = false;
         allCardsWereCreated = false;
@@ -71,18 +73,18 @@ public class CardGroup_SO : ScriptableObject
 
         if (!allCardsWithUserInputWereCreated)
         {
-            SelectRandomAssignmentWithUserInput(randomAssingnment);
+            SelectRandomAssignmentWithUserInput_Numbers(randomAssingnment);
         }
 
         if (givenAssignmentsWithAnswers.Count == assignments.AssignmentsWithAnswers.Length)
         {
             allCardsWithAnswersWereCreated = true;
             TypeOfAssignment = Assignment.Assignment_With_Number_Input;
-            SelectRandomAssignmentWithUserInput(randomAssingnment);
+            SelectRandomAssignmentWithUserInput_Numbers(randomAssingnment);
 
         }
 
-        if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput_Number.Length)
+        if (givenAssignmentsUserInput_Number.Count == assignments.AssignmentsWithUserInput_Number.Length)
         {
             allCardsWithUserInputWereCreated = true;
             TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
@@ -101,7 +103,7 @@ public class CardGroup_SO : ScriptableObject
 
     public void SelectRandomlyTypeOfAssignment()
     {
-        int randomType = UnityEngine.Random.Range(0, 2);
+        int randomType = UnityEngine.Random.Range(0, 3);
         switch (randomType)
         {
             case 0:
@@ -110,7 +112,10 @@ public class CardGroup_SO : ScriptableObject
             case 1:
                 TypeOfAssignment = Assignment.Assignment_With_Number_Input;
                 break;
-        }
+            case 3:
+                TypeOfAssignment = Assignment.Assignment_With_Text_Input;
+                break;
+        }       
 
     }
 
@@ -154,7 +159,7 @@ public class CardGroup_SO : ScriptableObject
         }
     }
 
-    void SelectRandomAssignmentWithUserInput(DiffAssignments randomAssingnment)
+    void SelectRandomAssignmentWithUserInput_Numbers(DiffAssignments randomAssingnment)
     {
         if (TypeOfAssignment == Assignment.Assignment_With_Number_Input)
         {
@@ -163,16 +168,16 @@ public class CardGroup_SO : ScriptableObject
 
                 randomAssingnment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput_Number.Length)];
 
-                if (givenAssignmentsUserInput.Count == assignments.AssignmentsWithUserInput_Number.Length)
+                if (givenAssignmentsUserInput_Number.Count == assignments.AssignmentsWithUserInput_Number.Length)
                 {
                     allCardsWithUserInputWereCreated = true;
 
                 }
 
-                if (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput_Number) && !allCardsWithUserInputWereCreated)
+                if (givenAssignmentsUserInput_Number.Contains(randomAssingnment.assignmentWithUserInput_Number) && !allCardsWithUserInputWereCreated)
                 {
 
-                    while (givenAssignmentsUserInput.Contains(randomAssingnment.assignmentWithUserInput_Number))
+                    while (givenAssignmentsUserInput_Number.Contains(randomAssingnment.assignmentWithUserInput_Number))
                     {
                         randomAssingnment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput_Number.Length)];
                     }
@@ -181,13 +186,49 @@ public class CardGroup_SO : ScriptableObject
                 if (!allCardsWithUserInputWereCreated)
                 {
                     assignments.assignmentWithUserInput_Number = randomAssingnment.assignmentWithUserInput_Number;
-                    givenAssignmentsUserInput.Add(randomAssingnment.assignmentWithUserInput_Number);
+                    givenAssignmentsUserInput_Number.Add(randomAssingnment.assignmentWithUserInput_Number);
                     break;
                 }
 
             }
         }
     }
+
+    void SelectRandomAssignmentWithUserInput_Text(DiffAssignments randomAssingnment)
+    {
+        if (TypeOfAssignment == Assignment.Assignment_With_Text_Input)
+        {
+            for (int i = 0; i < assignments.AssignmentsWithUserInput_Text.Length; i++)
+            {
+
+                randomAssingnment.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput_Text.Length)];
+
+                if (givenAssignmentsUserInput_Number.Count == assignments.AssignmentsWithUserInput_Number.Length)
+                {
+                    allCardsWithUserInputWereCreated = true;
+
+                }
+
+                if (givenAssignmentsUserInput_Number.Contains(randomAssingnment.assignmentWithUserInput_Number) && !allCardsWithUserInputWereCreated)
+                {
+
+                    while (givenAssignmentsUserInput_Number.Contains(randomAssingnment.assignmentWithUserInput_Number))
+                    {
+                        randomAssingnment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[UnityEngine.Random.Range(0, assignments.AssignmentsWithUserInput_Number.Length)];
+                    }
+                }
+
+                if (!allCardsWithUserInputWereCreated)
+                {
+                    assignments.assignmentWithUserInput_Number = randomAssingnment.assignmentWithUserInput_Number;
+                    givenAssignmentsUserInput_Number.Add(randomAssingnment.assignmentWithUserInput_Number);
+                    break;
+                }
+
+            }
+        }
+    }
+
 
     public void GetRandomAssignment()
     {
@@ -202,7 +243,7 @@ public class CardGroup_SO : ScriptableObject
             GetRandomAssignmentUserInput();
         }
 
-        if(givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput.Count == 0)
+        if(givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput_Number.Count == 0)
         {
             Debug.Log("All Data was sent");
         }
@@ -213,7 +254,7 @@ public class CardGroup_SO : ScriptableObject
     {
         if (TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {          
-            if (givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput.Count != 0)
+            if (givenAssignmentsWithAnswers.Count == 0 && givenAssignmentsUserInput_Number.Count != 0)
             {
                 TypeOfAssignment = Assignment.Assignment_With_Number_Input;
                 GetRandomAssignmentUserInput();
@@ -232,16 +273,16 @@ public class CardGroup_SO : ScriptableObject
     {
         if (TypeOfAssignment == Assignment.Assignment_With_Number_Input )
         {
-            if (givenAssignmentsUserInput.Count == 0 && givenAssignmentsWithAnswers.Count != 0)
+            if (givenAssignmentsUserInput_Number.Count == 0 && givenAssignmentsWithAnswers.Count != 0)
             {
                 TypeOfAssignment = Assignment.Assignment_With_Answer_Options;
                 GetRandomAssignmentWithAnswers();
             }
-            else if(givenAssignmentsUserInput.Count > 0)
+            else if(givenAssignmentsUserInput_Number.Count > 0)
             {
-                int randomIndex = UnityEngine.Random.Range(0, givenAssignmentsUserInput.Count);
-                randomAssignment.assignmentWithUserInput_Number = givenAssignmentsUserInput[randomIndex];
-                givenAssignmentsUserInput.Remove(givenAssignmentsUserInput[randomIndex]);
+                int randomIndex = UnityEngine.Random.Range(0, givenAssignmentsUserInput_Number.Count);
+                randomAssignment.assignmentWithUserInput_Number = givenAssignmentsUserInput_Number[randomIndex];
+                givenAssignmentsUserInput_Number.Remove(givenAssignmentsUserInput_Number[randomIndex]);
             }
             
             

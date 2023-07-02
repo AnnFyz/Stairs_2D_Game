@@ -15,33 +15,37 @@ MonoBehaviour:
   Title: Platzhalter Antworten Symbole geometrische Toleranzen
   numberOfAssignmentGroup: 0
   Weight: 80
-  groupColor: {r: 0.8490566, g: 0.69441247, b: 0, a: 1}
+  groupColor: {r: 0, g: 0.10248383, b: 0.9245283, a: 1}
   TypeOfAssignment: 2
   currentAmountOfCardsOfThisType: 0
   assignments:
     AssignmentsWithAnswers: []
-    AssignmentsWithUserInput:
-    - {fileID: 11400000, guid: 53813e4ff8c9de24f805f712a1e64d0e, type: 2}
-    - {fileID: 11400000, guid: 34a1d987c90c83b48b18fc22b1016b7f, type: 2}
-    - {fileID: 11400000, guid: e098ce48f395e1c4382910c63f312579, type: 2}
-    - {fileID: 11400000, guid: 25892efcb253892459ed25816f2dd18e, type: 2}
-    - {fileID: 11400000, guid: 1b2e120a92646934383b804ab10a1ac3, type: 2}
-    - {fileID: 11400000, guid: ad9487711804ee147ad68bf2d62ca9c0, type: 2}
-    - {fileID: 11400000, guid: 6d50ea7942cb48f4f9db9f76ce0467e2, type: 2}
-    - {fileID: 11400000, guid: 3fbc7f356db2dd946b4d799bd8cc244a, type: 2}
-    - {fileID: 11400000, guid: 7fe878b4bda3f024195a5676dfb2ed81, type: 2}
-    - {fileID: 11400000, guid: 35b9256c220519245b4a9fe7bb0fd1d1, type: 2}
-    - {fileID: 11400000, guid: fcbdfab122ae77f4f9dabfca9ad1f48b, type: 2}
-    - {fileID: 11400000, guid: c21be64df2e86ea4ab8b2fe47d4a8d95, type: 2}
-    - {fileID: 11400000, guid: cd850c91da5755e418535c30f193dede, type: 2}
-    - {fileID: 11400000, guid: f20880b73c17c1b40bb654dc67614d25, type: 2}
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text:
+    - {fileID: 11400000, guid: 49d341590b5464949b15e2e873e43ba4, type: 2}
+    - {fileID: 11400000, guid: 1d156e3fa6ab63d4d8a11361017bc172, type: 2}
+    - {fileID: 11400000, guid: 5e19413c2325af24e9ab798b0b7730f6, type: 2}
+    - {fileID: 11400000, guid: 32b760a94e8ee76498e6848a04a3d292, type: 2}
+    - {fileID: 11400000, guid: 05a26fc9e81276f4d80aac15473a7dc8, type: 2}
+    - {fileID: 11400000, guid: 38c2070ad2b8f6a4195f6b1b8d6e6a40, type: 2}
+    - {fileID: 11400000, guid: 5998b9466587fd3419f717bb940adc2d, type: 2}
+    - {fileID: 11400000, guid: b5318897bcb6a5c4f99175774f0582a8, type: 2}
+    - {fileID: 11400000, guid: aef861fe84f09a14fa58d79ec4234eaf, type: 2}
+    - {fileID: 11400000, guid: a3d6c3ca2fe1dcc4eb5f1a353608add5, type: 2}
+    - {fileID: 11400000, guid: 829a565ecf1823c488137af634819772, type: 2}
+    - {fileID: 11400000, guid: 20d262691eb58e6479c84953681a3a0f, type: 2}
+    - {fileID: 11400000, guid: 0461e6f123717c74aa026bca511a4ead, type: 2}
+    - {fileID: 11400000, guid: 8d6c7b60ea56e474d80cd91f45eaef39, type: 2}
     assignmentWithAnswers: {fileID: 11400000, guid: 99f2eb4b83f74a645b640c193acb106f, type: 2}
-    assignmentWithUserInput: {fileID: 11400000, guid: ce595d1efae4485479ad6069c6cba91c, type: 2}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentsWithUserInput_Text: {fileID: 0}
   randomAssignment:
     AssignmentsWithAnswers: []
-    AssignmentsWithUserInput: []
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 11400000, guid: 757d5f08c7d22794eb01440952b67e71, type: 2}
-    assignmentWithUserInput: {fileID: 11400000, guid: a3d2d140500a5e743b48e648f619328e, type: 2}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentsWithUserInput_Text: {fileID: 0}
   givenAssignmentsWithAnswers: []
   givenAssignmentsUserInput: []
   allCardsWithAnswersWereCreated: 0

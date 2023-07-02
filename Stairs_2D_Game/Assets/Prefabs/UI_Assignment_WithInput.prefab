@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 10, y: 10}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &698230841
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 76230f2cf7d91884192e4e9790bb7cba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ac8043dee3fb0a4797a7e19a307f743, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.453247, y: 325.21002}
-  m_SizeDelta: {x: 438.7741, y: 50}
+  m_AnchoredPosition: {x: 0, y: 390}
+  m_SizeDelta: {x: 440, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2089435449
 CanvasRenderer:
@@ -319,9 +319,11 @@ MonoBehaviour:
   assignmentType: 0
   assingnment:
     AssignmentsWithAnswers: []
-    AssignmentsWithUserInput: []
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput: {fileID: 0}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentsWithUserInput_Text: {fileID: 0}
   UIPanel: {fileID: 0}
   isCardActivated: 0
   isCardDeactivared: 0
@@ -503,7 +505,8 @@ MonoBehaviour:
   UIPanel: {fileID: 2023652257086522025}
   question: {fileID: 2089435446}
   inputFieldObj: {fileID: 9207895414039650216}
-  savedUserInput: 0
+  savedUserInputNumber: 0
+  savedUserInputText: 
   sprite: {fileID: 698230838}
 --- !u!1 &2447024613761917930
 GameObject:
@@ -628,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09019608, g: 0.14117648, b: 0.13669537, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

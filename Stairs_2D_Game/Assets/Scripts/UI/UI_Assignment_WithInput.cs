@@ -139,14 +139,14 @@ public class UI_Assignment_WithInput : MonoBehaviour
 
     void CheckUserInputWithText()
     {
-        if (savedUserInputText == CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer)
+        if (savedUserInputText == CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer)
         {
             Debug.Log("Right Answer");
             RaiseOnAnsweredQuestionEvent();
         }
-        else if (savedUserInputText != CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer)
+        else if (savedUserInputText != CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer)
         {
-            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer);
+            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer);
             RaiseOnWrongAnswerEvent();
         }
     }

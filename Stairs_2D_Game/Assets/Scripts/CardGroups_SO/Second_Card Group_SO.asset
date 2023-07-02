@@ -20,20 +20,26 @@ MonoBehaviour:
   currentAmountOfCardsOfThisType: 0
   assignments:
     AssignmentsWithAnswers:
-    - {fileID: 11400000, guid: a9a9359455b1b0f4e8af8765d5e48a94, type: 2}
-    - {fileID: 11400000, guid: 102b4ee8d64c16e4b9dd74e213598f01, type: 2}
-    - {fileID: 11400000, guid: 2d1293f38d3e76a448d12639b30a5fd5, type: 2}
-    AssignmentsWithUserInput:
-    - {fileID: 11400000, guid: 3f283728768ca9145ba187df704f0674, type: 2}
-    - {fileID: 11400000, guid: 9728542f78cc6174996de2028165200c, type: 2}
-    - {fileID: 11400000, guid: 1771cb10e0440e542b1b903901471a2f, type: 2}
+    - {fileID: 11400000, guid: d4cd33d1da3ab7a439797857ae8d38aa, type: 2}
+    - {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
+    - {fileID: 11400000, guid: 72a4064d63daaa94e86d39fca81b7a9a, type: 2}
+    - {fileID: 11400000, guid: 03de453c50ba9b747abe41bb76431e44, type: 2}
+    - {fileID: 11400000, guid: 409eed77f3a644949b3479eeb9a3aaa3, type: 2}
+    - {fileID: 11400000, guid: e1d633be88042194aa940dd20dd1e078, type: 2}
+    - {fileID: 11400000, guid: e0a49f7a549456a42ad2727ba2ae749c, type: 2}
+    - {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput: {fileID: 0}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentsWithUserInput_Text: {fileID: 0}
   randomAssignment:
     AssignmentsWithAnswers: []
-    AssignmentsWithUserInput: []
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput: {fileID: 0}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentsWithUserInput_Text: {fileID: 0}
   givenAssignmentsWithAnswers: []
   givenAssignmentsUserInput: []
   allCardsWithAnswersWereCreated: 0
