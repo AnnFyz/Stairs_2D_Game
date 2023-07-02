@@ -79,7 +79,7 @@ public class CardManager : MonoBehaviour
             }
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
-                group.GetRandomAssignment();
+                group.GetAssignment();
                 card = CardController.Create(prefabCard, group, transform);
                 card.Setup(group, group.randomAssignment);
             }

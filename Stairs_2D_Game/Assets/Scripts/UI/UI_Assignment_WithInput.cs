@@ -16,7 +16,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
     public string savedUserInputText;
     TMP_InputField tmpInputField;
     public Action OnAnsweredQuestion;
-    public Action <float> OnWrongAnswer;
+    public Action <string> OnWrongAnswer;
     [SerializeField] GameObject sprite;
     private void Awake()
     {
@@ -109,7 +109,16 @@ public class UI_Assignment_WithInput : MonoBehaviour
     }
     void RaiseOnWrongAnswerEvent()
     {
-        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber);
+        if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Number_Input)
+        {
+            OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber.ToString());
+        }
+
+        if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
+        {
+            OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer);
+        }
+
     }
 
     void CheckUserInputWithNumbers()

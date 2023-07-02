@@ -16,8 +16,8 @@ MonoBehaviour:
   numberOfAssignmentGroup: 2
   Weight: 11
   groupColor: {r: 0.98039216, g: 0.80324537, b: 0.4666666, a: 1}
-  TypeOfAssignment: 0
-  currentAmountOfCardsOfThisType: 0
+  TypeOfAssignment: 1
+  currentAmountOfCardsOfThisType: 6
   assignments:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number:
@@ -30,18 +30,20 @@ MonoBehaviour:
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 0}
   randomAssignment:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Number: {fileID: 11400000, guid: f2746535fea4a464aaef92a4ae01655a, type: 2}
+    assignmentWithUserInput_Text: {fileID: 0}
   givenAssignmentsWithAnswers: []
-  givenAssignmentsUserInput: []
+  givenAssignmentsUserInput_Number: []
+  givenAssignmentsUserInput_Text: []
   allCardsWithAnswersWereCreated: 0
-  allCardsWithUserInputWereCreated: 0
+  allCardsWithUserInput_Numbers_WereCreated: 0
+  allCardsWithUserInput_Text_WereCreated: 0
   allCardsWereCreated: 0
   weightCurve:
     serializedVersion: 2
@@ -67,3 +69,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  indexForAssignmentsWithAnswers: 0
+  indexForAssignmentsWithUiserInput_Numbers: 6
+  indexForAssignmentsWithUiserInput_Text: 0

@@ -41,10 +41,10 @@ public class PopUpWindow : MonoBehaviour
     }
 
  
-    void SetupPopUpWindowForUserInput(float rightAnswer)
+    void SetupPopUpWindowForUserInput(string rightAnswer)
     {
         ActivateUIPanel();
-        answer_tmp.text = rightAnswer.ToString();
+        answer_tmp.text = rightAnswer;
     }
 
      void SetupPopUpWindowForAnswerOptions(string rightAnswer)
