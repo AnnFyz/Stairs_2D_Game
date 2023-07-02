@@ -13,6 +13,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
     [SerializeField] GameObject question; // for TextMeshPro
     [SerializeField] GameObject inputFieldObj; // for InputField
     public float savedUserInputNumber;
+    public string savedUserInputText;
     TMP_InputField tmpInputField;
     public Action OnAnsweredQuestion;
     public Action <float> OnWrongAnswer;
@@ -39,8 +40,14 @@ public class UI_Assignment_WithInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SaveUserInput();
-            CheckUserInput();
+            if(CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Number_Input)
+            {
+                UserInputWithNumbersHandler();
+            }
+            if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
+            {
+                UserInputWithTextHandler();
+            }
             UIPanel.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -70,7 +77,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
         this.sprite.GetComponent<Image>().sprite = sprite;
     }
 
-    void SaveUserInput()
+    void UserInputWithNumbersHandler()
+    {
+        SaveUserInputWithNumbers();
+        CheckUserInputWithNumbers();
+    }
+    void SaveUserInputWithNumbers()
     {
         try
         {
@@ -97,22 +109,45 @@ public class UI_Assignment_WithInput : MonoBehaviour
     }
     void RaiseOnWrongAnswerEvent()
     {
-        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber);
+        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber);
     }
 
-    void CheckUserInput()
+    void CheckUserInputWithNumbers()
     {
-        if(savedUserInputNumber == CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        if(savedUserInputNumber == CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber)
         {
             Debug.Log("Right Answer");
             RaiseOnAnsweredQuestionEvent();
         }
-        else if (savedUserInputNumber != CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber)
+        else if (savedUserInputNumber != CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber)
         {
-            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput.RightNumber);
+            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber);
             RaiseOnWrongAnswerEvent();
         }
     }
 
-    
+    void UserInputWithTextHandler()
+    {
+        SaveUserInputWithText();
+        CheckUserInputWithText();
+    }
+
+    void SaveUserInputWithText()
+    {
+        savedUserInputText = tmpInputField.text.ToString();
+    }
+
+    void CheckUserInputWithText()
+    {
+        if (savedUserInputText == CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer)
+        {
+            Debug.Log("Right Answer");
+            RaiseOnAnsweredQuestionEvent();
+        }
+        else if (savedUserInputText != CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer)
+        {
+            Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentsWithUserInput_Text.RightAnswer);
+            RaiseOnWrongAnswerEvent();
+        }
+    }
 }
