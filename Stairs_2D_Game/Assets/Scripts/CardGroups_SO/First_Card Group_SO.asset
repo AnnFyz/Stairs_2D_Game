@@ -17,7 +17,7 @@ MonoBehaviour:
   Weight: 80
   groupColor: {r: 0, g: 0.10248383, b: 0.9245283, a: 1}
   TypeOfAssignment: 2
-  currentAmountOfCardsOfThisType: 0
+  currentAmountOfCardsOfThisType: 14
   assignments:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number: []
@@ -36,21 +36,37 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 20d262691eb58e6479c84953681a3a0f, type: 2}
     - {fileID: 11400000, guid: 0461e6f123717c74aa026bca511a4ead, type: 2}
     - {fileID: 11400000, guid: 8d6c7b60ea56e474d80cd91f45eaef39, type: 2}
-    assignmentWithAnswers: {fileID: 11400000, guid: 99f2eb4b83f74a645b640c193acb106f, type: 2}
+    assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 11400000, guid: 38c2070ad2b8f6a4195f6b1b8d6e6a40, type: 2}
   randomAssignment:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 11400000, guid: 757d5f08c7d22794eb01440952b67e71, type: 2}
     assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 11400000, guid: 20d262691eb58e6479c84953681a3a0f, type: 2}
   givenAssignmentsWithAnswers: []
-  givenAssignmentsUserInput: []
-  allCardsWithAnswersWereCreated: 0
-  allCardsWithUserInputWereCreated: 0
-  allCardsWereCreated: 0
+  givenAssignmentsUserInput_Number: []
+  givenAssignmentsUserInput_Text:
+  - {fileID: 11400000, guid: 49d341590b5464949b15e2e873e43ba4, type: 2}
+  - {fileID: 11400000, guid: 829a565ecf1823c488137af634819772, type: 2}
+  - {fileID: 11400000, guid: 5e19413c2325af24e9ab798b0b7730f6, type: 2}
+  - {fileID: 11400000, guid: 5998b9466587fd3419f717bb940adc2d, type: 2}
+  - {fileID: 11400000, guid: 05a26fc9e81276f4d80aac15473a7dc8, type: 2}
+  - {fileID: 11400000, guid: aef861fe84f09a14fa58d79ec4234eaf, type: 2}
+  - {fileID: 11400000, guid: 8d6c7b60ea56e474d80cd91f45eaef39, type: 2}
+  - {fileID: 11400000, guid: a3d6c3ca2fe1dcc4eb5f1a353608add5, type: 2}
+  - {fileID: 11400000, guid: 32b760a94e8ee76498e6848a04a3d292, type: 2}
+  - {fileID: 11400000, guid: b5318897bcb6a5c4f99175774f0582a8, type: 2}
+  - {fileID: 11400000, guid: 20d262691eb58e6479c84953681a3a0f, type: 2}
+  - {fileID: 11400000, guid: 0461e6f123717c74aa026bca511a4ead, type: 2}
+  - {fileID: 11400000, guid: 1d156e3fa6ab63d4d8a11361017bc172, type: 2}
+  - {fileID: 11400000, guid: 38c2070ad2b8f6a4195f6b1b8d6e6a40, type: 2}
+  allCardsWithAnswersWereCreated: 1
+  allCardsWithUserInput_Numbers_WereCreated: 1
+  allCardsWithUserInput_Text_WereCreated: 1
+  allCardsWereCreated: 1
   weightCurve:
     serializedVersion: 2
     m_Curve:

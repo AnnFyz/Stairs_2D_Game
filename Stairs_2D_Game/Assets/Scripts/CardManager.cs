@@ -74,7 +74,7 @@ public class CardManager : MonoBehaviour
         {
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
-                group.SetRandomAssignments();
+               // group.SetRandomAssignments();
 
             }
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
