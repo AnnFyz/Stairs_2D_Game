@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ResultsHandler : MonoBehaviour
 {
@@ -9,17 +11,10 @@ public class ResultsHandler : MonoBehaviour
     [SerializeField] Transform textObject;
 
     public static ResultsHandler Instance { get; private set; }
-    [SerializeField] int amountOfWrongAnswers_AssignmentsWithAnswers;
-    [SerializeField] int amountOfWrongAnswers_AssignmentsUserInput_Numbers;
-    [SerializeField] int amountOfWrongAnswers_AssignmentsUserInput_Text;
+    [SerializeField] int[] amountOfWrongAnswers;
+    [SerializeField] int[] amountOfAllAnswers;
+    [SerializeField] float[] PercentageOfUnsolvedAssignments;
 
-    [SerializeField] int amountOfAllAnswers_AssignmentsWithAnswers;
-    [SerializeField] int amountOfAllgAnswers_AssignmentsUserInput_Numbers;
-    [SerializeField] int amountOfAllAnswers_AssignmentsUserInput_Text;
-
-    [SerializeField] float PercentageOfInsolvedAssignmentsWithAnswers;
-    [SerializeField] float PercentageOfInsolvedAssignmentsWithUserInput_Numbers;
-    [SerializeField] float PercentageOfInsolvedAssignmentsWithUserInput_Text;
 
 
     private void Awake()
@@ -37,7 +32,11 @@ public class ResultsHandler : MonoBehaviour
 
     private void Start()
     {
-        CardManager.Instance.OnFinishedGame += CalculatePercentageOfUnsolvedAssignments;
+        DeactivateUIPanel();
+        CardManager.Instance.OnFinishedGame += HandleResult;
+        amountOfWrongAnswers = new int[CardManager.Instance.CardGroups.Length];
+        amountOfAllAnswers = new int[CardManager.Instance.CardGroups.Length];
+        PercentageOfUnsolvedAssignments = new float[CardManager.Instance.CardGroups.Length];
         CalculateAmountOfGroupsPref();
     }
 
@@ -49,52 +48,78 @@ public class ResultsHandler : MonoBehaviour
             textObj.transform.SetParent(textObject.transform);
         }
     }
-    public void AddWrongAnswer(Assignment typeOfAssignment)
+    public void AddWrongAnswer(int index)
     {
-        if (typeOfAssignment == Assignment.Assignment_With_Answer_Options)
-        {
-            amountOfWrongAnswers_AssignmentsWithAnswers++;
-        }
-        if (typeOfAssignment == Assignment.Assignment_With_Number_Input)
-        {
-            amountOfWrongAnswers_AssignmentsUserInput_Numbers++;
-        }
-        if (typeOfAssignment == Assignment.Assignment_With_Text_Input)
-        {
-            amountOfWrongAnswers_AssignmentsUserInput_Text++;
-        }
+        // textObject.GetChild(index).GetComponent<TextMeshProUGUI>().text =
+        amountOfWrongAnswers[index]++;
     }
-
+    //public void AddWrongAnswer(Assignment typeOfAssignment)
+    //{
+    //    if (typeOfAssignment == Assignment.Assignment_With_Answer_Options)
+    //    {
+    //        amountOfWrongAnswers_AssignmentsWithAnswers++;
+    //    }
+    //    if (typeOfAssignment == Assignment.Assignment_With_Number_Input)
+    //    {
+    //        amountOfWrongAnswers_AssignmentsUserInput_Numbers++;
+    //    }
+    //    if (typeOfAssignment == Assignment.Assignment_With_Text_Input)
+    //    {
+    //        amountOfWrongAnswers_AssignmentsUserInput_Text++;
+    //    }
+    //}
     public void CalculateAmountOfAllAnswers()
     {
-        for (int i = 0; i < CardManager.Instance.reorginizedCards.Length; i++)
+        for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Answer_Options)
-            {
-                amountOfAllAnswers_AssignmentsWithAnswers++;
-            }
-            if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Number_Input)
-            {
-                amountOfAllgAnswers_AssignmentsUserInput_Numbers++;
-            }
-            if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Text_Input)
-            {
-                amountOfAllAnswers_AssignmentsUserInput_Text++;
-            }
+            amountOfAllAnswers[i]= CardManager.Instance.CardGroups[i].currentAmountOfCardsOfThisType;
         }
     }
+    //public void CalculateAmountOfAllAnswers()
+    //{
+    //    for (int i = 0; i < CardManager.Instance.reorginizedCards.Length; i++)
+    //    {
+    //        if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Answer_Options)
+    //        {
+    //            amountOfAllAnswers_AssignmentsWithAnswers++;
+    //        }
+    //        if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Number_Input)
+    //        {
+    //            amountOfAllgAnswers_AssignmentsUserInput_Numbers++;
+    //        }
+    //        if (CardManager.Instance.reorginizedCards[i].assignmentType == Assignment.Assignment_With_Text_Input)
+    //        {
+    //            amountOfAllAnswers_AssignmentsUserInput_Text++;
+    //        }
+    //    }
+    //}
 
+    void HandleResult()
+    {
+        CalculatePercentageOfUnsolvedAssignments();
+        SetupPanel();
+    }
     public void CalculatePercentageOfUnsolvedAssignments()
     {
-        PercentageOfInsolvedAssignmentsWithAnswers = amountOfWrongAnswers_AssignmentsWithAnswers * (amountOfAllAnswers_AssignmentsWithAnswers * 0.01f);
-        PercentageOfInsolvedAssignmentsWithUserInput_Numbers = amountOfWrongAnswers_AssignmentsUserInput_Numbers * (amountOfAllgAnswers_AssignmentsUserInput_Numbers * 0.01f);
-        PercentageOfInsolvedAssignmentsWithUserInput_Text = amountOfWrongAnswers_AssignmentsUserInput_Text * (amountOfAllAnswers_AssignmentsUserInput_Text * 0.01f);
+        for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+        {
+            PercentageOfUnsolvedAssignments[i] = amountOfWrongAnswers[i] / (amountOfAllAnswers[i] * 0.01f);
+        }
+        //PercentageOfInsolvedAssignmentsWithAnswers = amountOfWrongAnswers_AssignmentsWithAnswers * (amountOfAllAnswers_AssignmentsWithAnswers * 0.01f);
+        //PercentageOfInsolvedAssignmentsWithUserInput_Numbers = amountOfWrongAnswers_AssignmentsUserInput_Numbers * (amountOfAllgAnswers_AssignmentsUserInput_Numbers * 0.01f);
+        //PercentageOfInsolvedAssignmentsWithUserInput_Text = amountOfWrongAnswers_AssignmentsUserInput_Text * (amountOfAllAnswers_AssignmentsUserInput_Text * 0.01f);
     }
     void SetupPanel()
     {
+        for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+        {
+            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = PercentageOfUnsolvedAssignments[i].ToString();
+        }
+
+        ActivateUIPanel();
     }
 
-        void ActivateUIPanel()
+    void ActivateUIPanel()
     {
         UIPanel.SetActive(true);
     }

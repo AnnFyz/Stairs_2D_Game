@@ -19,6 +19,8 @@ public class CardManager : MonoBehaviour
     [SerializeField] bool wasOpenedAllCards = false;
     public CardController[] reorginizedCards;
     public Action OnFinishedGame;
+
+    int groupIndex = 0;
     private void Awake()
     {
 
@@ -66,26 +68,31 @@ public class CardManager : MonoBehaviour
     {
         foreach (var group in CardGroups)
         {
+           
             AmountOfCardsToInstantiate += group.currentAmountOfCardsOfThisType;
         }
     }
     void CreateCards()
     {
         CardController card;
+        
         foreach (var group in CardGroups)
         {
-            for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
-            {
-               // group.SetRandomAssignments();
+           
+            //for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+            //{
+            //   // group.SetRandomAssignments();
 
-            }
+            //}
             for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
             {
                 group.GetAssignment();
                 card = CardController.Create(prefabCard, group, transform);
-                card.Setup(group, group.randomAssignment);
+                card.Setup(group, group.randomAssignment, groupIndex);
             }
 
+            if(groupIndex < CardGroups.Length)
+            groupIndex++;
         }
     }
 

@@ -10,6 +10,7 @@ public class CardController : MonoBehaviour
     public GameObject UIPanel;
     public bool isCardActivated = false;
     public bool isCardDeactivared = false;
+    public int cardGroupIndex;
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class CardController : MonoBehaviour
         return card;
     }
 
-    public void Setup(CardGroup_SO group, DiffAssignments randomAssignment)
+    public void Setup(CardGroup_SO group, DiffAssignments randomAssignment, int indexOfGroup)
     {
         assignmentType = group.TypeOfAssignment;
         assingnment = randomAssignment;
