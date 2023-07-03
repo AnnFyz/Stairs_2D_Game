@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fourth_Card Group_SO
   m_EditorClassIdentifier: 
   Title: 
-  numberOfAssignmentGroup: 2
+  numberOfAssignmentGroup: 3
   Weight: 11
   groupColor: {r: 0.98039216, g: 0.80324537, b: 0.4666666, a: 1}
   TypeOfAssignment: 1

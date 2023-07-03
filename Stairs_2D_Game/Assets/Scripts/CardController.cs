@@ -29,7 +29,7 @@ public class CardController : MonoBehaviour
     {
         Transform cardObj = Instantiate(prefabCard);
         cardObj.transform.SetParent(parent);
-        cardObj.GetComponentInChildren<Image>().color = cardGroup.groupColor;
+        //cardObj.GetComponentInChildren<Image>().color = cardGroup.groupColor;
         CardController card = prefabCard.GetComponent<CardController>();
         Canvas.ForceUpdateCanvases();
         return card;
@@ -39,6 +39,8 @@ public class CardController : MonoBehaviour
     {
         assignmentType = group.TypeOfAssignment;
         assingnment = randomAssignment;
+        cardGroupIndex = indexOfGroup;
+        this.GetComponentInChildren<Image>().color = group.groupColor;
     }
 
 

@@ -89,6 +89,7 @@ public class CardManager : MonoBehaviour
                 group.GetAssignment();
                 card = CardController.Create(prefabCard, group, transform);
                 card.Setup(group, group.randomAssignment, groupIndex);
+                //Debug.Log("groupIndex " + groupIndex);
             }
 
             if(groupIndex < CardGroups.Length)
