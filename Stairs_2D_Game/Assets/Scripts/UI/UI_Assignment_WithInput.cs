@@ -112,11 +112,13 @@ public class UI_Assignment_WithInput : MonoBehaviour
         if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Number_Input)
         {
             OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Number.RightNumber.ToString());
+            ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.assignmentType);
         }
 
-        if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
+        else if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
         {
             OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithUserInput_Text.RightAnswer);
+            ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.assignmentType);
         }
 
     }

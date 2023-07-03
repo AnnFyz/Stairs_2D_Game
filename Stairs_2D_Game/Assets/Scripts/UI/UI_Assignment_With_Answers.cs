@@ -76,5 +76,6 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     {
         int index = CardManager.selectedCard.assingnment.assignmentWithAnswers.IndexOfRightAnswer;
         OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
+        ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.assignmentType);
     }
 }

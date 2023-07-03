@@ -9,7 +9,7 @@ public class CardManager : MonoBehaviour
 {
     public static CardManager Instance { get; private set; }
     public Transform prefabCard;
-    [SerializeField] CardGroup_SO[] CardGroups;
+    public CardGroup_SO[] CardGroups;
     int AmountOfCardsToInstantiate = 0;
     //public List <CardController> createdCards = new List<CardController>();
     [SerializeField] CardController[] createdCards;
@@ -17,7 +17,8 @@ public class CardManager : MonoBehaviour
     public  CardController currentselectedCard;
     [SerializeField] int indexOfSelectedCard = 0;
     [SerializeField] bool wasOpenedAllCards = false;
-    [SerializeField] CardController[] reorginizedCards;
+    public CardController[] reorginizedCards;
+    public Action OnFinishedGame;
     private void Awake()
     {
 
@@ -46,6 +47,7 @@ public class CardManager : MonoBehaviour
         AddAllCreatedCards();
         ReorganizeCreatedCards();
         selectedCard = reorginizedCards[0];
+        ResultsHandler.Instance.CalculateAmountOfAllAnswers();
 
     }
     private void Update()
@@ -107,9 +109,15 @@ public class CardManager : MonoBehaviour
         {
             selectedCard.DeactivateCard();
             wasOpenedAllCards = true;
+            RaiseOnFinishedGameEvent();
 
         }
 
+    }
+
+    void RaiseOnFinishedGameEvent()
+    {
+        OnFinishedGame?.Invoke();
     }
     CardGroup_SO GetRandomGroup()
     {
@@ -135,10 +143,6 @@ public class CardManager : MonoBehaviour
         return group;
     }
 
-    void CalculateProgress()
-    {
-       
-    }
     public void ReorganizeCreatedCards()
     {
         System.Random rnd = new System.Random();

@@ -17,16 +17,13 @@ MonoBehaviour:
   Weight: 11
   groupColor: {r: 0.98039216, g: 0.80324537, b: 0.4666666, a: 1}
   TypeOfAssignment: 1
-  currentAmountOfCardsOfThisType: 6
+  currentAmountOfCardsOfThisType: 3
   assignments:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number:
     - {fileID: 11400000, guid: b055369752636204b8f520dfd958ed2f, type: 2}
     - {fileID: 11400000, guid: aaf1e4c01d3bfee4dac761b33775b4f6, type: 2}
     - {fileID: 11400000, guid: 726089b129d86c34ca315c78b5405cfe, type: 2}
-    - {fileID: 11400000, guid: 1cd43ee5334ce334c9dc2b393a1b0014, type: 2}
-    - {fileID: 11400000, guid: 2a9b0e9aaccd7044bbe7db05583d47f3, type: 2}
-    - {fileID: 11400000, guid: f2746535fea4a464aaef92a4ae01655a, type: 2}
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
@@ -36,7 +33,7 @@ MonoBehaviour:
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
-    assignmentWithUserInput_Number: {fileID: 11400000, guid: f2746535fea4a464aaef92a4ae01655a, type: 2}
+    assignmentWithUserInput_Number: {fileID: 11400000, guid: 726089b129d86c34ca315c78b5405cfe, type: 2}
     assignmentWithUserInput_Text: {fileID: 0}
   givenAssignmentsWithAnswers: []
   givenAssignmentsUserInput_Number: []
@@ -70,5 +67,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   indexForAssignmentsWithAnswers: 0
-  indexForAssignmentsWithUiserInput_Numbers: 6
+  indexForAssignmentsWithUiserInput_Numbers: 3
   indexForAssignmentsWithUiserInput_Text: 0
