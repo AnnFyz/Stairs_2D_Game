@@ -275,8 +275,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Question
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
+  m_sharedMaterial: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -465,6 +465,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
     - target: {fileID: 6104931366010997596, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -624,6 +632,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
     - target: {fileID: 6104931366010997596, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -794,6 +810,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
+    - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
     - target: {fileID: 6104931366010997596, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
