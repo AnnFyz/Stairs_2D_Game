@@ -204,6 +204,7 @@ MonoBehaviour:
   UIPanel: {fileID: 0}
   isCardActivated: 0
   isCardDeactivared: 0
+  cardGroupIndex: 0
 --- !u!1 &2345773749446824631
 GameObject:
   m_ObjectHideFlags: 0
