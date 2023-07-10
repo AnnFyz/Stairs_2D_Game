@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: ja
-  sprite: {fileID: 21300000, guid: b338343ee864d7d49b6dea65e44152fd, type: 3}
+  sprite: {fileID: 21300000, guid: e9fe561461974ce45910e1f20d102647, type: 3}
