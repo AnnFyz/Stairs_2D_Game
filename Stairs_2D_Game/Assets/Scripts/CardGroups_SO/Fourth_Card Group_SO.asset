@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
   m_Name: Fourth_Card Group_SO
   m_EditorClassIdentifier: 
-  Title: 
+  Title: "Tolerierungsgrunds\xE4tze"
   numberOfAssignmentGroup: 3
   Weight: 11
   groupColor: {r: 0.98039216, g: 0.80324537, b: 0.4666666, a: 1}

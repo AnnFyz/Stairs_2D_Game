@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
   m_Name: Second_Card Group_SO
   m_EditorClassIdentifier: 
-  Title: 
+  Title: Ebenenindikatoren
   numberOfAssignmentGroup: 1
   Weight: 42
   groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}

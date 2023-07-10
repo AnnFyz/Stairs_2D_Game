@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ResultsHandler : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class ResultsHandler : MonoBehaviour
     [SerializeField] int[] amountOfAllAnswers;
     [SerializeField] float[] PercentageOfUnsolvedAssignments;
     [SerializeField] TextMeshProUGUI[] results;
-
+    public int[] sceneIndices;
+    public int index;
 
     private void Awake()
     {
@@ -45,7 +47,7 @@ public class ResultsHandler : MonoBehaviour
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = PercentageOfUnsolvedAssignments[i].ToString() + " %";
+            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfUnsolvedAssignments[i].ToString() + " %";
             results[i] = textObject.GetChild(i).GetComponent<TextMeshProUGUI>();
         }
     }
@@ -87,7 +89,8 @@ public class ResultsHandler : MonoBehaviour
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = PercentageOfUnsolvedAssignments[i].ToString() + " %";
+            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfUnsolvedAssignments[i].ToString() + " %";
+            sceneIndices[i] = i+1;
         }
 
         ActivateUIPanel();
@@ -101,5 +104,11 @@ public class ResultsHandler : MonoBehaviour
     {
         UIPanel.SetActive(false);
     }
+
+    //public void LoadNewScene()
+    //{
+    //    index = 
+    //    SceneManager.LoadScene(index);
+    //}
 
 }

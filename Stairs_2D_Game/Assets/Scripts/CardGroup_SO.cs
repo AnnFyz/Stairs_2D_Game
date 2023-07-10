@@ -27,7 +27,7 @@ public struct DiffAssignments
 [CreateAssetMenu]
 public class CardGroup_SO : ScriptableObject
 {
-    [SerializeField] string Title;
+    public string Title;
     public int numberOfAssignmentGroup;
     [Range(0, 100)]
     public int Weight = 0;

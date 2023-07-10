@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
   m_Name: Third_Card Group_SO
   m_EditorClassIdentifier: 
-  Title: 
+  Title: Toleranzzonen
   numberOfAssignmentGroup: 2
   Weight: 11
   groupColor: {r: 0.7613713, g: 0.46742615, b: 0.9811321, a: 1}
@@ -45,18 +45,20 @@ MonoBehaviour:
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 0}
   randomAssignment:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
     assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
-    assignmentsWithUserInput_Text: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 0}
   givenAssignmentsWithAnswers: []
-  givenAssignmentsUserInput: []
+  givenAssignmentsUserInput_Number: []
+  givenAssignmentsUserInput_Text: []
   allCardsWithAnswersWereCreated: 0
-  allCardsWithUserInputWereCreated: 0
+  allCardsWithUserInput_Numbers_WereCreated: 0
+  allCardsWithUserInput_Text_WereCreated: 0
   allCardsWereCreated: 0
   weightCurve:
     serializedVersion: 2
@@ -82,3 +84,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  indexForAssignmentsWithAnswers: 0
+  indexForAssignmentsWithUiserInput_Numbers: 0
+  indexForAssignmentsWithUiserInput_Text: 0

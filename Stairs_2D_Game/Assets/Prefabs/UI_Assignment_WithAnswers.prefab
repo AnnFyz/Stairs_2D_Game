@@ -140,7 +140,7 @@ MonoBehaviour:
   answer_1: {fileID: 1362079541497566247}
   answer_2: {fileID: 7224045037547100134}
   answer_3: {fileID: 7224045036709033932}
-  sprite: {fileID: 7224045036709033932}
+  sprite: {fileID: 1358287279}
 --- !u!1 &3529102560595790879
 GameObject:
   m_ObjectHideFlags: 0

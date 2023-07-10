@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneWithCards.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SceneWithGroup_1.unity
+    guid: fe832929baa300b4bafa07ea2abc49fe
+  - enabled: 1
+    path: Assets/Scenes/SceneWithGroup_2.unity
+    guid: 5093e3f2ac1906149a08845f4fe13214
+  - enabled: 1
+    path: Assets/Scenes/SceneWithGroup_4.unity
+    guid: d495bee9f6d8f344b9a7173a705616f1
   m_configObjects: {}

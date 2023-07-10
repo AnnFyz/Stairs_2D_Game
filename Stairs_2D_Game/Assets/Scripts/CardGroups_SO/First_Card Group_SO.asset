@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
   m_Name: First_Card Group_SO
   m_EditorClassIdentifier: 
-  Title: Platzhalter Antworten Symbole geometrische Toleranzen
+  Title: Geometrische Toleranzen
   numberOfAssignmentGroup: 0
   Weight: 80
   groupColor: {r: 0, g: 0.10248383, b: 0.9245283, a: 1}

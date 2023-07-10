@@ -1240,6 +1240,8 @@ MonoBehaviour:
   prefabCard: {fileID: 6788987019479456951, guid: d4b905b1d04d2084ab4141fbb1962043, type: 3}
   CardGroups:
   - {fileID: 11400000, guid: e040033be05cb7e4282cbed553f1c302, type: 2}
+  - {fileID: 11400000, guid: 1ba6bfd8020e14a4d8b848d8fd6cf75e, type: 2}
+  - {fileID: 11400000, guid: 310fa4bfa9820824eb0dd04d4d82d45b, type: 2}
   createdCards: []
   currentselectedCard: {fileID: 218331829058340591, guid: d4b905b1d04d2084ab4141fbb1962043, type: 3}
   indexOfSelectedCard: 0
