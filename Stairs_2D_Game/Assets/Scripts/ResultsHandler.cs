@@ -75,6 +75,7 @@ public class ResultsHandler : MonoBehaviour
 
     void HandleResult()
     {
+        SetupNextSceneIndex();
         CalculatePercentageOfUnsolvedAssignments();
         SetupPanel();
     }
@@ -90,7 +91,6 @@ public class ResultsHandler : MonoBehaviour
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
             textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfUnsolvedAssignments[i].ToString() + " %";
-            sceneIndices[i] = i+1;
         }
 
         ActivateUIPanel();
@@ -105,10 +105,14 @@ public class ResultsHandler : MonoBehaviour
         UIPanel.SetActive(false);
     }
 
-    //public void LoadNewScene()
-    //{
-    //    index = 
-    //    SceneManager.LoadScene(index);
-    //}
+
+    void SetupNextSceneIndex()
+    {
+        for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+        {
+            textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(i+1);
+        }
+
+    }
 
 }
