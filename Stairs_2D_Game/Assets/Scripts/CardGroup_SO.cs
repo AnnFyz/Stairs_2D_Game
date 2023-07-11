@@ -64,6 +64,8 @@ public class CardGroup_SO : ScriptableObject
 
     }
 
+
+
     public void CalculateCurrentAmountOfCardsOfThisType()
     {
         currentAmountOfCardsOfThisType = assignments.AssignmentsWithAnswers.Length + assignments.AssignmentsWithUserInput_Number.Length + assignments.AssignmentsWithUserInput_Text.Length;

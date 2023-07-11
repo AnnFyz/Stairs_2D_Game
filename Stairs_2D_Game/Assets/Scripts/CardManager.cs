@@ -43,6 +43,12 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        HandleStart();
+    }
+
+    public void HandleStart()
+    {
+       
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
         CreateCards();
@@ -50,7 +56,6 @@ public class CardManager : MonoBehaviour
         ReorganizeCreatedCards();
         selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
-
     }
     private void Update()
     {

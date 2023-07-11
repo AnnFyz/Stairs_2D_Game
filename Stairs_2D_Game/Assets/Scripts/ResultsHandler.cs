@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ResultsHandler : MonoBehaviour
 {
+    public bool isSceneOnlyWithOneGroup = false;
     [SerializeField] GameObject UIPanel;
     [SerializeField] Transform group_TextPref;
     [SerializeField] Transform textObject;
@@ -41,6 +42,10 @@ public class ResultsHandler : MonoBehaviour
         PercentageOfUnsolvedAssignments = new float[CardManager.Instance.CardGroups.Length];
         results = new TextMeshProUGUI[CardManager.Instance.CardGroups.Length];
         CalculateAmountOfGroupsPref();
+        if(CardManager.Instance.CardGroups.Length <= 1)
+        {
+            isSceneOnlyWithOneGroup = true;
+        }
     }
 
     private void Update()
@@ -108,11 +113,22 @@ public class ResultsHandler : MonoBehaviour
 
     void SetupNextSceneIndex()
     {
-        for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+        if (!isSceneOnlyWithOneGroup)
         {
-            textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(i+1);
+            for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+            {
+                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(i + 1);
+            }
+
         }
 
+        else
+        {
+            for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
+            {
+                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(0);
+            }
+        }
     }
 
 }

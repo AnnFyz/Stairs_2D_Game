@@ -216,7 +216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Try the group again '
+  m_text: 'Try again '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
   m_sharedMaterial: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}

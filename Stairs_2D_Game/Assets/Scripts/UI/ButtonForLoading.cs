@@ -15,5 +15,8 @@ public class ButtonForLoading : MonoBehaviour
     public void LoadNewScene()
     {
         SceneManager.LoadScene(nextSceneIndex);
+       
     }
+
+
 }
