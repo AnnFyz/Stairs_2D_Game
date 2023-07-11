@@ -14,7 +14,7 @@ public class CardManager : MonoBehaviour
     //public List <CardController> createdCards = new List<CardController>();
     [SerializeField] CardController[] createdCards;
     public static CardController selectedCard;
-    public  CardController currentselectedCard;
+    public CardController currentselectedCard;
     [SerializeField] int indexOfSelectedCard = 0;
     [SerializeField] bool wasOpenedAllCards = false;
     public CardController[] reorginizedCards;
@@ -48,7 +48,10 @@ public class CardManager : MonoBehaviour
 
     public void HandleStart()
     {
-       
+        for (int i = 0; i < CardGroups.Length; i++)
+        {
+            CardGroups[i].HandleStart();
+        }
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
         CreateCards();
@@ -57,7 +60,7 @@ public class CardManager : MonoBehaviour
         selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         currentselectedCard = selectedCard;
     }
@@ -73,32 +76,41 @@ public class CardManager : MonoBehaviour
     {
         foreach (var group in CardGroups)
         {
-           
+
             AmountOfCardsToInstantiate += group.currentAmountOfCardsOfThisType;
         }
     }
     void CreateCards()
     {
         CardController card;
-        
-        foreach (var group in CardGroups)
-        {
-           
-            //for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
-            //{
-            //   // group.SetRandomAssignments();
 
-            //}
-            for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+        if (CardGroups.Length > 1)
+        {
+            foreach (var group in CardGroups)
             {
-                group.GetAssignment();
-                card = CardController.Create(prefabCard, group, transform);
-                card.Setup(group, group.randomAssignment, groupIndex);
-                //Debug.Log("groupIndex " + groupIndex);
+
+                for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+                {
+                    group.GetAssignment();
+                    card = CardController.Create(prefabCard, group, transform);
+                    card.Setup(group, group.randomAssignment, groupIndex);
+                }
+
+                if (groupIndex < CardGroups.Length)
+                {
+                    groupIndex++;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < CardGroups[0].currentAmountOfCardsOfThisType; i++)
+            {
+                CardGroups[0].GetAssignment();
+                card = CardController.Create(prefabCard, CardGroups[0], transform);
+                card.Setup(CardGroups[0], CardGroups[0].randomAssignment, groupIndex);
             }
 
-            if(groupIndex < CardGroups.Length)
-            groupIndex++;
         }
     }
 
@@ -163,7 +175,7 @@ public class CardManager : MonoBehaviour
         for (int i = 0; i < reorginizedCards.Length; i++)
         {
             reorginizedCards[i].transform.SetSiblingIndex(i);
-            
+
         }
     }
 

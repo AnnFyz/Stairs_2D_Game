@@ -50,6 +50,16 @@ public class CardGroup_SO : ScriptableObject
 
     private void OnEnable()
     {
+        HandleStart();
+
+    }
+
+    private void OnDisable()
+    {
+        HandleStart();
+    }
+    public void HandleStart()
+    {
         indexForAssignmentsWithAnswers = 0;
         indexForAssignmentsWithUiserInput_Numbers = 0;
         indexForAssignmentsWithUiserInput_Text = 0;
@@ -61,9 +71,8 @@ public class CardGroup_SO : ScriptableObject
         allCardsWithUserInput_Numbers_WereCreated = false;
         allCardsWithUserInput_Text_WereCreated = false;
         allCardsWereCreated = false;
-
+        Debug.Log("HandleStart");
     }
-
 
 
     public void CalculateCurrentAmountOfCardsOfThisType()
