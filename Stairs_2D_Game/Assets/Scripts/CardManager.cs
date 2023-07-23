@@ -54,11 +54,20 @@ public class CardManager : MonoBehaviour
         }
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
+        DeleteCards();
         CreateCards();
         AddAllCreatedCards();
         ReorganizeCreatedCards();
         selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
+    }
+
+    void DeleteCards()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+          Destroy(transform.GetChild(i));
+        }
     }
     private void FixedUpdate()
     {
