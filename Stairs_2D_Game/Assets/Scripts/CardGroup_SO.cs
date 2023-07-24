@@ -54,19 +54,19 @@ public class CardGroup_SO : ScriptableObject
 
     }
 
-    private void OnDisable()
-    {
-        HandleStart();
-    }
+    //private void OnDisable()
+    //{
+    //    HandleStart();
+    //}
     public void HandleStart()
     {
+        givenAssignmentsWithAnswers.Clear();
+        givenAssignmentsUserInput_Number.Clear();
+        givenAssignmentsUserInput_Text.Clear();
         indexForAssignmentsWithAnswers = 0;
         indexForAssignmentsWithUiserInput_Numbers = 0;
         indexForAssignmentsWithUiserInput_Text = 0;
         currentAmountOfCardsOfThisType = 0;
-        givenAssignmentsWithAnswers.Clear();
-        givenAssignmentsUserInput_Number.Clear();
-        givenAssignmentsUserInput_Text.Clear();
         allCardsWithAnswersWereCreated = false;
         allCardsWithUserInput_Numbers_WereCreated = false;
         allCardsWithUserInput_Text_WereCreated = false;

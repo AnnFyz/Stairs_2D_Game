@@ -66,7 +66,10 @@ public class ResultsHandler : MonoBehaviour
     }
     public void AddWrongAnswer(int index)
     {
-        amountOfWrongAnswers[index]++;
+        if(index <= amountOfWrongAnswers.Length)
+        {
+            amountOfWrongAnswers[index]++;
+        }
     }
    
     public void CalculateAmountOfAllAnswers()

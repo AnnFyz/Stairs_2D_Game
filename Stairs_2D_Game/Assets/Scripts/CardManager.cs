@@ -35,15 +35,21 @@ public class CardManager : MonoBehaviour
     }
     void OnEnable()
     {
-        UI_Assignment_WithInput.Instance.OnAnsweredQuestion += SelectNextCard;
+        UI_Assignment_WithInput.Instance.OnAnsweredQuestion += SelectNextCard; 
         UI_Assignment_With_Answers.Instance.OnAnsweredQuestion += SelectNextCard;
         PopUpWindow.Instance.OnClosedPopUpWindow += SelectNextCard;
     }
 
+    private void OnDisable()
+    {
+        UI_Assignment_WithInput.Instance.OnAnsweredQuestion -= SelectNextCard; 
+        UI_Assignment_With_Answers.Instance.OnAnsweredQuestion -= SelectNextCard;
+        PopUpWindow.Instance.OnClosedPopUpWindow -= SelectNextCard;
+    }
 
     private void Start()
     {
-        HandleStart();
+        HandleStart(); 
     }
 
     public void HandleStart()
@@ -111,7 +117,7 @@ public class CardManager : MonoBehaviour
                 }
             }
         }
-        else
+        else if (CardGroups.Length == 1 )
         {
             for (int i = 0; i < CardGroups[0].currentAmountOfCardsOfThisType; i++)
             {
