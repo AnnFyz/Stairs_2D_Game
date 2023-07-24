@@ -24,6 +24,11 @@ public class ButtonForLoading : MonoBehaviour
     public void LoadNewScene()
     {
         OnLoadedScene?.Invoke();
+        foreach (var group in CardManager.Instance.CardGroups)
+        {
+            group.HandleStart();
+        }
+        CardManager.Instance.DeleteCards();
         SceneManager.LoadScene(nextSceneIndex);
     }
 

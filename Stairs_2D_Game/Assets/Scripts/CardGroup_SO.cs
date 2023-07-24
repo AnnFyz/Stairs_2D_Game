@@ -8,7 +8,8 @@ public enum Assignment
 {
     Assignment_With_Answer_Options,
     Assignment_With_Number_Input,
-    Assignment_With_Text_Input
+    Assignment_With_Text_Input,
+    None
 
 }
 
@@ -45,8 +46,8 @@ public class CardGroup_SO : ScriptableObject
     public bool allCardsWereCreated = false;
     public AnimationCurve weightCurve;
     public int indexForAssignmentsWithAnswers = 0;
-    public int indexForAssignmentsWithUiserInput_Numbers = 0;
-    public int indexForAssignmentsWithUiserInput_Text = 0;
+    public int indexForAssignmentsWithUserInput_Numbers = 0;
+    public int indexForAssignmentsWithUserInput_Text = 0;
 
     private void OnEnable()
     {
@@ -60,12 +61,15 @@ public class CardGroup_SO : ScriptableObject
     //}
     public void HandleStart()
     {
+        randomAssignment.assignmentWithAnswers = null;
+        randomAssignment.assignmentWithUserInput_Number = null;
+        randomAssignment.assignmentWithUserInput_Text = null;
         givenAssignmentsWithAnswers.Clear();
         givenAssignmentsUserInput_Number.Clear();
         givenAssignmentsUserInput_Text.Clear();
         indexForAssignmentsWithAnswers = 0;
-        indexForAssignmentsWithUiserInput_Numbers = 0;
-        indexForAssignmentsWithUiserInput_Text = 0;
+        indexForAssignmentsWithUserInput_Numbers = 0;
+        indexForAssignmentsWithUserInput_Text = 0;
         currentAmountOfCardsOfThisType = 0;
         allCardsWithAnswersWereCreated = false;
         allCardsWithUserInput_Numbers_WereCreated = false;
@@ -94,6 +98,8 @@ public class CardGroup_SO : ScriptableObject
         {
             SelectAssignmentWithUserInput_Text();
         }
+
+        Debug.Log("TypeOfAssignment " + TypeOfAssignment);
     }
 
     void SelectAssignmentWithAnswers()
@@ -107,32 +113,38 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithAnswersWereCreated = true;
         }
+
+        Debug.Log(" randomAssignment.assignmentWithAnswers " + randomAssignment.assignmentWithAnswers);
     }
 
     void SelectAssignmentWithUserInput_Number()
     {
-        if (indexForAssignmentsWithUiserInput_Numbers < assignments.AssignmentsWithUserInput_Number.Length)
+        if (indexForAssignmentsWithUserInput_Numbers < assignments.AssignmentsWithUserInput_Number.Length)
         {
-            randomAssignment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[indexForAssignmentsWithUiserInput_Numbers];
-            indexForAssignmentsWithUiserInput_Numbers++;
+            randomAssignment.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[indexForAssignmentsWithUserInput_Numbers];
+            indexForAssignmentsWithUserInput_Numbers++;
         }
         else
         {
             allCardsWithUserInput_Numbers_WereCreated = true;
         }
+
+        Debug.Log("randomAssignment.assignmentWithUserInput_Number " + randomAssignment.assignmentWithUserInput_Number);
     }
 
     void SelectAssignmentWithUserInput_Text()
     {
-        if (indexForAssignmentsWithUiserInput_Text < assignments.AssignmentsWithUserInput_Text.Length)
+        if (indexForAssignmentsWithUserInput_Text < assignments.AssignmentsWithUserInput_Text.Length)
         {
-            randomAssignment.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[indexForAssignmentsWithUiserInput_Text];
-            indexForAssignmentsWithUiserInput_Text++;
+            randomAssignment.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[indexForAssignmentsWithUserInput_Text];
+            indexForAssignmentsWithUserInput_Text++;
         }
         else
         {
             allCardsWithUserInput_Text_WereCreated = true;
         }
+
+        Debug.Log("randomAssignment.assignmentWithUserInput_Text " + randomAssignment.assignmentWithUserInput_Text);
     }
 }
 //public void SetRandomAssignments()

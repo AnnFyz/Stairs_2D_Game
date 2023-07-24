@@ -66,13 +66,36 @@ public class CardManager : MonoBehaviour
         ReorganizeCreatedCards();
         selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
+        DeleteCards();
+        CreateCards();
+        AddAllCreatedCards();
+        ReorganizeCreatedCards();
+        selectedCard = reorginizedCards[0];
+        ResultsHandler.Instance.CalculateAmountOfAllAnswers();
     }
 
-    void DeleteCards()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            CreateCards();
+            AddAllCreatedCards();
+            ReorganizeCreatedCards();
+            selectedCard = reorginizedCards[0];
+            ResultsHandler.Instance.CalculateAmountOfAllAnswers();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            DeleteCards();
+
+
+        }
+        }
+    public void DeleteCards()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-          Destroy(transform.GetChild(i));
+            transform.GetChild(i).GetComponent<CardController>().DestroyCard();
         }
     }
     private void FixedUpdate()
@@ -99,7 +122,7 @@ public class CardManager : MonoBehaviour
     {
         CardController card;
 
-        if (CardGroups.Length > 1)
+        if (CardGroups.Length > 0)
         {
             foreach (var group in CardGroups)
             {
@@ -117,16 +140,16 @@ public class CardManager : MonoBehaviour
                 }
             }
         }
-        else if (CardGroups.Length == 1 )
-        {
-            for (int i = 0; i < CardGroups[0].currentAmountOfCardsOfThisType; i++)
-            {
-                CardGroups[0].GetAssignment();
-                card = CardController.Create(prefabCard, CardGroups[0], transform);
-                card.Setup(CardGroups[0], CardGroups[0].randomAssignment, groupIndex);
-            }
+        //else if (CardGroups.Length == 1 )
+        //{
+        //    for (int i = 0; i < CardGroups[0].currentAmountOfCardsOfThisType; i++)
+        //    {
+        //        CardGroups[0].GetAssignment();
+        //        card = CardController.Create(prefabCard, CardGroups[0], transform);
+        //        card.Setup(CardGroups[0], CardGroups[0].randomAssignment, groupIndex);
+        //    }
 
-        }
+        //}
     }
 
     void AddAllCreatedCards()

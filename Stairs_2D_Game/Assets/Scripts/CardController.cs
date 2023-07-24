@@ -12,6 +12,7 @@ public class CardController : MonoBehaviour
     public bool isCardDeactivared = false;
     public int cardGroupIndex;
 
+
     private void Start()
     {
         if (this != CardManager.selectedCard)
@@ -27,11 +28,12 @@ public class CardController : MonoBehaviour
     }
     public static CardController Create(Transform prefabCard, CardGroup_SO cardGroup, Transform parent)
     {
+
         Transform cardObj = Instantiate(prefabCard);
         cardObj.transform.SetParent(parent);
         //cardObj.GetComponentInChildren<Image>().color = cardGroup.groupColor;
         CardController card = prefabCard.GetComponent<CardController>();
-        Canvas.ForceUpdateCanvases();
+        //Canvas.ForceUpdateCanvases();
         return card;
     }
 
@@ -59,7 +61,7 @@ public class CardController : MonoBehaviour
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Number.Question, assingnment.assignmentWithUserInput_Number.sprite);
             }
-            else if(assignmentType == Assignment.Assignment_With_Text_Input)
+            else if (assignmentType == Assignment.Assignment_With_Text_Input)
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Text.Question, assingnment.assignmentWithUserInput_Text.sprite);
             }
@@ -77,9 +79,16 @@ public class CardController : MonoBehaviour
 
     public void DeactivateCard()
     {
-       
-            gameObject.GetComponent<Button>().interactable = false;
-            isCardActivated = false;
-       
+
+        gameObject.GetComponent<Button>().interactable = false;
+        isCardActivated = false;
+
+    }
+
+    public void DestroyCard()
+    {
+
+        Destroy(gameObject);
+
     }
 }

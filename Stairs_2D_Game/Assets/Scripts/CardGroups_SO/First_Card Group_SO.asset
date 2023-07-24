@@ -33,7 +33,7 @@ MonoBehaviour:
     AssignmentsWithAnswers: []
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
-    assignmentWithAnswers: {fileID: 11400000, guid: 757d5f08c7d22794eb01440952b67e71, type: 2}
+    assignmentWithAnswers: {fileID: 0}
     assignmentWithUserInput_Number: {fileID: 0}
     assignmentWithUserInput_Text: {fileID: 11400000, guid: 32b760a94e8ee76498e6848a04a3d292, type: 2}
   givenAssignmentsWithAnswers: []
@@ -41,7 +41,7 @@ MonoBehaviour:
   givenAssignmentsUserInput_Text: []
   allCardsWithAnswersWereCreated: 0
   allCardsWithUserInput_Numbers_WereCreated: 0
-  allCardsWithUserInput_Text_WereCreated: 0
+  allCardsWithUserInput_Text_WereCreated: 1
   allCardsWereCreated: 0
   weightCurve:
     serializedVersion: 2
@@ -68,5 +68,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   indexForAssignmentsWithAnswers: 0
-  indexForAssignmentsWithUiserInput_Numbers: 0
-  indexForAssignmentsWithUiserInput_Text: 4
+  indexForAssignmentsWithUserInput_Numbers: 0
+  indexForAssignmentsWithUserInput_Text: 4
