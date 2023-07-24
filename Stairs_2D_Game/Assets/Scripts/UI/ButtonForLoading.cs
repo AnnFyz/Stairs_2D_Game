@@ -9,13 +9,7 @@ public class ButtonForLoading : MonoBehaviour
 {
     [SerializeField] int nextSceneIndex;
     [SerializeField] UnityEvent OnLoadedScene;
-    //     void Start()
-    //{
-    //    if (OnLoadedScene == null)
-    //        OnLoadedScene = new UnityEvent();
 
-    //    OnLoadedScene.AddListener(CardManager.Instance.Ha);
-    //}
     public void SetIndexOfNextScene(int index)
     {
         nextSceneIndex = index;
@@ -24,11 +18,6 @@ public class ButtonForLoading : MonoBehaviour
     public void LoadNewScene()
     {
         OnLoadedScene?.Invoke();
-        foreach (var group in CardManager.Instance.CardGroups)
-        {
-            group.HandleStart();
-        }
-        CardManager.Instance.DeleteCards();
         SceneManager.LoadScene(nextSceneIndex);
     }
 

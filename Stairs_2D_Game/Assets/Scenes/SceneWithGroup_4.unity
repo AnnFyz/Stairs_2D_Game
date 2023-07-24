@@ -766,6 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c292cf0d3d95f40b4c525b728e342f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSceneOnlyWithOneGroup: 0
   UIPanel: {fileID: 662414612}
   group_TextPref: {fileID: 3411431163146436466, guid: ae99c8d921abfbe4a864454e752ab6d2, type: 3}
   textObject: {fileID: 2085691328}
@@ -776,6 +777,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  sceneIndices: 
+  index: 0
 --- !u!1 &1269417681
 GameObject:
   m_ObjectHideFlags: 0

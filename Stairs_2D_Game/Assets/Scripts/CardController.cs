@@ -26,22 +26,20 @@ public class CardController : MonoBehaviour
             isCardActivated = true;
         }
     }
-    public static CardController Create(Transform prefabCard, CardGroup_SO cardGroup, Transform parent)
+    public static CardController Create(Transform prefabCard, Transform parent)
     {
 
         Transform cardObj = Instantiate(prefabCard);
         cardObj.transform.SetParent(parent);
-        //cardObj.GetComponentInChildren<Image>().color = cardGroup.groupColor;
         CardController card = prefabCard.GetComponent<CardController>();
         //Canvas.ForceUpdateCanvases();
         return card;
     }
 
-    public void Setup(CardGroup_SO group, DiffAssignments randomAssignment, int indexOfGroup)
+    public void Setup(CardGroup_SO group)
     {
         assignmentType = group.TypeOfAssignment;
-        assingnment = randomAssignment;
-        cardGroupIndex = indexOfGroup;
+        assingnment = group.assignments;
         this.GetComponentInChildren<Image>().color = group.groupColor;
     }
 

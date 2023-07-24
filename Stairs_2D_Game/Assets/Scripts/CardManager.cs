@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class CardManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class CardManager : MonoBehaviour
     public Transform prefabCard;
     public CardGroup_SO[] CardGroups;
     int AmountOfCardsToInstantiate = 0;
-    //public List <CardController> createdCards = new List<CardController>();
     [SerializeField] CardController[] createdCards;
     public static CardController selectedCard;
     public CardController currentselectedCard;
@@ -49,48 +49,31 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+     
         HandleStart(); 
     }
 
     public void HandleStart()
     {
+        groupIndex = 0;
+
         for (int i = 0; i < CardGroups.Length; i++)
         {
             CardGroups[i].HandleStart();
         }
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
-        DeleteCards();
+        
         CreateCards();
-        AddAllCreatedCards();
-        ReorganizeCreatedCards();
-        selectedCard = reorginizedCards[0];
-        ResultsHandler.Instance.CalculateAmountOfAllAnswers();
-        DeleteCards();
-        CreateCards();
+        
+        //CheckTheFirstCard();
         AddAllCreatedCards();
         ReorganizeCreatedCards();
         selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            CreateCards();
-            AddAllCreatedCards();
-            ReorganizeCreatedCards();
-            selectedCard = reorginizedCards[0];
-            ResultsHandler.Instance.CalculateAmountOfAllAnswers();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            DeleteCards();
-
-
-        }
-        }
+   
     public void DeleteCards()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -98,10 +81,7 @@ public class CardManager : MonoBehaviour
             transform.GetChild(i).GetComponent<CardController>().DestroyCard();
         }
     }
-    private void FixedUpdate()
-    {
-        currentselectedCard = selectedCard;
-    }
+   
     void CalculateCurrentAmountOfCardsInTheGroup()
     {
 
@@ -127,29 +107,27 @@ public class CardManager : MonoBehaviour
             foreach (var group in CardGroups)
             {
 
-                for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
+                for (int i = 1; i <= group.currentAmountOfCardsOfThisType; i++)
                 {
                     group.GetAssignment();
-                    card = CardController.Create(prefabCard, group, transform);
-                    card.Setup(group, group.randomAssignment, groupIndex);
+                    card = CardController.Create(prefabCard, transform);
+                    //card.Setup(group);
+                    Debug.Log("Setup");
                 }
 
-                if (groupIndex < CardGroups.Length)
+                if (groupIndex < CardGroups.Length -1)
                 {
                     groupIndex++;
                 }
             }
         }
-        //else if (CardGroups.Length == 1 )
-        //{
-        //    for (int i = 0; i < CardGroups[0].currentAmountOfCardsOfThisType; i++)
-        //    {
-        //        CardGroups[0].GetAssignment();
-        //        card = CardController.Create(prefabCard, CardGroups[0], transform);
-        //        card.Setup(CardGroups[0], CardGroups[0].randomAssignment, groupIndex);
-        //    }
 
-        //}
+    }
+
+    void CheckTheFirstCard()
+    {
+        CardController firstCard = GetComponentInChildren<CardController>();
+        firstCard.Setup(CardGroups[0]);
     }
 
     void AddAllCreatedCards()
@@ -182,30 +160,7 @@ public class CardManager : MonoBehaviour
     {
         OnFinishedGame?.Invoke();
     }
-    CardGroup_SO GetRandomGroup()
-    {
-        CardGroup_SO group = null;
-        var totalWeight = 0;
-        foreach (var item in CardGroups)
-        {
-            totalWeight += (int)Mathf.Round(item.weightCurve.Evaluate(1));
-        }
-        var rndWeightGroup = UnityEngine.Random.Range(0, totalWeight);
-        var processedWeight = 0;
-        foreach (var item in CardGroups)
-        {
-            processedWeight += item.Weight;
-            if (rndWeightGroup <= processedWeight)
-            {
-                group = item;
-                break;
-            }
-        }
-
-        Debug.Log("Group: " + group.name);
-        return group;
-    }
-
+  
     public void ReorganizeCreatedCards()
     {
         System.Random rnd = new System.Random();

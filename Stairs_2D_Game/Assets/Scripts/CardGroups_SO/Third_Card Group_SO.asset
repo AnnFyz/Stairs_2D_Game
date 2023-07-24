@@ -85,5 +85,5 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   indexForAssignmentsWithAnswers: 0
-  indexForAssignmentsWithUiserInput_Numbers: 0
-  indexForAssignmentsWithUiserInput_Text: 0
+  indexForAssignmentsWithUserInput_Numbers: 0
+  indexForAssignmentsWithUserInput_Text: 0
