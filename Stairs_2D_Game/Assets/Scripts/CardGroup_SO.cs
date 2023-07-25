@@ -115,6 +115,7 @@ public class CardGroup_SO : ScriptableObject
 
     public void GetAssignment()
     {
+        Debug.Log("Type of assignment " + TypeOfAssignment);
         if (TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {
             SelectAssignmentWithAnswers();

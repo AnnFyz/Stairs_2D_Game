@@ -23,6 +23,14 @@ public class CardManager : MonoBehaviour
     int groupIndex = 0;
 
     [SerializeField] DiffAssignments allAssignments;
+    public int indexForAssignmentsWithAnswers = 0;
+    public int indexForAssignmentsWithUserInput_Numbers = 0;
+    public int indexForAssignmentsWithUserInput_Text = 0;
+
+    public bool allCardsWithAnswersWereCreated = false;
+    public bool allCardsWithUserInput_Numbers_WereCreated = false;
+    public bool allCardsWithUserInput_Text_WereCreated = false;
+
     private void Awake()
     {
 
@@ -65,7 +73,7 @@ public class CardManager : MonoBehaviour
         }
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
-        CreateCards();
+        SetupCards();
 
         //CheckTheFirstCard();
         AddAllCreatedCards();
@@ -99,7 +107,7 @@ public class CardManager : MonoBehaviour
             AmountOfCardsToInstantiate += group.currentAmountOfCardsOfThisType;
         }
     }
-    void CreateCards()
+    void SetupCards()
     {
         CardController card;
 
@@ -109,16 +117,16 @@ public class CardManager : MonoBehaviour
 
             foreach (var group in CardGroups)
             {
-                Debug.Log("group " + group);
+                
+
                 AddAllAssignments(group);
 
                 for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
                 {
-                    //Debug.Log("group " + group.currentAmountOfCardsOfThisType);
-                    //group.GetAssignment();
+                    //GetAssignment(group, i);
+                    group.GetAssignment();
                     card = CardController.Create(prefabCard, transform);
-                    card.Setup(group);
-                   
+                    card.Setup(group, group.TypeOfAssignment, group.assignments);                  
 
                 }
 
@@ -128,6 +136,11 @@ public class CardManager : MonoBehaviour
                 }
             }
         }
+
+    }
+
+    void CreateCards()
+    {
 
     }
 
@@ -151,17 +164,97 @@ public class CardManager : MonoBehaviour
             allAssignments.AssignmentsWithUserInput_Text = group.assignments.AssignmentsWithUserInput_Text;
         }
     }
-    void CheckTheFirstCard()
+
+
+    public void GetAssignment(CardGroup_SO group, int index)
     {
-        CardController firstCard = GetComponentInChildren<CardController>();
-        firstCard.Setup(CardGroups[0]);
-
-
-        for (int i = 0; i < createdCards.Length; i++)
+        if (group.TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
         {
-            //createdCards.Contains<>
+            SelectAssignmentWithAnswers(index);
         }
+        else if (group.TypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        {
+            SelectAssignmentWithUserInput_Number(index);
+        }
+        else if (group.TypeOfAssignment == Assignment.Assignment_With_Text_Input)
+        {
+            SelectAssignmentWithUserInput_Text(index);
+        }
+
     }
+
+    void SelectAssignmentWithAnswers(int index)
+    {
+        if (indexForAssignmentsWithAnswers < allAssignments.AssignmentsWithAnswers.Length)
+        {
+            //Debug.Log("indexForAssignmentsWithAnswers " + indexForAssignmentsWithAnswers);
+            allAssignments.assignmentWithAnswers = allAssignments.AssignmentsWithAnswers[index];
+            
+
+        }
+        if (index == allAssignments.AssignmentsWithAnswers.Length)
+        {
+            allCardsWithAnswersWereCreated = true;
+            allAssignments.assignmentWithAnswers = null;
+            //assignments.assignmentWithAnswers = assignments.AssignmentsWithAnswers[assignments.AssignmentsWithAnswers.Length-1];
+
+        }
+
+        //Debug.Log(" randomAssignment.assignmentWithAnswers " + randomAssignment.assignmentWithAnswers);
+
+    }
+
+    void SelectAssignmentWithUserInput_Number(int index)
+    {
+        if (indexForAssignmentsWithUserInput_Numbers < allAssignments.AssignmentsWithUserInput_Number.Length)
+        {
+            //Debug.Log("indexForAssignmentsWithUserInput_Numbers " + indexForAssignmentsWithUserInput_Numbers);
+            allAssignments.assignmentWithUserInput_Number = allAssignments.AssignmentsWithUserInput_Number[indexForAssignmentsWithUserInput_Numbers];
+        
+
+        }
+        if (index == allAssignments.AssignmentsWithUserInput_Number.Length)
+        {
+            allCardsWithUserInput_Numbers_WereCreated = true;
+            allAssignments.assignmentWithUserInput_Number = null;
+            //assignments.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[assignments.AssignmentsWithUserInput_Number.Length -1];
+        }
+
+        //Debug.Log("randomAssignment.assignmentWithUserInput_Number " + randomAssignment.assignmentWithUserInput_Number);
+
+    }
+
+    void SelectAssignmentWithUserInput_Text(int index)
+    {
+        if (indexForAssignmentsWithUserInput_Text < allAssignments.AssignmentsWithUserInput_Text.Length)
+        {
+            //Debug.Log("indexForAssignmentsWithUserInput_Text " + indexForAssignmentsWithUserInput_Text);
+            allAssignments.assignmentWithUserInput_Text = allAssignments.AssignmentsWithUserInput_Text[indexForAssignmentsWithUserInput_Text];
+            
+        }
+        if (index == allAssignments.AssignmentsWithUserInput_Text.Length)
+        {
+            allCardsWithUserInput_Text_WereCreated = true;
+            allAssignments.assignmentWithUserInput_Text = null;
+            //assignments.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[assignments.AssignmentsWithUserInput_Text.Length -1];
+        }
+
+        //Debug.Log("randomAssignment.assignmentWithUserInput_Text " + randomAssignment.assignmentWithUserInput_Text);
+
+    }
+
+
+    //void CheckTheFirstCard()
+    //{
+    //    CardController firstCard = GetComponentInChildren<CardController>();
+    //    firstCard.Setup(CardGroups[0]);
+
+
+    //    for (int i = 0; i < createdCards.Length; i++)
+    //    {
+    //        //createdCards.Contains<>
+    //    }
+    //}
 
     void AddAllCreatedCards()
     {
