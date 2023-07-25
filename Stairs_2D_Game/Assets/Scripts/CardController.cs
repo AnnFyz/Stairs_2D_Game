@@ -26,23 +26,14 @@ public class CardController : MonoBehaviour
             isCardActivated = true;
         }
     }
-    public static CardController Create(Transform prefabCard, Transform parent)
-    {
 
-        Transform cardObj = Instantiate(prefabCard);
-        cardObj.transform.SetParent(parent);
-        CardController card = prefabCard.GetComponent<CardController>();
-        //Canvas.ForceUpdateCanvases();
-        return card;
-    }
-
-    public void Setup(CardGroup_SO group, Assignment typeOfAssignment, DiffAssignments assignments)
+    public void Setup(CardGroup_SO group, Assignment typeOfAssignment, DiffAssignments assignments, int index)
     {
-        //assignmentType = group.TypeOfAssignment;
-        // assingnment = group.assignments;
         assignmentType = typeOfAssignment;
         assingnment = assignments;
         this.GetComponentInChildren<Image>().color = group.groupColor;
+        //cardGroupIndex = group.numberOfAssignmentGroup;
+        cardGroupIndex = index;
     }
 
 
@@ -56,14 +47,17 @@ public class CardController : MonoBehaviour
             if (assignmentType == Assignment.Assignment_With_Answer_Options && assingnment.assignmentWithAnswers != null)
             {
                 UI_Assignment_With_Answers.Instance.ActivateUIPanel(assingnment.assignmentWithAnswers.Question, assingnment.assignmentWithAnswers.Answers[0], assingnment.assignmentWithAnswers.Answers[1], assingnment.assignmentWithAnswers.Answers[2], assingnment.assignmentWithAnswers.sprite);
+
             }
             else if (assignmentType == Assignment.Assignment_With_Number_Input)
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Number.Question, assingnment.assignmentWithUserInput_Number.sprite);
+
             }
             else if (assignmentType == Assignment.Assignment_With_Text_Input)
             {
                 UI_Assignment_WithInput.Instance.ActivateUIPanel(assingnment.assignmentWithUserInput_Text.Question, assingnment.assignmentWithUserInput_Text.sprite);
+
             }
         }
     }
