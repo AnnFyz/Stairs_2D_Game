@@ -21,6 +21,8 @@ public class CardManager : MonoBehaviour
     public Action OnFinishedGame;
 
     int groupIndex = 0;
+
+    [SerializeField] DiffAssignments allAssignments;
     private void Awake()
     {
 
@@ -63,17 +65,16 @@ public class CardManager : MonoBehaviour
         }
         CalculateCurrentAmountOfCardsInTheGroup();
         CalculateAmountOfCardsToInstantiate();
-        
         CreateCards();
-        
+
         //CheckTheFirstCard();
         AddAllCreatedCards();
-        ReorganizeCreatedCards();
-        selectedCard = reorginizedCards[0];
+       // ReorganizeCreatedCards();
+        //selectedCard = reorginizedCards[0];
         ResultsHandler.Instance.CalculateAmountOfAllAnswers();
     }
 
-   
+  
     public void DeleteCards()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -104,18 +105,24 @@ public class CardManager : MonoBehaviour
 
         if (CardGroups.Length > 0)
         {
+            
+
             foreach (var group in CardGroups)
             {
+                Debug.Log("group " + group);
+                AddAllAssignments(group);
 
-                for (int i = 1; i <= group.currentAmountOfCardsOfThisType; i++)
+                for (int i = 0; i < group.currentAmountOfCardsOfThisType; i++)
                 {
-                    group.GetAssignment();
+                    //Debug.Log("group " + group.currentAmountOfCardsOfThisType);
+                    //group.GetAssignment();
                     card = CardController.Create(prefabCard, transform);
-                    //card.Setup(group);
-                    Debug.Log("Setup");
+                    card.Setup(group);
+                   
+
                 }
 
-                if (groupIndex < CardGroups.Length -1)
+                if (groupIndex < CardGroups.Length)
                 {
                     groupIndex++;
                 }
@@ -124,10 +131,36 @@ public class CardManager : MonoBehaviour
 
     }
 
+    void AddAllAssignments(CardGroup_SO group)
+    {
+      
+
+        if (group.TypeOfAssignment == Assignment.Assignment_With_Answer_Options)
+        {
+            Debug.Log("Add  " + Assignment.Assignment_With_Answer_Options);
+            allAssignments.AssignmentsWithAnswers = group.assignments.AssignmentsWithAnswers;
+        }
+        if (group.TypeOfAssignment == Assignment.Assignment_With_Number_Input)
+        {
+            Debug.Log("Add  " + Assignment.Assignment_With_Number_Input);
+            allAssignments.AssignmentsWithUserInput_Number = group.assignments.AssignmentsWithUserInput_Number;
+        }
+        if (group.TypeOfAssignment == Assignment.Assignment_With_Text_Input)
+        {
+            Debug.Log("Add  " + Assignment.Assignment_With_Text_Input);
+            allAssignments.AssignmentsWithUserInput_Text = group.assignments.AssignmentsWithUserInput_Text;
+        }
+    }
     void CheckTheFirstCard()
     {
         CardController firstCard = GetComponentInChildren<CardController>();
         firstCard.Setup(CardGroups[0]);
+
+
+        for (int i = 0; i < createdCards.Length; i++)
+        {
+            //createdCards.Contains<>
+        }
     }
 
     void AddAllCreatedCards()

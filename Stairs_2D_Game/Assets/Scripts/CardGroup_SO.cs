@@ -134,7 +134,7 @@ public class CardGroup_SO : ScriptableObject
     {
         if (indexForAssignmentsWithAnswers < assignments.AssignmentsWithAnswers.Length)
         {
-            Debug.Log("indexForAssignmentsWithAnswers " + indexForAssignmentsWithAnswers);
+            //Debug.Log("indexForAssignmentsWithAnswers " + indexForAssignmentsWithAnswers);
             assignments.assignmentWithAnswers = assignments.AssignmentsWithAnswers[indexForAssignmentsWithAnswers];
             indexForAssignmentsWithAnswers++;
 
@@ -143,6 +143,7 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithAnswersWereCreated = true;
             assignments.assignmentWithAnswers = null;
+            //assignments.assignmentWithAnswers = assignments.AssignmentsWithAnswers[assignments.AssignmentsWithAnswers.Length-1];
 
         }
 
@@ -154,7 +155,7 @@ public class CardGroup_SO : ScriptableObject
     {
         if (indexForAssignmentsWithUserInput_Numbers < assignments.AssignmentsWithUserInput_Number.Length)
         {
-            Debug.Log("indexForAssignmentsWithUserInput_Numbers " + indexForAssignmentsWithUserInput_Numbers);
+            //Debug.Log("indexForAssignmentsWithUserInput_Numbers " + indexForAssignmentsWithUserInput_Numbers);
             assignments.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[indexForAssignmentsWithUserInput_Numbers];
             indexForAssignmentsWithUserInput_Numbers++;
 
@@ -163,6 +164,7 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithUserInput_Numbers_WereCreated = true;
             assignments.assignmentWithUserInput_Number = null;
+            //assignments.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[assignments.AssignmentsWithUserInput_Number.Length -1];
         }
 
         //Debug.Log("randomAssignment.assignmentWithUserInput_Number " + randomAssignment.assignmentWithUserInput_Number);
@@ -173,7 +175,7 @@ public class CardGroup_SO : ScriptableObject
     {
         if (indexForAssignmentsWithUserInput_Text < assignments.AssignmentsWithUserInput_Text.Length)
         {
-            Debug.Log("indexForAssignmentsWithUserInput_Text " + indexForAssignmentsWithUserInput_Text);
+            //Debug.Log("indexForAssignmentsWithUserInput_Text " + indexForAssignmentsWithUserInput_Text);
             assignments.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[indexForAssignmentsWithUserInput_Text];
             indexForAssignmentsWithUserInput_Text++;
         }
@@ -181,6 +183,7 @@ public class CardGroup_SO : ScriptableObject
         {
             allCardsWithUserInput_Text_WereCreated = true;
             assignments.assignmentWithUserInput_Text = null;
+            //assignments.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[assignments.AssignmentsWithUserInput_Text.Length -1];
         }
 
         //Debug.Log("randomAssignment.assignmentWithUserInput_Text " + randomAssignment.assignmentWithUserInput_Text);

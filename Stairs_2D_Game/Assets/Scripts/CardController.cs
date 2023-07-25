@@ -32,12 +32,13 @@ public class CardController : MonoBehaviour
         Transform cardObj = Instantiate(prefabCard);
         cardObj.transform.SetParent(parent);
         CardController card = prefabCard.GetComponent<CardController>();
-        //Canvas.ForceUpdateCanvases();
+        Canvas.ForceUpdateCanvases();
         return card;
     }
 
     public void Setup(CardGroup_SO group)
     {
+        group.GetAssignment();
         assignmentType = group.TypeOfAssignment;
         assingnment = group.assignments;
         this.GetComponentInChildren<Image>().color = group.groupColor;
