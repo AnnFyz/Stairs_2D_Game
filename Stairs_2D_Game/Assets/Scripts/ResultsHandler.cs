@@ -91,7 +91,7 @@ public class ResultsHandler : MonoBehaviour
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            PercentageOfUnsolvedAssignments[i] = amountOfWrongAnswers[i] / (amountOfAllAnswers[i] * 0.01f);
+            PercentageOfUnsolvedAssignments[i] = Mathf.Round(amountOfWrongAnswers[i] / (amountOfAllAnswers[i] * 0.01f));
         }
     }
     void SetupPanel()
