@@ -109,7 +109,7 @@ public class CardManager : MonoBehaviour
     }
     void SetupCards()
     {
-        CardController card;
+
 
         if (CardGroups.Length > 0)
         {
@@ -125,8 +125,11 @@ public class CardManager : MonoBehaviour
                 {
                     //GetAssignment(group, i);
                     group.GetAssignment();
-                    card = CardController.Create(prefabCard, transform);
-                    card.Setup(group, group.TypeOfAssignment, group.assignments);                  
+                    Transform card =  Instantiate(prefabCard, transform);
+                    card.GetComponent<CardController>().Setup(group, group.TypeOfAssignment, group.assignments);
+
+                    //card = CardController.Create(prefabCard, transform);
+                    //Setup(group, group.TypeOfAssignment, group.assignments);                  
 
                 }
 

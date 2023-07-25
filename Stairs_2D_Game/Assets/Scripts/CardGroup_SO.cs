@@ -143,10 +143,11 @@ public class CardGroup_SO : ScriptableObject
         if (indexForAssignmentsWithAnswers == assignments.AssignmentsWithAnswers.Length)
         {
             allCardsWithAnswersWereCreated = true;
-            assignments.assignmentWithAnswers = null;
-            //assignments.assignmentWithAnswers = assignments.AssignmentsWithAnswers[assignments.AssignmentsWithAnswers.Length-1];
+            //assignments.assignmentWithAnswers = null;
+            assignments.assignmentWithAnswers = assignments.AssignmentsWithAnswers[assignments.AssignmentsWithAnswers.Length-1];
 
         }
+       
 
         //Debug.Log(" randomAssignment.assignmentWithAnswers " + randomAssignment.assignmentWithAnswers);
 
@@ -164,8 +165,8 @@ public class CardGroup_SO : ScriptableObject
         if (indexForAssignmentsWithUserInput_Numbers == assignments.AssignmentsWithUserInput_Number.Length)
         {
             allCardsWithUserInput_Numbers_WereCreated = true;
-            assignments.assignmentWithUserInput_Number = null;
-            //assignments.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[assignments.AssignmentsWithUserInput_Number.Length -1];
+            //assignments.assignmentWithUserInput_Number = null;
+            assignments.assignmentWithUserInput_Number = assignments.AssignmentsWithUserInput_Number[assignments.AssignmentsWithUserInput_Number.Length -1];
         }
 
         //Debug.Log("randomAssignment.assignmentWithUserInput_Number " + randomAssignment.assignmentWithUserInput_Number);
@@ -183,8 +184,8 @@ public class CardGroup_SO : ScriptableObject
         if (indexForAssignmentsWithUserInput_Text == assignments.AssignmentsWithUserInput_Text.Length)
         {
             allCardsWithUserInput_Text_WereCreated = true;
-            assignments.assignmentWithUserInput_Text = null;
-            //assignments.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[assignments.AssignmentsWithUserInput_Text.Length -1];
+            //assignments.assignmentWithUserInput_Text = null;
+            assignments.assignmentWithUserInput_Text = assignments.AssignmentsWithUserInput_Text[assignments.AssignmentsWithUserInput_Text.Length -1];
         }
 
         //Debug.Log("randomAssignment.assignmentWithUserInput_Text " + randomAssignment.assignmentWithUserInput_Text);
