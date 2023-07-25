@@ -20,7 +20,7 @@ public class CardManager : MonoBehaviour
     public CardController[] reorginizedCards;
     public Action OnFinishedGame;
 
-    int groupIndex = 0;
+    public int groupIndex = 0;
 
     private void Awake()
     {

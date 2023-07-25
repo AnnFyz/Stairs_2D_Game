@@ -120,7 +120,7 @@ public class ResultsHandler : MonoBehaviour
         {
             for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
             {
-                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(i + 1);
+                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(CardManager.Instance.groupIndex);
             }
 
         }
@@ -129,7 +129,7 @@ public class ResultsHandler : MonoBehaviour
         {
             for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
             {
-                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(0);
+                textObject.GetChild(i).gameObject.GetComponent<ButtonForLoading>().SetIndexOfNextScene(index);
             }
         }
     }
