@@ -15,8 +15,8 @@ MonoBehaviour:
   currentAssignment: 0
   Question: "Wie muss diese Geradheitstoleranz gepr\xFCft werden?"
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "parallel zur Fl\xE4che A "
+  - "nach Ermessen des Pr\xFCfers "
+  - "senkrecht zur Fl\xE4che A "
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 0269280d8251b394b9c8328080bcc488, type: 3}

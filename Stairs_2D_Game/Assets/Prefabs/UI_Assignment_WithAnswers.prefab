@@ -167,7 +167,7 @@ RectTransform:
   m_GameObject: {fileID: 3529102560595790879}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1362079541497566246}
@@ -178,8 +178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 537, y: 302}
+  m_AnchoredPosition: {x: -0.416, y: 0.001}
+  m_SizeDelta: {x: 2829.259, y: 1596.844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3529102560595790877
 MonoBehaviour:
@@ -196,10 +196,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 275
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 0
+    m_Top: 0
+    m_Bottom: 254
+  m_ChildAlignment: 7
+  m_Spacing: -230.64
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -542,6 +542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 3059309860001792825, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: cardIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -709,6 +713,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 3059309860001792825, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: cardIndex
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 6104931365588971410, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -887,6 +895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3529102560595790878}
     m_Modifications:
+    - target: {fileID: 3059309860001792825, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
+      propertyPath: cardIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6104931364846196870, guid: 6d2e8960fe62e934eb3afe47e5a29100, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100

@@ -15,8 +15,8 @@ MonoBehaviour:
   currentAssignment: 0
   Question: "Wie muss diese Profiltoleranz gepr\xFCft werden?"
   Answers:
-  - yes
-  - no
-  - I don't know
+  - parallel zur Achse A
+  - senkrecht zur Achse A
+  - "nach Ermessen des Pr\xFCfers "
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 1854bec9d1fdf7b428b399a738211185, type: 3}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
-  RightAnswer: ja
+  RightAnswer: Position
   sprite: {fileID: 21300000, guid: a5270431e8851e7438caf40fead24689, type: 3}

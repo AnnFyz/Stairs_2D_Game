@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
-  RightAnswer: ja
+  RightAnswer: "Zylindrizit\xE4t "
   sprite: {fileID: 21300000, guid: 32949f226ab8fff48b2b20028b90c860, type: 3}

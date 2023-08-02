@@ -15,8 +15,8 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Warum ist dieser RichtungselementIndikator notwendig?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - 'Der Richtungselementindikator ist nicht notwendig. '
+  - Die Messung dieser Lauftoleranz ist in dieser Form einfacher
+  - Die Messrichtung ist sonst geometrisch unbestimmt
+  IndexOfRightAnswer: 2
   sprite: {fileID: 21300000, guid: 673fb576367104b47a31d0b88e0e40d0, type: 3}

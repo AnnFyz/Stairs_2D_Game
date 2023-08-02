@@ -60,6 +60,10 @@ public class UI_Assignment_With_Answers : MonoBehaviour
         this.answer_2.GetComponentInChildren<TextMeshProUGUI>().text = answer_2;
         this.answer_3.GetComponentInChildren<TextMeshProUGUI>().text = answer_3;
         this.sprite.GetComponent<Image>().sprite = sprite;
+
+        this.answer_1.GetComponent<AnswerButtonCheckerForAssignmentsWithAnswers>().SetCardIndex(0);
+        this.answer_2.GetComponent<AnswerButtonCheckerForAssignmentsWithAnswers>().SetCardIndex(1);
+        this.answer_3.GetComponent<AnswerButtonCheckerForAssignmentsWithAnswers>().SetCardIndex(2);
     }
 
    public void SelectAnswer()

@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Was bedeutet dieser Kollektionsebenen-Indikator?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Die Messrichtung f\xFCr die Fl\xE4chenprofiltoleranz ist 45\xB0 schr\xE4g zur
+    Fl\xE4che A"
+  - "Die Messrichtung f\xFCr die Fl\xE4chenprofiltoleranz ist parallel zur Fl\xE4che
+    A "
+  - "Die Messrichtung f\xFCr die Fl\xE4chenprofiltoleranz ist senkrecht zur Fl\xE4che
+    A"
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: 0ac8043dee3fb0a4797a7e19a307f743, type: 3}

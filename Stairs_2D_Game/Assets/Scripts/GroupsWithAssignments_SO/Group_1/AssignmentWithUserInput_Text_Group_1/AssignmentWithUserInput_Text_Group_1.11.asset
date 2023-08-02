@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
-  RightAnswer: ja
+  RightAnswer: "Konzentrizit\xE4t / Koaxialit\xE4t"
   sprite: {fileID: 21300000, guid: 4016df70cd5f3094a8cf25c84febf30c, type: 3}

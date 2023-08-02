@@ -15,8 +15,9 @@ MonoBehaviour:
   currentAssignment: 0
   Question: "Was ist der Unterschied zw. diesen 2 Parallelit\xE4tstoleranzen?"
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Diese Parallelit\xE4tstoleranzen sind gleich"
+  - "Die Parallelit\xE4tstoleranz 1 ist parallel und die Parallelit\xE4tstoleranz
+    2 ist senkrecht zur Fl\xE4che D definiert "
+  - "Die Parallelit\xE4tstoleranzen widersprechen sich und sind falsch"
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: db791cd41bbc0834192fdd7af3c3c42d, type: 3}

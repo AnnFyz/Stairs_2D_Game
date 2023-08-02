@@ -17,17 +17,17 @@ MonoBehaviour:
   Weight: 42
   groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
   TypeOfAssignment: 0
-  currentAmountOfCardsOfThisType: 0
+  currentAmountOfCardsOfThisType: 2
   assignments:
     AssignmentsWithAnswers:
-    - {fileID: 11400000, guid: d4cd33d1da3ab7a439797857ae8d38aa, type: 2}
-    - {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
+    - {fileID: 11400000, guid: 409eed77f3a644949b3479eeb9a3aaa3, type: 2}
+    - {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
-    assignmentWithAnswers: {fileID: 0}
+    assignmentWithAnswers: {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
     assignmentWithUserInput_Number: {fileID: 0}
     assignmentWithUserInput_Text: {fileID: 0}
-  allCardsWithAnswersWereCreated: 0
+  allCardsWithAnswersWereCreated: 1
   allCardsWithUserInput_Numbers_WereCreated: 0
   allCardsWithUserInput_Text_WereCreated: 0
   allCardsWereCreated: 0
@@ -55,6 +55,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  indexForAssignmentsWithAnswers: 0
+  indexForAssignmentsWithAnswers: 2
   indexForAssignmentsWithUserInput_Numbers: 0
   indexForAssignmentsWithUserInput_Text: 0
