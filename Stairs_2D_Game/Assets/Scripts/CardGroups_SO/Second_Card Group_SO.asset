@@ -20,11 +20,16 @@ MonoBehaviour:
   currentAmountOfCardsOfThisType: 2
   assignments:
     AssignmentsWithAnswers:
+    - {fileID: 11400000, guid: d4cd33d1da3ab7a439797857ae8d38aa, type: 2}
+    - {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
+    - {fileID: 11400000, guid: 72a4064d63daaa94e86d39fca81b7a9a, type: 2}
+    - {fileID: 11400000, guid: 03de453c50ba9b747abe41bb76431e44, type: 2}
     - {fileID: 11400000, guid: 409eed77f3a644949b3479eeb9a3aaa3, type: 2}
+    - {fileID: 11400000, guid: e1d633be88042194aa940dd20dd1e078, type: 2}
     - {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
     AssignmentsWithUserInput_Number: []
     AssignmentsWithUserInput_Text: []
-    assignmentWithAnswers: {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
+    assignmentWithAnswers: {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
     assignmentWithUserInput_Number: {fileID: 0}
     assignmentWithUserInput_Text: {fileID: 0}
   allCardsWithAnswersWereCreated: 1
