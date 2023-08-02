@@ -80,7 +80,7 @@ public class CardGroup_SO : ScriptableObject
     }
     private void OnEnable()
     {
-        AssetDatabase.Refresh();
+       
 
         HandleStart();
 
