@@ -15,5 +15,5 @@ MonoBehaviour:
   currentAssignment: 0
   Question: "Wie gro\xDF ist der Durchmesser einer Bohrung, in der diese Welle immer
     montierbar ist?"
-  RightNumber: 0
+  RightNumber: 35.1
   sprite: {fileID: 21300000, guid: c63a0ce6ddaface47b2e730600924473, type: 3}

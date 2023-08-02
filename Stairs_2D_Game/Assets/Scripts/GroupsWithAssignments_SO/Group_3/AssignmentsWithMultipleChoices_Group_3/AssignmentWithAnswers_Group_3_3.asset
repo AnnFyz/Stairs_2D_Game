@@ -15,8 +15,10 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - 'Zylinder mit einem Durchmesser von 0,1 mm '
+  - "Fl\xE4che zwischen 2 konzentrischen Kreisen mit einem radialen Abstand von 0,05
+    mm "
+  - "Fl\xE4che zwischen 2 konzentrischen Kreisen mit einem radialen Abstand von 0,1
+    mm "
+  IndexOfRightAnswer: 2
   sprite: {fileID: 21300000, guid: b5508ef21bc3e5f4aa70a5c1e0b11e2d, type: 3}

@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Zylinder mit einem Durchmesser von 0,04 mm und einem Winkel von 60\xB0 zur Fl\xE4che
+    A "
+  - "Volumen zwischen zwei Zylindern, die einen radialen Abstand von 0,08 mm zueinander
+    haben und jeweils einen Winkel von 60\xB0 zur Fl\xE4che A aufweisen "
+  - "Zylinder mit einem Durchmesser von 0,08 mm und einem Winkel von 60\xB0 zur Fl\xE4che
+    A "
+  IndexOfRightAnswer: 2
   sprite: {fileID: 21300000, guid: 7222f49053142a448a770e29ea5d288f, type: 3}

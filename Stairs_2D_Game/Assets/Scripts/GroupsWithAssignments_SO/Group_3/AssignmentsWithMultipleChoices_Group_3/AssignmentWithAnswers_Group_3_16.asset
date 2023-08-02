@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "Fl\xE4che zwischen getrennten Profillinien, die Kreise mit einem Durchmesser
+    von 0,2 mm einh\xFCllen "
+  - "Fl\xE4che zwischen zusammengesetzten Profillinien, die Kreise mit einem Durchmesser
+    von 0,2 mm einh\xFCllen und scharfe Ecken an den \xDCberg\xE4ngen aufweisen "
+  - "Fl\xE4che zwischen zusammengesetzten Profillinien, die Kreise mit einem Durchmesser
+    von 0,2 mm einh\xFCllen und runde Ecken an den \xDCberg\xE4ngen aufweisen  "
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 6a3642d58e4764e44a73eac39cab506c, type: 3}

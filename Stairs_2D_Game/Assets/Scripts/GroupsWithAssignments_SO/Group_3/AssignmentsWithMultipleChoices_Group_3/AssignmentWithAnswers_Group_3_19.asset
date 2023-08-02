@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "Volumen zwischen 2 koaxialen Zylindern, deren Achse mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,1 mm zueinander haben "
+  - "Fl\xE4che zwischen 2 parallelen Kreisen, deren Mitte mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,1 mm zueinander haben "
+  - "Volumen zwischen 2 koaxialen Zylindern, deren Achse mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,2 mm zueinander haben "
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 66e57069cabafca41b04d6c2f71b616b, type: 3}

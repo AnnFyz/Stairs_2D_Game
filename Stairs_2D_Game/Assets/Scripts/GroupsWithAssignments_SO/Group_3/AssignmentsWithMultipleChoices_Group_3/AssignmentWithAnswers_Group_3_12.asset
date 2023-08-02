@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Volumen zwischen zwei Ebenen, die einen Abstand von 0,16 mm zueinander haben
+    und symmetrisch in der Nut im Bezug auf Fl\xE4che A sind "
+  - "Volumen zwischen zwei Ebenen, die einen Abstand von 0,04 mm zueinander haben
+    und symmetrisch in der Nut im Bezug auf Fl\xE4che A sind "
+  - "Volumen zwischen zwei Ebenen, die einen Abstand von 0,08 mm zueinander haben
+    und symmetrisch in der Nut im Bezug auf Fl\xE4che A sind "
+  IndexOfRightAnswer: 2
   sprite: {fileID: 21300000, guid: 363ac972e7f222742a1821a91b7ff26f, type: 3}

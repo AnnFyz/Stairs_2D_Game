@@ -15,8 +15,9 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - 'Zylinder mit einem Durchmesser von 0,03 mm parallel zur Achse A '
+  - 'Zylinder mit einem Durchmesser von 0,015 mm parallel zur Achse A '
+  - 'Volumen zwischen zwei Zylindern, die einen radialen Abstand von 0,015 mm zueinander
+    haben und parallel zur Achse A sind '
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: d3ff110956245594bb23e6c3209b9abb, type: 3}

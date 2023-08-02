@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "Fl\xE4che zwischen zwei konzentrischen Kreisen, die einen radialen Abstand von
+    0,1 mm zueinander haben und zur Achse A-B ausgerichtet sind "
+  - "Fl\xE4che zwischen zwei konzentrischen Kreisen, die einen radialen Abstand von
+    0,05 mm zueinander haben und zur Achse A-B ausgerichtet sind "
+  - 'Volumen zwischen zwei koaxialen Zylindern, die einen radialen Abstand von 0,1
+    mm zueinander haben und zur Achse A-B ausgerichtet sind '
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: c45dc939933782c4889eeedbc458d328, type: 3}

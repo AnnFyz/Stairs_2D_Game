@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Zylinder mit einem Durchmesser von 0,16 mm in der genauen Position zu den Fl\xE4chen
+    A und B "
+  - "Zylinder mit einem Durchmesser von 0,08 mm in der genauen Position zu den Fl\xE4chen
+    A und B "
+  - "Volumen zwischen zwei koaxialen Zylindern, die einen radialen Abstand von 0,08
+    mm zueinander haben und in der genauen Position zu den Fl\xE4chen A und B sind "
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: 1e4323bec1a13774096eec3b7ee9ed2a, type: 3}

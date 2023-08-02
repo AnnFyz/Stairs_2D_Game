@@ -15,8 +15,10 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - "Volumen zwischen zwei Profilfl\xE4chen, die Kugeln mit einem Durchmesser von
+    0,01 mm einh\xFCllen"
+  - "Volumen zwischen zwei Profilfl\xE4chen, die Kugeln mit einem Durchmesser von
+    0,02 mm einh\xFCllen "
+  - "Fl\xE4che zwischen zwei parallelen Fl\xE4chen mit einem Abstand von 0,02 mm "
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: 77a414b550874f646b78b13abf1e4bb4, type: 3}

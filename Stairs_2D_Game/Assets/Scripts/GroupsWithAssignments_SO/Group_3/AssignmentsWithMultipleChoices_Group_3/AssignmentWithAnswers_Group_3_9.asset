@@ -15,8 +15,11 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "Zylinder mit einem Durchmesser von 0,1 mm und einem Winkel von 90\xB0 zur Fl\xE4che
+    A "
+  - "Zylinder mit einem Durchmesser von 0,05 mm und einem Winkel von 90\xB0 zur Fl\xE4che
+    A "
+  - "Zylinder, der in allen Richtungen einen maximalen Winkel von 90\xB10,1\xB0 zur
+    Fl\xE4che A aufweist "
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 88144c013fc92294abea7396891ccf05, type: 3}

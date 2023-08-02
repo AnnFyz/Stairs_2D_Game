@@ -15,8 +15,8 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
+  - "Volumen zwischen 2 Fl\xE4chen mit einem Abstand von 0,08 mm"
+  - "Volumen zwischen 2 Fl\xE4chen mit einem Abstand von 0,04 mm "
+  - 'Eine Ebene mit einer Ebenheit von 0,08 mm '
   IndexOfRightAnswer: 0
   sprite: {fileID: 21300000, guid: 99988669fbf500d4086661e17264a44b, type: 3}

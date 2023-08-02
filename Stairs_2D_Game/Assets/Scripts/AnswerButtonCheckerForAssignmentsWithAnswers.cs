@@ -29,6 +29,7 @@ public class AnswerButtonCheckerForAssignmentsWithAnswers : MonoBehaviour
         else if (cardIndex != index)
         {
             Debug.Log("cardIndex " + cardIndex + "IndexOfRightAnswer " + index);
+            Debug.Log("Button " + this);
             //Debug.Log("Wrong Answer, the right answer: " + CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
             UI_Assignment_With_Answers.Instance.RaiseOnWrongAnswerEvent();
         }

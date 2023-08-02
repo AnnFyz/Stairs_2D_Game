@@ -15,8 +15,8 @@ MonoBehaviour:
   currentAssignment: 0
   Question: Welche Form hat diese Toleranzzone?
   Answers:
-  - yes
-  - no
-  - I don't know
-  IndexOfRightAnswer: 0
+  - 'Volumen zwischen 2 Zylindern mit axialem Abstand von 0,08 mm '
+  - "R\xF6hrchen mit Durchmesser 0,08 mm"
+  - 'Volumen zwischen 2 Zylindern mit radialem Abstand von 0,08 mm '
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: 4776bc14e22279a46add305bc150a5fe, type: 3}
