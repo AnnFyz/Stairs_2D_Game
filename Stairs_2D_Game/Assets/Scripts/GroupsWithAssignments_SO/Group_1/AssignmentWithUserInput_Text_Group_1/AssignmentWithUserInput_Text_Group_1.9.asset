@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: Rechtwinkligkeit
-  sprite: {fileID: 21300000, guid: e9fe561461974ce45910e1f20d102647, type: 3}
+  sprite: {fileID: 21300000, guid: aaae77fd4cb59254ca5b56fa569a8ac4, type: 3}

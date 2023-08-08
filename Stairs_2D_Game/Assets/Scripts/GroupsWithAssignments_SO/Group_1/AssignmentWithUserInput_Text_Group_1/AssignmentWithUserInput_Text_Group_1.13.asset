@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: 'Lauf '
-  sprite: {fileID: 21300000, guid: 4016df70cd5f3094a8cf25c84febf30c, type: 3}
+  sprite: {fileID: 21300000, guid: f8bc47c5220bfbf42948c608e312b063, type: 3}

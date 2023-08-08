@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: Ebenheit
-  sprite: {fileID: 21300000, guid: 4bd0a496eec2f854aa7d7f277a528ee1, type: 3}
+  sprite: {fileID: 21300000, guid: 3571fa2c95eb8514c9435cd4862e7f80, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: Rundheit
-  sprite: {fileID: 21300000, guid: 231680335445dc74a9b2488612b969e0, type: 3}
+  sprite: {fileID: 21300000, guid: 063fd8fac1362ca45aa25422e8322db7, type: 3}

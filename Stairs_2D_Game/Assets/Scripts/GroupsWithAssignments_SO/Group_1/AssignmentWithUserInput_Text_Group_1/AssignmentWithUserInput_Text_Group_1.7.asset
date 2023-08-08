@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: "Parallelit\xE4t"
-  sprite: {fileID: 21300000, guid: 8a3e6e3962f7b994ea77ceb62d15c416, type: 3}
+  sprite: {fileID: 21300000, guid: fa199ab2e6225814dbd100aff141a27f, type: 3}

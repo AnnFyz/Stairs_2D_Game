@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: "Konzentrizit\xE4t / Koaxialit\xE4t"
-  sprite: {fileID: 21300000, guid: 392cefd6d97a187489cc092516dc1aa0, type: 3}
+  sprite: {fileID: 21300000, guid: 65a0e8994dff47d45b8e47cef6267cee, type: 3}

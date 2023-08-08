@@ -15,4 +15,4 @@ MonoBehaviour:
   currentAssignment: 2
   Question: 'Was bedeutet dieses Symbol? '
   RightAnswer: Symmetrie
-  sprite: {fileID: 21300000, guid: 1b93868c5718f1f44ae2d6ff07ee4480, type: 3}
+  sprite: {fileID: 21300000, guid: 510c2a91f067e9943aaae2d9cbcdbb9a, type: 3}

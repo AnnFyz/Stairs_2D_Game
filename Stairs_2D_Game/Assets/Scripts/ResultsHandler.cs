@@ -15,7 +15,7 @@ public class ResultsHandler : MonoBehaviour
     public static ResultsHandler Instance { get; private set; }
     [SerializeField] int[] amountOfWrongAnswers;
     [SerializeField] int[] amountOfAllAnswers;
-    [SerializeField] float[] PercentageOfUnsolvedAssignments;
+    [SerializeField] float[] PercentageOfSolvedAssignments;
     [SerializeField] TextMeshProUGUI[] results;
     public int[] sceneIndices;
     public int index;
@@ -39,7 +39,7 @@ public class ResultsHandler : MonoBehaviour
         CardManager.Instance.OnFinishedGame += HandleResult;
         amountOfWrongAnswers = new int[CardManager.Instance.CardGroups.Length];
         amountOfAllAnswers = new int[CardManager.Instance.CardGroups.Length];
-        PercentageOfUnsolvedAssignments = new float[CardManager.Instance.CardGroups.Length];
+        PercentageOfSolvedAssignments = new float[CardManager.Instance.CardGroups.Length];
         results = new TextMeshProUGUI[CardManager.Instance.CardGroups.Length];
         CalculateAmountOfGroupsPref();
         if(CardManager.Instance.CardGroups.Length <= 1)
@@ -52,7 +52,7 @@ public class ResultsHandler : MonoBehaviour
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfUnsolvedAssignments[i].ToString() + " %";
+            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfSolvedAssignments[i].ToString() + " %";
             results[i] = textObject.GetChild(i).GetComponent<TextMeshProUGUI>();
         }
     }
@@ -91,14 +91,15 @@ public class ResultsHandler : MonoBehaviour
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            PercentageOfUnsolvedAssignments[i] = Mathf.Round(amountOfWrongAnswers[i] / (amountOfAllAnswers[i] * 0.01f));
+            PercentageOfSolvedAssignments[i] = 100 - (Mathf.Round(amountOfWrongAnswers[i] / (amountOfAllAnswers[i] * 0.01f)));
+
         }
     }
     void SetupPanel()
     {
         for (int i = 0; i < CardManager.Instance.CardGroups.Length; i++)
         {
-            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfUnsolvedAssignments[i].ToString() + " %";
+            textObject.GetChild(i).GetComponent<TextMeshProUGUI>().text = CardManager.Instance.CardGroups[i].Title + ": " + PercentageOfSolvedAssignments[i].ToString() + " %";
         }
 
         ActivateUIPanel();
