@@ -6,7 +6,7 @@ public class PauseMenuHandler : MonoBehaviour
 {
     [SerializeField] int sceneToLoad = 1;
     [SerializeField] GameObject Panel;
-
+    [SerializeField] GameObject Logos;
     private void Start()
     {
         DeactivatePanel();
@@ -27,10 +27,12 @@ public class PauseMenuHandler : MonoBehaviour
     public void ActivatePanel()
     {
         Panel.SetActive(true);
+        Logos.SetActive(true);
     }
 
     public void DeactivatePanel()
     {
         Panel.SetActive(false);
+        Logos.SetActive(false);
     }
 }
