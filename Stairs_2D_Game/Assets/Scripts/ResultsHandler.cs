@@ -60,8 +60,11 @@ public class ResultsHandler : MonoBehaviour
     {
         foreach (var group in CardManager.Instance.CardGroups)
         {
+            Vector3 scaleOfTextObj = group_TextPref.localScale;
             Transform textObj = Instantiate(group_TextPref);
             textObj.transform.SetParent(textObject.transform);
+            textObj.transform.localScale = scaleOfTextObj;
+            Debug.Log("scale: " + textObj.transform.localScale);
         }
     }
     public void AddWrongAnswer(int index)
@@ -83,6 +86,7 @@ public class ResultsHandler : MonoBehaviour
 
     void HandleResult()
     {
+        Canvas.ForceUpdateCanvases();
         SetupNextSceneIndex();
         CalculatePercentageOfUnsolvedAssignments();
         SetupPanel();
