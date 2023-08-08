@@ -15,5 +15,5 @@ MonoBehaviour:
   currentAssignment: 0
   Question: "Wie gro\xDF ist die Positionstoleranz bei dieser Bohrung, wenn der Durchmesser
     20,2 mm betr\xE4gt?"
-  RightNumber: 0.7
+  RightNumber: 0.6
   sprite: {fileID: 21300000, guid: fe5e627d9e893dd449a6ca209e7be31f, type: 3}

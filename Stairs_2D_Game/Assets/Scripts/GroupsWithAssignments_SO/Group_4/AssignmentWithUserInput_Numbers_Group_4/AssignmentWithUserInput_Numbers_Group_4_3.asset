@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AssignmentWithUserInput_Numbers_Group_4_3
   m_EditorClassIdentifier: 
   currentAssignment: 0
-  Question: "Wie gro\xDF ist der Durchmesser einer Bohrung, in der diese Welle immer
-    montierbar ist?"
+  Question: "Wie gro\xDF darf der Durchmesser einer Welle sein, die in diese H\xFClse
+    immer montierbar ist?"
   RightNumber: 29.9
   sprite: {fileID: 21300000, guid: 3606cef463563784eba2acf9fb07b87a, type: 3}
