@@ -16,6 +16,7 @@ public class UI_Assignment_With_Answers : MonoBehaviour
     [SerializeField] GameObject sprite;
     public Action OnAnsweredQuestion;
     public Action<string> OnWrongAnswer;
+    public Action OnRightAnswer;
     private void Awake()
     {
 
@@ -73,7 +74,8 @@ public class UI_Assignment_With_Answers : MonoBehaviour
 
     public void RaiseOnAnsweredQuestionEvent()
     {
-        OnAnsweredQuestion?.Invoke();
+        //OnAnsweredQuestion?.Invoke();
+        OnRightAnswer?.Invoke();
     }
 
    public void RaiseOnWrongAnswerEvent()

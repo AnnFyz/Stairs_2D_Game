@@ -1836,7 +1836,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4606494939483306418}
         m_TargetAssemblyTypeName: PopUpWindow, Assembly-CSharp
-        m_MethodName: DeactivateUIPanel
+        m_MethodName: DeactivateUIPanelForRightAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2661,7 +2661,7 @@ PrefabInstance:
       objectReference: {fileID: 4606494939483306418}
     - target: {fileID: 6958103333394196671, guid: 9b0c9c4d8541a4d4587531fe6920e6ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DeactivateUIPanel
+      value: DeactivateUIPanelForWrongAnswer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0c9c4d8541a4d4587531fe6920e6ee, type: 3}

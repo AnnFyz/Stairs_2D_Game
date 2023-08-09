@@ -17,6 +17,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
     TMP_InputField tmpInputField;
     public Action OnAnsweredQuestion;
     public Action <string> OnWrongAnswer;
+    public Action OnRightAnswer;
     [SerializeField] GameObject sprite;
     private void Awake()
     {
@@ -106,7 +107,8 @@ public class UI_Assignment_WithInput : MonoBehaviour
  
     void RaiseOnAnsweredQuestionEvent()
     {
-        OnAnsweredQuestion?.Invoke();
+        //OnAnsweredQuestion?.Invoke();
+        OnRightAnswer?.Invoke();
     }
     void RaiseOnWrongAnswerEvent()
     {

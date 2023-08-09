@@ -38,7 +38,11 @@ public class PopUpWindow : MonoBehaviour
     {
         UI_Assignment_WithInput.Instance.OnWrongAnswer += SetupPopUpWindowForUserInput;
         UI_Assignment_With_Answers.Instance.OnWrongAnswer += SetupPopUpWindowForAnswerOptions;
+        UI_Assignment_WithInput.Instance.OnRightAnswer += SetupWindowForRightAnswer;
+        UI_Assignment_With_Answers.Instance.OnRightAnswer += SetupWindowForRightAnswer;
+
         UIPanelForWrongObj.SetActive(false);
+        UIPanelForRightObj.SetActive(false);
     }
 
  
