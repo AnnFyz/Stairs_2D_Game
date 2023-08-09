@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class PopUpWindow : MonoBehaviour
 {
     public static PopUpWindow Instance;
-    [SerializeField] GameObject UIPanel;
+    [SerializeField] GameObject UIPanelForWrongObj;
+    [SerializeField] GameObject UIPanelForRightObj;
     [SerializeField] GameObject rightAnswerObj;
     [SerializeField] TextMeshProUGUI answer_tmp;
     public Action OnClosedPopUpWindow;
@@ -37,29 +38,45 @@ public class PopUpWindow : MonoBehaviour
     {
         UI_Assignment_WithInput.Instance.OnWrongAnswer += SetupPopUpWindowForUserInput;
         UI_Assignment_With_Answers.Instance.OnWrongAnswer += SetupPopUpWindowForAnswerOptions;
-        UIPanel.SetActive(false);
+        UIPanelForWrongObj.SetActive(false);
     }
 
  
     void SetupPopUpWindowForUserInput(string rightAnswer)
     {
-        ActivateUIPanel();
+        ActivateUIPanelForWrongAnswer();
         answer_tmp.text = rightAnswer;
     }
 
      void SetupPopUpWindowForAnswerOptions(string rightAnswer)
     {
-        ActivateUIPanel();
+        ActivateUIPanelForWrongAnswer();
         answer_tmp.text = rightAnswer;
     }
 
-    void ActivateUIPanel()
+    void SetupWindowForRightAnswer()
     {
-        UIPanel.SetActive(true);
+        ActivateUIPanelForRightAnswer();
     }
-    public void DeactivateUIPanel()
+
+    void ActivateUIPanelForWrongAnswer()
     {
-        UIPanel.SetActive(false);
+        UIPanelForWrongObj.SetActive(true);
+    }
+
+    void ActivateUIPanelForRightAnswer()
+    {
+        UIPanelForRightObj.SetActive(true);
+    }
+    public void DeactivateUIPanelForWrongAnswer()
+    {
+        UIPanelForWrongObj.SetActive(false);
+        OnClosedPopUpWindow?.Invoke();
+    }
+
+    public void DeactivateUIPanelForRightAnswer()
+    {
+        UIPanelForRightObj.SetActive(false);
         OnClosedPopUpWindow?.Invoke();
     }
 
