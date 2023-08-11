@@ -23,13 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneWithCards_Group_4.unity
     guid: 9b134931c01d75c46bcd036a8e0b8003
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_1.unity
+    guid: a7fe40cce330e404eaa2967efa5d5ec4
   - enabled: 0
-    path: Assets/Scenes/SceneWithGroup_1.unity
-    guid: fe832929baa300b4bafa07ea2abc49fe
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/SceneWithGroup_2.unity
-    guid: 5093e3f2ac1906149a08845f4fe13214
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/SceneWithGroup_4.unity
-    guid: d495bee9f6d8f344b9a7173a705616f1
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -33,7 +33,7 @@ public class PuzzlePiece : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(Vector2.Distance(transform.position, slot.transform.position ) < 25)
+        if(Vector2.Distance(transform.position, slot.transform.position ) < 45)
         {
             transform.position = slot.transform.position;
             slot.Placed();
