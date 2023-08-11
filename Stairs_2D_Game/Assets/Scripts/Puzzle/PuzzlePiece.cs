@@ -4,15 +4,58 @@ using UnityEngine;
 
 public class PuzzlePiece : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] SpriteRenderer renderer;
+
+    bool isDragging, isPlaced;
+    Vector2 offset, originalPos;
+    PuzzleSlot slot;
+    private void Awake()
     {
-        
+        originalPos = transform.position;
+    }
+    private void Update()
+    {
+        if (!isDragging ||isPlaced)
+        {
+            return;
+        }
+
+       
+
+        transform.position = GetMousePos() - offset;
+
+    }
+    private void OnMouseDown()
+    {
+        isDragging = true;
+        offset = GetMousePos() - (Vector2)transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseUp()
     {
-        
+        if(Vector2.Distance(transform.position, slot.transform.position ) < 25)
+        {
+            transform.position = slot.transform.position;
+            slot.Placed();
+            isPlaced = true;
+        }
+        else
+        {
+            transform.position = originalPos;
+            isDragging = false;
+        }
+
+    }
+
+    Vector2 GetMousePos()
+    {
+        var mousePos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        return mousePos;
+    }
+
+    public void Init(PuzzleSlot slot)
+    {
+        renderer.sprite = slot.renderer.sprite;
+        this.slot = slot;
     }
 }

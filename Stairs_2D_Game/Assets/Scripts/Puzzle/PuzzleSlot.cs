@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PuzzleSlot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public SpriteRenderer renderer;
+   public void Placed()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
