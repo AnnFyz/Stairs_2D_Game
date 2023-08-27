@@ -2135,6 +2135,21 @@ MonoBehaviour:
   piecePref: {fileID: 6362585043040848697, guid: f55fdeb8cb6d147488658e5cf1c88b63, type: 3}
   slotParent: {fileID: 1218758414}
   pieceParent: {fileID: 1343710921}
+  OnCompletedPuzzle:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2046860589}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &1382423691
 Transform:
   m_ObjectHideFlags: 0

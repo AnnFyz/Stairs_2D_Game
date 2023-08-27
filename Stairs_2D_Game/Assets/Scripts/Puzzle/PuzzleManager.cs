@@ -3,16 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using UnityEngine.Events;
+
 
 public class PuzzleManager : MonoBehaviour
 {
+    public static PuzzleManager Instance { get; private set; }
     [SerializeField] List<PuzzleSlot> slotPref;
     [SerializeField] PuzzlePiece piecePref;
     [SerializeField] Transform slotParent, pieceParent;
-    Action OnCompletedPuzzle;
+    public UnityEvent OnCompletedPuzzle;
+    int amountOfPlacedPieces = 0;
+    int maxAmountOfPlacedPieces;
+
+    private void Awake()
+    {
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
+        maxAmountOfPlacedPieces = slotPref.Count;
+        if (OnCompletedPuzzle == null)
+        { OnCompletedPuzzle = new UnityEvent(); }
+
         Spawn();
     }
     void Spawn()
@@ -32,6 +54,23 @@ public class PuzzleManager : MonoBehaviour
             PuzzlePiece spawnedPiece = Instantiate(piecePref, randomPiecePos[i].position, Quaternion.identity);
 
             spawnedPiece.Init(spawnedSlot); // to assign the right sprite for the certain slot
+        }
+    }
+
+    public void AddPlacedPiece()
+    {
+        if(amountOfPlacedPieces < maxAmountOfPlacedPieces)
+        {
+            amountOfPlacedPieces++;
+        }
+        CheckOfAllPiecesArePlaced();
+    }
+
+    void CheckOfAllPiecesArePlaced()
+    {
+      if(amountOfPlacedPieces == maxAmountOfPlacedPieces)
+        {
+            OnCompletedPuzzle.Invoke();
         }
     }
 }
