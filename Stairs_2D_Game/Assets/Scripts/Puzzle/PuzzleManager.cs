@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 public class PuzzleManager : MonoBehaviour
 {
+    public List<Puzzle_SO> puzzles;
     public static PuzzleManager Instance { get; private set; }
     [SerializeField] List<PuzzleSlot> slotPref;
     [SerializeField] PuzzlePiece piecePref;
@@ -72,5 +73,10 @@ public class PuzzleManager : MonoBehaviour
         {
             OnCompletedPuzzle.Invoke();
         }
+    }
+
+    public void UpdatePuzzle()
+    {
+
     }
 }
