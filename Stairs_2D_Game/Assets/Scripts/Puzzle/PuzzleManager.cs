@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class PuzzleManager : MonoBehaviour
 {
     [SerializeField] List<PuzzleSlot> slotPref;
     [SerializeField] PuzzlePiece piecePref;
     [SerializeField] Transform slotParent, pieceParent;
+    Action OnCompletedPuzzle;
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class PuzzleManager : MonoBehaviour
         {
             piecePositions.Add(pieceParent.GetChild(i));
         }
-        var randomPiecePos = piecePositions.OrderBy(s => Random.value).Take(piecePositions.Count).ToList();
+        var randomPiecePos = piecePositions.OrderBy(s => UnityEngine.Random.value).Take(piecePositions.Count).ToList();
 
         for (int i = 0; i < slotPref.Count; i++)
         {

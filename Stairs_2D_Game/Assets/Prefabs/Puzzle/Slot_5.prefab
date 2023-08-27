@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: spriteForPiece
       value: 
-      objectReference: {fileID: 21300000, guid: 54d8f8f2d3101c143b8d1f8348ff73dc, type: 3}
+      objectReference: {fileID: 21300000, guid: 9f2b99a8cad0e004eaff7ab7c8241c0c, type: 3}
     - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Size.x
       value: 90
@@ -26,7 +26,19 @@ PrefabInstance:
     - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8fb65d6bd510a6b4585da42f32d698f6, type: 3}
+      objectReference: {fileID: 21300000, guid: 2ec7688d5524f9640854769b8e52e0c1, type: 3}
+    - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_SortingOrder
       value: 99
@@ -81,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2192429025495271483, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Name
-      value: Slot_1 1
+      value: Slot_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
