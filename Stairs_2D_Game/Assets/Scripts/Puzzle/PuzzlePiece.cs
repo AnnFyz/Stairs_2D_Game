@@ -55,7 +55,8 @@ public class PuzzlePiece : MonoBehaviour
 
     public void Init(PuzzleSlot slot)
     {
-        renderer.sprite = slot.renderer.sprite;
+        //renderer.sprite = slot.renderer.sprite;
+        renderer.sprite = slot.GetSpriteForPiece();
         this.slot = slot;
     }
 }

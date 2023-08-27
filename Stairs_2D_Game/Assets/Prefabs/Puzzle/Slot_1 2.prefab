@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: spriteForPiece
       value: 
-      objectReference: {fileID: 21300000, guid: 8fb65d6bd510a6b4585da42f32d698f6, type: 3}
+      objectReference: {fileID: 21300000, guid: 95b41a66bac778b4ca92bb10fc205416, type: 3}
     - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Size.x
       value: 90
@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2192429025495271483, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Name
-      value: Slot_1
+      value: Slot_1 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81d1ebcc57db381469824ec11d392571, type: 3}

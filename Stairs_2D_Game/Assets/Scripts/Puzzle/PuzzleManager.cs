@@ -15,13 +15,19 @@ public class PuzzleManager : MonoBehaviour
     }
     void Spawn()
     {
-        var randomSet = slotPref.OrderBy(s => Random.value).Take(3).ToList();
-
-        for (int i = 0; i < randomSet.Count; i++)
+        //var randomSet = slotPref.OrderBy(s => Random.value).Take(3).ToList();
+        List<Transform> piecePositions = new List<Transform>();
+        for (int i = 0; i < pieceParent.childCount; i++)
         {
-            PuzzleSlot spawnedSlot = Instantiate(randomSet[i], slotParent.GetChild(i).position, Quaternion.identity);
+            piecePositions.Add(pieceParent.GetChild(i));
+        }
+        var randomPiecePos = piecePositions.OrderBy(s => Random.value).Take(piecePositions.Count).ToList();
 
-            PuzzlePiece spawnedPiece = Instantiate(piecePref, pieceParent.GetChild(i).position, Quaternion.identity);
+        for (int i = 0; i < slotPref.Count; i++)
+        {
+            PuzzleSlot spawnedSlot = Instantiate(slotPref[i], slotParent.GetChild(i).position, Quaternion.identity);
+
+            PuzzlePiece spawnedPiece = Instantiate(piecePref, randomPiecePos[i].position, Quaternion.identity);
 
             spawnedPiece.Init(spawnedSlot); // to assign the right sprite for the certain slot
         }
