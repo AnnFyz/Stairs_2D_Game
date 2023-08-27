@@ -23,7 +23,7 @@ public class PuzzleManager : MonoBehaviour
 
             PuzzlePiece spawnedPiece = Instantiate(piecePref, pieceParent.GetChild(i).position, Quaternion.identity);
 
-            spawnedPiece.Init(spawnedSlot);
+            spawnedPiece.Init(spawnedSlot); // to assign the right sprite for the certain slot
         }
     }
 }
