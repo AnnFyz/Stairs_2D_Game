@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169e1788aa910b40876a86d21a6d03e, type: 3}
+  m_Name: Puzzle_1
+  m_EditorClassIdentifier: 
+  nameOfPuzzle: "Wei\xDFlichtinterferometrie"
+  slotPref:
+  - {fileID: 3076531760233085634, guid: 8982f1f1ba1b40046aa2d43d3d5233a3, type: 3}
+  - {fileID: 3076531760233085634, guid: bee491ce625caf646984301448b4ca95, type: 3}
+  - {fileID: 3076531760233085634, guid: 74b2158056ef5b54bacb301d936213fc, type: 3}
+  - {fileID: 3076531760233085634, guid: f585b998b273bf54881996d2ddd865bd, type: 3}
+  - {fileID: 3076531760233085634, guid: 412a6ba56825e474eaeed5887ae7ea34, type: 3}
+  startScheme: {fileID: 21300000, guid: f3c745c8cc9adf94b8373ac096e85766, type: 3}
+  fullScheme: {fileID: 21300000, guid: da22a106735f7914eb4a1bdb85fc26fd, type: 3}
