@@ -43,14 +43,20 @@ public class PuzzleManager : MonoBehaviour
 
     private void Start()
     {
-        maxAmountOfPlacedPieces = puzzles[puzzleIndex].slotPref.Count;
-        startSchemes[puzzleIndex].sprite = puzzles[puzzleIndex].startScheme;
-        fullSchemes[puzzleIndex].sprite = null;
+        SetupPuzzle();
 
         if (OnCompletedPuzzle == null)
         { OnCompletedPuzzle = new UnityEvent(); }
 
         Spawn(puzzleIndex);
+    }
+
+    void SetupPuzzle()
+    {
+        maxAmountOfPlacedPieces = puzzles[puzzleIndex].slotPref.Count;
+        startSchemes[puzzleIndex].sprite = puzzles[puzzleIndex].startScheme;
+        fullSchemes[puzzleIndex].sprite = null;
+
     }
     void Spawn(int puzzleIndex)
     {
@@ -83,7 +89,7 @@ public class PuzzleManager : MonoBehaviour
         }
         startSchemes[puzzleIndex].sprite = null;
         fullSchemes[puzzleIndex].sprite = null;
-
+        amountOfPlacedPieces = 0;
     }
     public void AddPlacedPiece()
     {
@@ -105,17 +111,18 @@ public class PuzzleManager : MonoBehaviour
 
     public void UpdatePuzzleGame()
     {
-        if(puzzleIndex < puzzles.Count)
+        DestroyOldPuzzle();
+        puzzleIndex++;
+        if (puzzleIndex < puzzles.Count)
         {
-            DestroyOldPuzzle();
-            puzzleIndex++;
             Debug.Log("UpdatePuzzle");
 
-            //maxAmountOfPlacedPieces = puzzles[puzzleIndex].slotPref.Count;
-            //Spawn(puzzleIndex);
+            SetupPuzzle();
+            Spawn(puzzleIndex);
         }
         else if(puzzleIndex == puzzles.Count)
         {
+           
             Debug.Log("All puzzles are solved");
         }
 
