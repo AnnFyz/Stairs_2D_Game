@@ -12,16 +12,16 @@ public class PuzzleManager : MonoBehaviour
     public static PuzzleManager Instance { get; private set; }
     //[SerializeField] List<PuzzleSlot> slotPref;
     [SerializeField] PuzzlePiece piecePref;
-    [SerializeField] Transform slotParent, pieceParent;
+    [SerializeField] List <Transform> slotParents, pieceParents;
     public UnityEvent OnCompletedPuzzle;
     int amountOfPlacedPieces = 0;
     int maxAmountOfPlacedPieces;
     int puzzleIndex = 0;
     [SerializeField] Transform currentPuzzle;
-    [SerializeField] Transform startSchemeObj;
-    [SerializeField] Transform fullSchemeObj;
-    [SerializeField] SpriteRenderer startScheme;
-    [SerializeField] SpriteRenderer fullScheme;
+    [SerializeField] List<Transform> startSchemeObjPos;
+    [SerializeField] List <Transform> fullSchemeObjPos;
+    [SerializeField] List <SpriteRenderer> startSchemes;
+    [SerializeField] List <SpriteRenderer> fullSchemes;
     private void Awake()
     {
 
@@ -33,15 +33,19 @@ public class PuzzleManager : MonoBehaviour
         {
             Instance = this;
         }
-        startScheme = startSchemeObj.GetComponent<SpriteRenderer>();
-        fullScheme = fullSchemeObj.GetComponent<SpriteRenderer>();
+        for (int i = 0; i < puzzles.Count; i++)
+        {
+            startSchemes[i] = startSchemeObjPos[i].GetComponent<SpriteRenderer>();
+            fullSchemes[i] = fullSchemeObjPos[i].GetComponent<SpriteRenderer>();
+        }
+        
      }       
 
     private void Start()
     {
         maxAmountOfPlacedPieces = puzzles[puzzleIndex].slotPref.Count;
-        startScheme.sprite = puzzles[puzzleIndex].startScheme;
-        fullScheme.sprite = null;
+        startSchemes[puzzleIndex].sprite = puzzles[puzzleIndex].startScheme;
+        fullSchemes[puzzleIndex].sprite = null;
 
         if (OnCompletedPuzzle == null)
         { OnCompletedPuzzle = new UnityEvent(); }
@@ -52,15 +56,15 @@ public class PuzzleManager : MonoBehaviour
     {
         //var randomSet = slotPref.OrderBy(s => Random.value).Take(3).ToList();
         List<Transform> piecePositions = new List<Transform>();
-        for (int i = 0; i < pieceParent.childCount; i++)
+        for (int i = 0; i < pieceParents[puzzleIndex].childCount; i++)
         {
-            piecePositions.Add(pieceParent.GetChild(i));
+            piecePositions.Add(pieceParents[puzzleIndex].GetChild(i));
         }
         var randomPiecePos = piecePositions.OrderBy(s => UnityEngine.Random.value).Take(piecePositions.Count).ToList();
 
         for (int i = 0; i < puzzles[puzzleIndex].slotPref.Count; i++)
         {
-            PuzzleSlot spawnedSlot = Instantiate(puzzles[puzzleIndex].slotPref[i], slotParent.GetChild(i).position, Quaternion.identity);
+            PuzzleSlot spawnedSlot = Instantiate(puzzles[puzzleIndex].slotPref[i], slotParents[puzzleIndex].GetChild(i).position, Quaternion.identity);
             spawnedSlot.transform.SetParent(currentPuzzle);
 
             PuzzlePiece spawnedPiece = Instantiate(piecePref, randomPiecePos[i].position, Quaternion.identity);
@@ -77,8 +81,8 @@ public class PuzzleManager : MonoBehaviour
             GameObject partOfPuzzle = currentPuzzle.GetChild(i).gameObject;
             Destroy(partOfPuzzle);
         }
-        startScheme.sprite = null;
-        fullScheme.sprite = null;
+        startSchemes[puzzleIndex].sprite = null;
+        fullSchemes[puzzleIndex].sprite = null;
 
     }
     public void AddPlacedPiece()
@@ -95,7 +99,7 @@ public class PuzzleManager : MonoBehaviour
       if(amountOfPlacedPieces == maxAmountOfPlacedPieces)
         {
             OnCompletedPuzzle.Invoke();
-            fullScheme.sprite = puzzles[puzzleIndex].fullScheme;
+            fullSchemes[puzzleIndex].sprite = puzzles[puzzleIndex].fullScheme;
         }
     }
 
