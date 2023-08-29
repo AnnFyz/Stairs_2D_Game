@@ -21,5 +21,5 @@ MonoBehaviour:
     von 0,2 mm einh\xFCllen und scharfe Ecken an den \xDCberg\xE4ngen aufweisen "
   - "Fl\xE4che zwischen zusammengesetzten Profillinien, die Kreise mit einem Durchmesser
     von 0,2 mm einh\xFCllen und runde Ecken an den \xDCberg\xE4ngen aufweisen  "
-  IndexOfRightAnswer: 0
+  IndexOfRightAnswer: 1
   sprite: {fileID: 21300000, guid: 6a3642d58e4764e44a73eac39cab506c, type: 3}
