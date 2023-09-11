@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169e1788aa910b40876a86d21a6d03e, type: 3}
+  m_Name: Puzzle_3
+  m_EditorClassIdentifier: 
+  nameOfPuzzle: Prinzip
+  slotPref:
+  - {fileID: 3076531760233085634, guid: c52be691a49cae240aa384a354a767ba, type: 3}
+  - {fileID: 3076531760233085634, guid: c90d069db33c70847a3bcf33c329bf03, type: 3}
+  - {fileID: 3076531760233085634, guid: 2e8c1f05fdc92d64fb93080df5c2c45c, type: 3}
+  - {fileID: 3076531760233085634, guid: 8dd276b4d5bd6384a82c711bcc72bf82, type: 3}
+  - {fileID: 3076531760233085634, guid: f544d65f24a14aa498ac31275de9340e, type: 3}
+  startScheme: {fileID: 21300000, guid: 5755397f872fafe4eab5a1b558d1f187, type: 3}
+  fullScheme: {fileID: 21300000, guid: a8192ed8781cb14498dcc24cbe13ae29, type: 3}

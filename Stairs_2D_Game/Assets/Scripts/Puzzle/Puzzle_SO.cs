@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "Puzzle_")]
 public class Puzzle_SO : ScriptableObject
 {
     public string nameOfPuzzle;
