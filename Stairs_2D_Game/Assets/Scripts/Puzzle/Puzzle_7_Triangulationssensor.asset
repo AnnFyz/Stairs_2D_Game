@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169e1788aa910b40876a86d21a6d03e, type: 3}
+  m_Name: Puzzle_7_Triangulationssensor
+  m_EditorClassIdentifier: 
+  nameOfPuzzle: 'Streulichtsensor '
+  slotPref:
+  - {fileID: 3076531760233085634, guid: 005fdcf16f0ff0947a4b0f825c0a0676, type: 3}
+  - {fileID: 3076531760233085634, guid: 20160a1192f9d554697468d4bf6f192b, type: 3}
+  - {fileID: 3076531760233085634, guid: 8db77c76dfcddaf44a002af581fb6682, type: 3}
+  startScheme: {fileID: 21300000, guid: 40714af6d059caf4386de251b0667d17, type: 3}
+  fullScheme: {fileID: 21300000, guid: e385840e801851649b8baa87bd5ccee7, type: 3}
