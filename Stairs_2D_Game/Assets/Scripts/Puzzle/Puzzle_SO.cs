@@ -9,4 +9,5 @@ public class Puzzle_SO : ScriptableObject
     public List<PuzzleSlot> slotPref;
     public Sprite startScheme;
     public Sprite fullScheme;
+    public string URL;
 }

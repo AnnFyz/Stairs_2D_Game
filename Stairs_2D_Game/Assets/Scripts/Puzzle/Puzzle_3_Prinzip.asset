@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7169e1788aa910b40876a86d21a6d03e, type: 3}
   m_Name: Puzzle_3_Prinzip
   m_EditorClassIdentifier: 
-  nameOfPuzzle: Prinzip
+  nameOfPuzzle: Fokusvariation
   slotPref:
   - {fileID: 3076531760233085634, guid: c52be691a49cae240aa384a354a767ba, type: 3}
   - {fileID: 3076531760233085634, guid: c90d069db33c70847a3bcf33c329bf03, type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 3076531760233085634, guid: f544d65f24a14aa498ac31275de9340e, type: 3}
   startScheme: {fileID: 21300000, guid: 5755397f872fafe4eab5a1b558d1f187, type: 3}
   fullScheme: {fileID: 21300000, guid: a8192ed8781cb14498dcc24cbe13ae29, type: 3}
+  URL: Fokusvariation

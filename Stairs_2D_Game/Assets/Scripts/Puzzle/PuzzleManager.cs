@@ -128,4 +128,9 @@ public class PuzzleManager : MonoBehaviour
 
 
     }
+
+    public Puzzle_SO GetCurrentPuzzleSO()
+    {
+        return puzzles[puzzleIndex];
+    }
 }
