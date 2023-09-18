@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class PuzzlePiece : MonoBehaviour
 {
     [SerializeField] SpriteRenderer renderer;
     [SerializeField] string nameOfPiece;
+    [SerializeField] TextMeshProUGUI nameOfPieceUI;
     bool isDragging, isPlaced;
     Vector2 offset, originalPos;
     PuzzleSlot slot;
@@ -38,6 +41,7 @@ public class PuzzlePiece : MonoBehaviour
             transform.position = slot.transform.position;
             slot.Placed();
             isPlaced = true;
+            nameOfPieceUI.text = null;
         }
         else
         {
@@ -57,7 +61,8 @@ public class PuzzlePiece : MonoBehaviour
     {
         
         renderer.sprite = slot.GetSpriteForPiece();
-        nameOfPiece = slot.GetNameForPiece(); 
+        nameOfPiece = slot.GetNameForPiece();
+        nameOfPieceUI.text = nameOfPiece;
         this.slot = slot;
     }
 }
