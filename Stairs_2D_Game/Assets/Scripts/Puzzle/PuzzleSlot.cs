@@ -6,11 +6,17 @@ public class PuzzleSlot : MonoBehaviour
 {
     public SpriteRenderer renderer;
     [SerializeField] Sprite spriteForPiece;
+    [SerializeField] string nameForPiece;
     bool wasPlaced = false;
 
     public Sprite GetSpriteForPiece()
     {
         return spriteForPiece;
+    }
+
+    public string GetNameForPiece()
+    {
+        return nameForPiece;
     }
    public void Placed()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PuzzlePiece : MonoBehaviour
 {
     [SerializeField] SpriteRenderer renderer;
-
+    [SerializeField] string nameOfPiece;
     bool isDragging, isPlaced;
     Vector2 offset, originalPos;
     PuzzleSlot slot;
@@ -55,8 +55,9 @@ public class PuzzlePiece : MonoBehaviour
 
     public void Init(PuzzleSlot slot)
     {
-        //renderer.sprite = slot.renderer.sprite;
+        
         renderer.sprite = slot.GetSpriteForPiece();
+        nameOfPiece = slot.GetNameForPiece(); 
         this.slot = slot;
     }
 }
