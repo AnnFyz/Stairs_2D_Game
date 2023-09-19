@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 3076531760233085634, guid: 2e8c1f05fdc92d64fb93080df5c2c45c, type: 3}
   - {fileID: 3076531760233085634, guid: 8dd276b4d5bd6384a82c711bcc72bf82, type: 3}
   - {fileID: 3076531760233085634, guid: f544d65f24a14aa498ac31275de9340e, type: 3}
-  startScheme: {fileID: 21300000, guid: 5755397f872fafe4eab5a1b558d1f187, type: 3}
-  fullScheme: {fileID: 21300000, guid: a8192ed8781cb14498dcc24cbe13ae29, type: 3}
+  startScheme: {fileID: 21300000, guid: c5d1e6bc95823d24182c1ad3dfe27bed, type: 3}
+  fullScheme: {fileID: 21300000, guid: 9702b650747b0ce46b19ba5e9c36ba54, type: 3}
   URL: Fokusvariation

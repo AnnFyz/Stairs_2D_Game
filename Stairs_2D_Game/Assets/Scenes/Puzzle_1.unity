@@ -6114,33 +6114,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzles:
+  - {fileID: 11400000, guid: 78c7fe3e22ced0949a7db32c145a97f8, type: 2}
+  - {fileID: 11400000, guid: e9d09bd3deefabe49837f12d56e9e3b4, type: 2}
+  - {fileID: 11400000, guid: 3b66b9756e1804542afd66aa01689056, type: 2}
   - {fileID: 11400000, guid: 56651e35849741844a3bfcf3585cb91a, type: 2}
   - {fileID: 11400000, guid: 0692a229d33bae14880a78aa6f2e63b8, type: 2}
-  - {fileID: 11400000, guid: 78c7fe3e22ced0949a7db32c145a97f8, type: 2}
   - {fileID: 11400000, guid: 74cd5def303687e48b26a2060bc9dd0a, type: 2}
   - {fileID: 11400000, guid: 9ee07226469f5bd49a6cca94c0afd90f, type: 2}
   - {fileID: 11400000, guid: ce1559af7d55eef40a7e267debead30b, type: 2}
-  - {fileID: 11400000, guid: e9d09bd3deefabe49837f12d56e9e3b4, type: 2}
-  - {fileID: 11400000, guid: 3b66b9756e1804542afd66aa01689056, type: 2}
   piecePref: {fileID: 6362585043040848697, guid: f55fdeb8cb6d147488658e5cf1c88b63, type: 3}
   slotParents:
+  - {fileID: 1397427076}
+  - {fileID: 822472153}
+  - {fileID: 320046243}
   - {fileID: 1218758414}
   - {fileID: 759855600}
-  - {fileID: 1397427076}
   - {fileID: 1804607985}
   - {fileID: 15080099}
   - {fileID: 1073734747}
-  - {fileID: 822472153}
-  - {fileID: 320046243}
   pieceParents:
+  - {fileID: 1957916268}
+  - {fileID: 1862548114}
+  - {fileID: 723401508}
   - {fileID: 1343710921}
   - {fileID: 1075827781}
-  - {fileID: 1957916268}
   - {fileID: 534763145}
   - {fileID: 222697417}
   - {fileID: 1614299004}
-  - {fileID: 1862548114}
-  - {fileID: 723401508}
   OnCompletedPuzzle:
     m_PersistentCalls:
       m_Calls:
@@ -6170,23 +6170,23 @@ MonoBehaviour:
         m_CallState: 2
   currentPuzzle: {fileID: 1351650452}
   startSchemeObjPos:
+  - {fileID: 1221195814}
+  - {fileID: 835542454}
+  - {fileID: 243841499}
   - {fileID: 1928517355}
   - {fileID: 284566442}
-  - {fileID: 1221195814}
   - {fileID: 240020933}
   - {fileID: 1379856329}
   - {fileID: 682958379}
-  - {fileID: 835542454}
-  - {fileID: 243841499}
   fullSchemeObjPos:
+  - {fileID: 968856207}
+  - {fileID: 1745041572}
+  - {fileID: 2140106930}
   - {fileID: 2046860591}
   - {fileID: 424536834}
-  - {fileID: 968856207}
   - {fileID: 2008444296}
   - {fileID: 1534754519}
   - {fileID: 106856083}
-  - {fileID: 1745041572}
-  - {fileID: 2140106930}
   startSchemes:
   - {fileID: 0}
   - {fileID: 0}

@@ -20,6 +20,6 @@ MonoBehaviour:
   - {fileID: 3076531760233085634, guid: b08c29dbbcd3d194a9a23ba5d164dbcf, type: 3}
   - {fileID: 3076531760233085634, guid: c7ffb04c94ca1354e9f9b2d0c2aa8ccb, type: 3}
   - {fileID: 3076531760233085634, guid: ec2ff4f6c54bfef45b3755f4421a3b7e, type: 3}
-  startScheme: {fileID: 21300000, guid: feb3edf8e6600a1438d3ae1b4c0382c4, type: 3}
-  fullScheme: {fileID: 21300000, guid: 415734445031bf94486341905ee1c2e6, type: 3}
+  startScheme: {fileID: 21300000, guid: 5d1a1e5f8f66b4849a64850f0b7cdde4, type: 3}
+  fullScheme: {fileID: 21300000, guid: b6ca3d86a05e068418babb5be33efb65, type: 3}
   URL: https://mediathek.htw-berlin.de/album/373/getMedium/default/3994fbb95352aa2ddf2c5288d823d3e8.mp4

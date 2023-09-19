@@ -12,9 +12,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3076531760233085635}
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
+      propertyPath: nameForPiece
+      value: Detektor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: spriteForPiece
       value: 
-      objectReference: {fileID: 21300000, guid: 7d3a905a4f48df14ab02ab5a45d6fd33, type: 3}
+      objectReference: {fileID: 21300000, guid: 231cb7554a6562b4c82252c2a021661c, type: 3}
     - target: {fileID: 2192429025495271429, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: m_Size.x
       value: 90
