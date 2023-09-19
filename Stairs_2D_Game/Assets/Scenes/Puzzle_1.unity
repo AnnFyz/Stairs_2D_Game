@@ -893,8 +893,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6097,7 +6097,7 @@ GameObject:
   m_Layer: 0
   m_Name: PuzzleManager
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6114,6 +6114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzles:
+  - {fileID: 11400000, guid: 56651e35849741844a3bfcf3585cb91a, type: 2}
   - {fileID: 11400000, guid: 0692a229d33bae14880a78aa6f2e63b8, type: 2}
   - {fileID: 11400000, guid: 78c7fe3e22ced0949a7db32c145a97f8, type: 2}
   - {fileID: 11400000, guid: 74cd5def303687e48b26a2060bc9dd0a, type: 2}
@@ -6121,9 +6122,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce1559af7d55eef40a7e267debead30b, type: 2}
   - {fileID: 11400000, guid: e9d09bd3deefabe49837f12d56e9e3b4, type: 2}
   - {fileID: 11400000, guid: 3b66b9756e1804542afd66aa01689056, type: 2}
-  - {fileID: 11400000, guid: 56651e35849741844a3bfcf3585cb91a, type: 2}
   piecePref: {fileID: 6362585043040848697, guid: f55fdeb8cb6d147488658e5cf1c88b63, type: 3}
   slotParents:
+  - {fileID: 1218758414}
   - {fileID: 759855600}
   - {fileID: 1397427076}
   - {fileID: 1804607985}
@@ -6131,8 +6132,8 @@ MonoBehaviour:
   - {fileID: 1073734747}
   - {fileID: 822472153}
   - {fileID: 320046243}
-  - {fileID: 1218758414}
   pieceParents:
+  - {fileID: 1343710921}
   - {fileID: 1075827781}
   - {fileID: 1957916268}
   - {fileID: 534763145}
@@ -6140,7 +6141,6 @@ MonoBehaviour:
   - {fileID: 1614299004}
   - {fileID: 1862548114}
   - {fileID: 723401508}
-  - {fileID: 1343710921}
   OnCompletedPuzzle:
     m_PersistentCalls:
       m_Calls:
@@ -6170,6 +6170,7 @@ MonoBehaviour:
         m_CallState: 2
   currentPuzzle: {fileID: 1351650452}
   startSchemeObjPos:
+  - {fileID: 1928517355}
   - {fileID: 284566442}
   - {fileID: 1221195814}
   - {fileID: 240020933}
@@ -6177,8 +6178,8 @@ MonoBehaviour:
   - {fileID: 682958379}
   - {fileID: 835542454}
   - {fileID: 243841499}
-  - {fileID: 1928517355}
   fullSchemeObjPos:
+  - {fileID: 2046860591}
   - {fileID: 424536834}
   - {fileID: 968856207}
   - {fileID: 2008444296}
@@ -6186,7 +6187,6 @@ MonoBehaviour:
   - {fileID: 106856083}
   - {fileID: 1745041572}
   - {fileID: 2140106930}
-  - {fileID: 2046860591}
   startSchemes:
   - {fileID: 0}
   - {fileID: 0}

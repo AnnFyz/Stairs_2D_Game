@@ -19,6 +19,6 @@ MonoBehaviour:
   - {fileID: 3076531760233085634, guid: 74b2158056ef5b54bacb301d936213fc, type: 3}
   - {fileID: 3076531760233085634, guid: f585b998b273bf54881996d2ddd865bd, type: 3}
   - {fileID: 3076531760233085634, guid: 412a6ba56825e474eaeed5887ae7ea34, type: 3}
-  startScheme: {fileID: 21300000, guid: f3c745c8cc9adf94b8373ac096e85766, type: 3}
-  fullScheme: {fileID: 21300000, guid: da22a106735f7914eb4a1bdb85fc26fd, type: 3}
+  startScheme: {fileID: 21300000, guid: a1d74a776f364c743a0211d1ebd31bd8, type: 3}
+  fullScheme: {fileID: 21300000, guid: b9210f6eb6025ed48b66020cf57aa350, type: 3}
   URL: https://mediathek.htw-berlin.de/album/373/getMedium/default/7cb1da548be0ce5d28b691db60eb8c87.mp4
