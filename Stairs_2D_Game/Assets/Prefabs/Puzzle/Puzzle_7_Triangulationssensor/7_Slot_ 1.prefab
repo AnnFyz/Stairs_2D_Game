@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 3076531760233085635}
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: nameForPiece
-      value: zjhllh
+      value: Fokussierlinse
       objectReference: {fileID: 0}
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: spriteForPiece

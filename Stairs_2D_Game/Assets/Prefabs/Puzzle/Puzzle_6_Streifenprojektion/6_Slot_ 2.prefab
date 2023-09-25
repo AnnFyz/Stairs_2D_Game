@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3076531760233085635}
     - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
+      propertyPath: nameForPiece
+      value: Lichtquelle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192429025495271428, guid: 81d1ebcc57db381469824ec11d392571, type: 3}
       propertyPath: spriteForPiece
       value: 
       objectReference: {fileID: 21300000, guid: 1ec3960cd42bc9448a08b1a9087a2f5b, type: 3}
