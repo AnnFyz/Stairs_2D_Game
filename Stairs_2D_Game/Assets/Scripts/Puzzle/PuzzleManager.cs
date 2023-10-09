@@ -14,6 +14,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] PuzzlePiece piecePref;
     [SerializeField] List <Transform> slotParents, pieceParents;
     public UnityEvent OnCompletedPuzzle;
+    public UnityEvent OnAllCompletedPuzzle;
     int amountOfPlacedPieces = 0;
     int maxAmountOfPlacedPieces;
     int puzzleIndex = 0;
@@ -47,6 +48,9 @@ public class PuzzleManager : MonoBehaviour
 
         if (OnCompletedPuzzle == null)
         { OnCompletedPuzzle = new UnityEvent(); }
+
+        if (OnAllCompletedPuzzle == null)
+        { OnAllCompletedPuzzle = new UnityEvent(); }
 
         Spawn(puzzleIndex);
     }
@@ -122,7 +126,7 @@ public class PuzzleManager : MonoBehaviour
         }
         else if(puzzleIndex == puzzles.Count)
         {
-           
+            OnAllCompletedPuzzle.Invoke();
             Debug.Log("All puzzles are solved");
         }
 
