@@ -34,10 +34,10 @@ public class CardManager : MonoBehaviour
             Instance = this;
         }
     }
-    private void Update()
-    {
-        currentselectedCard = selectedCard;
-    }
+    //private void Update()
+    //{
+    //    currentselectedCard = selectedCard;
+    //}
     void OnEnable()
     {
         UI_Assignment_WithInput.Instance.OnAnsweredQuestion += SelectNextCard; 

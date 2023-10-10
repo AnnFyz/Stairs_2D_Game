@@ -7,9 +7,9 @@ public class CardController : MonoBehaviour
 {
     public Assignment assignmentType;
     public DiffAssignments assingnment;
-    public GameObject UIPanel;
+    //public GameObject UIPanel;
     public bool isCardActivated = false;
-    public bool isCardDeactivared = false;
+    //public bool isCardDeactivared = false;
     public int cardGroupIndex;
 
 

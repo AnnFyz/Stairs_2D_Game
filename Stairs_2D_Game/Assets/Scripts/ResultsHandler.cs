@@ -64,7 +64,6 @@ public class ResultsHandler : MonoBehaviour
             Transform textObj = Instantiate(group_TextPref);
             textObj.transform.SetParent(textObject.transform);
             textObj.transform.localScale = scaleOfTextObj;
-            Debug.Log("scale: " + textObj.transform.localScale);
         }
     }
     public void AddWrongAnswer(int index)
