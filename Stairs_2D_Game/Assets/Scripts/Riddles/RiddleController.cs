@@ -33,4 +33,27 @@ public class RiddleController : MonoBehaviour
 
         }
     }
+    public void ActivateRiddle()
+    {
+        if (this == RiddleManager.selectedRiddle)
+        {
+            gameObject.GetComponent<Button>().interactable = true;
+            isRiddleActivated = true;
+        }
+    }
+
+    public void DeactivateRiddle()
+    {
+
+        gameObject.GetComponent<Button>().interactable = false;
+        isRiddleActivated = false;
+
+    }
+
+    public void DestroyRiddle()
+    {
+
+        Destroy(gameObject);
+
+    }
 }

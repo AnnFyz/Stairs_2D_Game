@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 public class RiddleResultsHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static RiddleResultsHandler Instance { get; private set; }
+    [SerializeField] GameObject UIPanel;
+    private void Awake()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 }

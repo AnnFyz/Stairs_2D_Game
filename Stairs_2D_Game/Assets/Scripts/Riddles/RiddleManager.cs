@@ -9,11 +9,15 @@ using System;
 public class RiddleManager : MonoBehaviour
 {
     public static RiddleManager Instance { get; private set; }
+    [SerializeField] Transform riddlePrefab;
     [SerializeField] public Riddle_SO[] riddles;
-    [SerializeField] Riddle_SO[] reorginizedRiddles;
+    [SerializeField] RiddleController[] createdRiddles;
+    [SerializeField] RiddleController[] reorginizedRiddles;
     public static RiddleController selectedRiddle;
     public RiddleController currentSelectedRiddle;
     public Action OnFinishedGame;
+    [SerializeField] int indexOfSelectedRiddle = 0;
+    [SerializeField] bool wasOpenedAllRiddles = false;
     private void Awake()
     {
 
@@ -26,9 +30,71 @@ public class RiddleManager : MonoBehaviour
             Instance = this;
         }
     }
+    void OnEnable()
+    {
+        UI_Assignment_Riddle.Instance.OnAnsweredQuestion += SelectNextRiddle;
+
+    }
+
+    private void Start()
+    {
+
+        HandleStart();
+    }
+
+    public void HandleStart()
+    {
+
+
+    }
 
     private void Update()
     {
         currentSelectedRiddle = selectedRiddle;
+    }
+
+    void SetupRiddles()
+    {
+
+    }
+    void RaiseOnFinishedGameEvent()
+    {
+        OnFinishedGame?.Invoke();
+    }
+
+    void SelectNextRiddle()
+    {
+        indexOfSelectedRiddle++;
+
+        if (indexOfSelectedRiddle < reorginizedRiddles.Length)
+        {
+            selectedRiddle.DeactivateRiddle();
+            selectedRiddle = reorginizedRiddles[indexOfSelectedRiddle];
+            selectedRiddle.ActivateRiddle();
+        }
+
+        else if (indexOfSelectedRiddle == reorginizedRiddles.Length)
+        {
+            selectedRiddle.DeactivateRiddle();
+            wasOpenedAllRiddles = true;
+            RaiseOnFinishedGameEvent();
+
+        }
+
+    }
+    void AddAllCreatedCards()
+    {
+        createdRiddles = GetComponentsInChildren<RiddleController>();
+    }
+
+    public void ReorganizeCreatedRiddles()
+    {
+        System.Random rnd = new System.Random();
+        reorginizedRiddles = createdRiddles.OrderBy(x => rnd.Next()).ToArray();
+        for (int i = 0; i < reorginizedRiddles.Length; i++)
+        {
+            reorginizedRiddles[i].transform.SetSiblingIndex(i);
+
+        }
     }
 }
