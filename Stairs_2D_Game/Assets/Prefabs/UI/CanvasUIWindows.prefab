@@ -854,7 +854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Review of unsolved Assignments:'
+  m_text: 'Review of solved Assignments:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
   m_sharedMaterial: {fileID: 5433368627161219528, guid: 7b39ff86c18901e4cac716a34b9264bc, type: 2}
@@ -2691,27 +2691,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6569982343161552803, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343161552803, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343161552803, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015258789
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343537451847, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343537451847, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343537451847, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -108.33333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343954251588, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_Pivot.x
@@ -2819,19 +2819,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6569982343954251595, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6569982344106092405, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982344106092405, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6569982344106092405, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 108.33336
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6646969736371465006, guid: e1ad89b01e35a9d46a5919a9d05eda9e, type: 3}
       propertyPath: m_LocalScale.x

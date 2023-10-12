@@ -70,8 +70,8 @@ public class UI_Assignment_Riddle : MonoBehaviour
 
     public void RaiseOnAnsweredQuestionEvent()
     {
-        //OnAnsweredQuestion?.Invoke();
-        OnRightAnswer?.Invoke();
+        OnAnsweredQuestion?.Invoke();
+        //OnRightAnswer?.Invoke();
     }
 
     public void RaiseOnWrongAnswerEvent()

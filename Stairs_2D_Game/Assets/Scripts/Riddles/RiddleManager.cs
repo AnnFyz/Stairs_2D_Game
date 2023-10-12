@@ -32,12 +32,13 @@ public class RiddleManager : MonoBehaviour
     }
     void OnEnable()
     {
-        //UI_Assignment_Riddle.Instance.OnAnsweredQuestion += SelectNextRiddle;
+        
 
     }
 
     private void Start()
     {
+        UI_Assignment_Riddle.Instance.OnAnsweredQuestion += SelectNextRiddle;
         HandleStart();
     }
 
@@ -84,6 +85,7 @@ public class RiddleManager : MonoBehaviour
         {
             selectedRiddle.DeactivateRiddle();
             wasOpenedAllRiddles = true;
+            Debug.Log("Over");
             RaiseOnFinishedGameEvent();
 
         }

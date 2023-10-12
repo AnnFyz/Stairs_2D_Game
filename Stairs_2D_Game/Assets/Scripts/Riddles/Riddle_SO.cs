@@ -12,5 +12,6 @@ public class Riddle_SO : ScriptableObject
     public string option_2;
     public string option_3;
     public int indexOfTheRightOption;
+    public int indexOfTheSecondRightOption;
     public Sprite sprite;
 }

@@ -2918,6 +2918,7 @@ MonoBehaviour:
   riddles:
   - {fileID: 11400000, guid: eb90a1b0cb61de24595a7963a17e9b93, type: 2}
   - {fileID: 11400000, guid: 545fdb645c2d3784f9d2bd7697b1ca64, type: 2}
+  - {fileID: 11400000, guid: 80adc5b9432c2ff49b0c7b43d0677359, type: 2}
   createdRiddles: []
   reorginizedRiddles: []
   currentSelectedRiddle: {fileID: 0}
@@ -4171,9 +4172,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForAssignmentsWithAnswers, Assembly-CSharp
-        m_MethodName: CheckTheCard
+      - m_Target: {fileID: 2458666556412126415}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4183,8 +4184,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI_Assignment_With_Answers, Assembly-CSharp
+      - m_Target: {fileID: 8355105461249270594}
+        m_TargetAssemblyTypeName: UI_Assignment_Riddle, Assembly-CSharp
         m_MethodName: SelectAnswer
         m_Mode: 1
         m_Arguments:
@@ -4470,7 +4471,7 @@ RectTransform:
   m_GameObject: {fileID: 2458666555251521300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4090843041318254207}
@@ -4530,18 +4531,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2910820571736935641}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
@@ -4584,6 +4573,7 @@ GameObject:
   - component: {fileID: 2458666556412126414}
   - component: {fileID: 2458666556412126413}
   - component: {fileID: 2220827603348691298}
+  - component: {fileID: 2458666556412126415}
   m_Layer: 5
   m_Name: Image_Card
   m_TagString: Untagged
@@ -4650,6 +4640,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2458666556412126411}
   m_CullTransparentMesh: 1
+--- !u!114 &2458666556412126415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2458666556412126411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4708748dd9e347c43a739a80715b1989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleIndex: -1
 --- !u!224 &2470853624358668610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6290,6 +6293,7 @@ GameObject:
   - component: {fileID: 6104931364928145189}
   - component: {fileID: 6104931364928145190}
   - component: {fileID: 7527226365578721929}
+  - component: {fileID: 7527226365578721930}
   m_Layer: 5
   m_Name: Image_Card
   m_TagString: Untagged
@@ -6365,7 +6369,7 @@ RectTransform:
   m_GameObject: {fileID: 6104931364988482773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5648211701146203582}
@@ -6443,18 +6447,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2910820571736935641}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
@@ -6541,18 +6533,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
-        m_MethodName: Click
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2910820571736935641}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
@@ -6584,7 +6564,7 @@ RectTransform:
   m_GameObject: {fileID: 6104931365895755007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5648211699838883220}
@@ -6630,6 +6610,7 @@ GameObject:
   - component: {fileID: 6104931365968602895}
   - component: {fileID: 6104931365968602892}
   - component: {fileID: 7527226366888647331}
+  - component: {fileID: 7527226366888647332}
   m_Layer: 5
   m_Name: Image_Card
   m_TagString: Untagged
@@ -7514,9 +7495,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForAssignmentsWithAnswers, Assembly-CSharp
-        m_MethodName: CheckTheCard
+      - m_Target: {fileID: 2458666556412126415}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7526,8 +7507,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI_Assignment_With_Answers, Assembly-CSharp
+      - m_Target: {fileID: 8355105461249270594}
+        m_TargetAssemblyTypeName: UI_Assignment_Riddle, Assembly-CSharp
         m_MethodName: SelectAnswer
         m_Mode: 1
         m_Arguments:
@@ -7538,6 +7519,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7527226365578721930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104931364928145184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4708748dd9e347c43a739a80715b1989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleIndex: -1
 --- !u!114 &7527226366888647331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7582,9 +7576,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AnswerButtonCheckerForAssignmentsWithAnswers, Assembly-CSharp
-        m_MethodName: CheckTheCard
+      - m_Target: {fileID: 2458666556412126415}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7594,8 +7588,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI_Assignment_With_Answers, Assembly-CSharp
+      - m_Target: {fileID: 8355105461249270594}
+        m_TargetAssemblyTypeName: UI_Assignment_Riddle, Assembly-CSharp
         m_MethodName: SelectAnswer
         m_Mode: 1
         m_Arguments:
@@ -7606,6 +7600,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7527226366888647332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6104931365968602890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4708748dd9e347c43a739a80715b1989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riddleIndex: -1
 --- !u!114 &7588194990665251964
 MonoBehaviour:
   m_ObjectHideFlags: 0

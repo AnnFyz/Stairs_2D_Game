@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac896feb544a8d743a1f8e7bc2c2af4b, type: 3}
   m_Name: Riddle 1
   m_EditorClassIdentifier: 
-  option_1: 
-  option_2: 
-  option_3: 
+  description: 354657687iurz5ter
+  option_1: 63
+  option_2: 547
+  option_3: 47
   indexOfTheRightOption: 0
   sprite: {fileID: 0}
