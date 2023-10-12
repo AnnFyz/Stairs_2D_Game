@@ -450,8 +450,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CardController, Assembly-CSharp
+      - m_Target: {fileID: -7559957513888419382}
+        m_TargetAssemblyTypeName: RiddleController, Assembly-CSharp
         m_MethodName: ActivateUIPanel
         m_Mode: 1
         m_Arguments:

@@ -32,19 +32,21 @@ public class RiddleManager : MonoBehaviour
     }
     void OnEnable()
     {
-        UI_Assignment_Riddle.Instance.OnAnsweredQuestion += SelectNextRiddle;
+        //UI_Assignment_Riddle.Instance.OnAnsweredQuestion += SelectNextRiddle;
 
     }
 
     private void Start()
     {
-
         HandleStart();
     }
 
     public void HandleStart()
     {
-
+        SetupRiddles();
+        AddAllCreatedCards();
+        ReorganizeCreatedRiddles();
+        selectedRiddle = reorginizedRiddles[0];
 
     }
 
@@ -55,7 +57,12 @@ public class RiddleManager : MonoBehaviour
 
     void SetupRiddles()
     {
+        for (int i = 0; i < riddles.Length; i++)
+        {
+            Transform riddle = Instantiate(riddlePrefab, transform);
+            riddle.GetComponent<RiddleController>().Setup(riddles[i]);
 
+        }
     }
     void RaiseOnFinishedGameEvent()
     {
@@ -97,4 +104,6 @@ public class RiddleManager : MonoBehaviour
 
         }
     }
+
+   
 }

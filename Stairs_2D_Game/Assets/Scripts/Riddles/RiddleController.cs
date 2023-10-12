@@ -30,7 +30,7 @@ public class RiddleController : MonoBehaviour
     {
         if (this == RiddleManager.selectedRiddle)
         {
-
+            UI_Assignment_Riddle.Instance.ActivateUIPanel(riddle.description, riddle.option_1, riddle.option_2, riddle.option_3, riddle.sprite);
         }
     }
     public void ActivateRiddle()

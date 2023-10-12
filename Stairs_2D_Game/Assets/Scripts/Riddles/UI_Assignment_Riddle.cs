@@ -49,6 +49,12 @@ public class UI_Assignment_Riddle : MonoBehaviour
         UIPanel.SetActive(false);
     }
 
+    public void SelectAnswer()
+    {
+        DeactivateUIPanel();
+        Debug.Log("DeactivateUIPanel");
+    }
+
     void SetupPanel(string description, string answer_1, string answer_2, string answer_3, Sprite sprite)
     {
         this.description.GetComponent<TextMeshProUGUI>().text = description;
@@ -74,5 +80,12 @@ public class UI_Assignment_Riddle : MonoBehaviour
         OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
         ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.cardGroupIndex);
         //ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.assignmentType);
+    }
+
+    public void ActivateUIPanel(string description, string answer_1, string answer_2, string answer_3, Sprite sprite)
+    {
+        UIPanel.SetActive(true);
+        SetupPanel(description, answer_1, answer_2, answer_3, sprite);
+
     }
 }

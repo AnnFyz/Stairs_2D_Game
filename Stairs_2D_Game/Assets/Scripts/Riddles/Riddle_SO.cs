@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Riddle_SO : ScriptableObject
 {
+    public string description;
     public string option_1;
     public string option_2;
     public string option_3;
