@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Riddle_1.unity
+    guid: 610b3fdac42f9eb4f82b1b322a9a8f92
   m_configObjects: {}
