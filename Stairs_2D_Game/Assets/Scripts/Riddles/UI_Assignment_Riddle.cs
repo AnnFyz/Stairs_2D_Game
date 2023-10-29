@@ -64,22 +64,48 @@ public class UI_Assignment_Riddle : MonoBehaviour
         this.sprite.GetComponent<Image>().sprite = sprite;
 
         this.answer_1.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(0);
+        Debug.Log("1 button's index: " + this.answer_1.GetComponent<AnswerButtonCheckerForRiddles>().GetRiddleIndex());
         this.answer_2.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(1);
         this.answer_3.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(2);
     }
 
-    public void RaiseOnAnsweredQuestionEvent()
+    public void RaiseOnOnRightAnswerEvent()
     {
-        OnAnsweredQuestion?.Invoke();
-        //OnRightAnswer?.Invoke();
+        OnRightAnswer?.Invoke();
     }
 
     public void RaiseOnWrongAnswerEvent()
     {
-        int index = CardManager.selectedCard.assingnment.assignmentWithAnswers.IndexOfRightAnswer;
-        OnWrongAnswer?.Invoke(CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index]);
-        ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.cardGroupIndex);
-        //ResultsHandler.Instance.AddWrongAnswer(CardManager.selectedCard.assignmentType);
+        int index = RiddleManager.selectedRiddle.riddle.indexOfTheRightOption;
+        int secondIndex = RiddleManager.selectedRiddle.riddle.indexOfTheSecondRightOption;
+        int thirdIndex = RiddleManager.selectedRiddle.riddle.indexOfTheThirdRightOption;
+        if (index != secondIndex)
+        {
+            if (index != secondIndex && index != thirdIndex)
+            {
+                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]} ");
+            }
+            else
+            {
+                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}");
+            }
+        }
+        else if(index != thirdIndex)
+        {
+            if (index != secondIndex && index != thirdIndex)
+            {
+                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]} ");
+            }
+            else
+            {
+                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]}");
+            }
+        }
+        else
+        {
+            OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}");
+        }
+
     }
 
     public void ActivateUIPanel(string description, string answer_1, string answer_2, string answer_3, Sprite sprite)

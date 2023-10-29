@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Riddle_ 1
   m_EditorClassIdentifier: 
   description: "Schraube f\xFCr Zahnimplantat "
-  option_1: Triangulationssensor
-  option_2: Konfokale Mikroskopie
-  option_3: "Wei\xDFlichtinterferometrie"
+  options:
+  - 345r
+  - restz
+  - rstrdztfuzjgkuhli
   indexOfTheRightOption: 1
   indexOfTheSecondRightOption: 1
+  indexOfTheThirdRightOption: 1
   sprite: {fileID: 21300000, guid: 35c09eeb3af2f0b42b8dd80c2c99e3f6, type: 3}

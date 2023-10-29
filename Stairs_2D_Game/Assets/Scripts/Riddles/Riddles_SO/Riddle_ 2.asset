@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Riddle_ 2
   m_EditorClassIdentifier: 
   description: "Lage\xFCberwachung in der Fertigung von Leiterplatten "
-  option_1: Triangulationssensor
-  option_2: Konfokale Mikroskopie
-  option_3: "Wei\xDFlichtinterferometrie"
+  options:
+  - .kkl
+  - dfghj
+  - hjll
   indexOfTheRightOption: 0
   indexOfTheSecondRightOption: 0
+  indexOfTheThirdRightOption: 0
   sprite: {fileID: 21300000, guid: 3c17361daec914e4284d0c3cb243ba5f, type: 3}

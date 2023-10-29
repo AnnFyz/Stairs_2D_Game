@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Riddle_ 3
   m_EditorClassIdentifier: 
   description: Mikrostrukturen auf Wafer-Ebene
-  option_1: Triangulationssensor
-  option_2: Konfokale Mikroskopie
-  option_3: "Wei\xDFlichtinterferometrie"
-  indexOfTheRightOption: 3
-  indexOfTheSecondRightOption: 3
+  options:
+  - WQERT
+  - FGHJ
+  - sdfgF
+  indexOfTheRightOption: 2
+  indexOfTheSecondRightOption: 2
+  indexOfTheThirdRightOption: 2
   sprite: {fileID: 21300000, guid: 3e095da72c96b6b4297693e589d1deda, type: 3}
