@@ -64,7 +64,6 @@ public class UI_Assignment_Riddle : MonoBehaviour
         this.sprite.GetComponent<Image>().sprite = sprite;
 
         this.answer_1.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(0);
-        Debug.Log("1 button's index: " + this.answer_1.GetComponent<AnswerButtonCheckerForRiddles>().GetRiddleIndex());
         this.answer_2.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(1);
         this.answer_3.GetComponent<AnswerButtonCheckerForRiddles>().SetRiddleIndex(2);
     }
@@ -112,6 +111,5 @@ public class UI_Assignment_Riddle : MonoBehaviour
     {
         UIPanel.SetActive(true);
         SetupPanel(description, answer_1, answer_2, answer_3, sprite);
-
     }
 }

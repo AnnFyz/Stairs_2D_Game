@@ -12,7 +12,13 @@ public class AnswerButtonCheckerForAssignmentsWithAnswers : MonoBehaviour
     {
         cardIndex = index;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("riddleIndex: " + cardIndex);
+        }
+    }
     public void CheckTheCard()
     {
 

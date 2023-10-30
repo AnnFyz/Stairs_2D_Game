@@ -6,24 +6,16 @@ using TMPro;
 
 public class AnswerButtonCheckerForRiddles : MonoBehaviour
 {
-    [SerializeField] int riddleIndex = 2;
-
+    [SerializeField] int riddleIndex = -1;
     public void SetRiddleIndex(int index)
     {
         riddleIndex = index;
     }
-
-    public int GetRiddleIndex()
-    {
-       return riddleIndex;
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("Riddle index: " + riddleIndex);
-
+            Debug.Log("riddleIndex: " + riddleIndex);
         }
     }
     public void CheckTheRiddle()
@@ -33,16 +25,16 @@ public class AnswerButtonCheckerForRiddles : MonoBehaviour
         int index = RiddleManager.selectedRiddle.riddle.indexOfTheRightOption;
         int secondIndex = RiddleManager.selectedRiddle.riddle.indexOfTheSecondRightOption;
         int thirdIndex = RiddleManager.selectedRiddle.riddle.indexOfTheThirdRightOption;
-        if (riddleIndex == index || riddleIndex == secondIndex || riddleIndex == thirdIndex)
+        if (riddleIndex == index) //|| currentRiddleIndex == secondIndex || currentRiddleIndex == thirdIndex)
         {
-            Debug.Log("riddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
+            Debug.Log("currentRiddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
             UI_Assignment_Riddle.Instance.RaiseOnOnRightAnswerEvent();
             //UI_Assignment_With_Answers.Instance.RaiseOnAnsweredQuestionEvent();
         }
         //else if (cardIndex != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
         else if (riddleIndex != index && riddleIndex != secondIndex && riddleIndex != thirdIndex)
         {
-            Debug.Log("Riddle index: " + riddleIndex);
+            Debug.Log("currentRiddleIndex: " + riddleIndex);
             Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexOfTheRightOption);
             UI_Assignment_Riddle.Instance.RaiseOnWrongAnswerEvent();
             //UI_Assignment_With_Answers.Instance.RaiseOnWrongAnswerEvent();

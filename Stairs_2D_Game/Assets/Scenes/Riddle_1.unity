@@ -1818,7 +1818,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 427.00378, y: 432, z: -10}
+  m_LocalPosition: {x: 426.9165, y: 432, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2673,7 +2673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1003382993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4004,9 +4004,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   riddlePrefab: {fileID: 6788987019479456951, guid: bb399ade8e528d541bd2b9280d40a688, type: 3}
   riddles:
-  - {fileID: 11400000, guid: 18615b42091e0e648b55f845be7de9f5, type: 2}
-  - {fileID: 11400000, guid: 1614bd09639078c438c53bd7f34b925c, type: 2}
-  - {fileID: 11400000, guid: 362f07cfba1063044b3546a04935eb48, type: 2}
+  - {fileID: 11400000, guid: 48341a99d2ddd524baf332725d01f902, type: 2}
+  - {fileID: 11400000, guid: b50e37cf16675c641ad7862b346da2ed, type: 2}
+  - {fileID: 11400000, guid: 1b5609cb25c667648986898f9fee65ad, type: 2}
+  - {fileID: 11400000, guid: b7fa48714476566409dee0bbe9b0ec0b, type: 2}
+  - {fileID: 11400000, guid: 415fa52f0243f1e43bdaaef38e39d386, type: 2}
+  - {fileID: 11400000, guid: fdf893dae4cdeec49a840b977f9d634d, type: 2}
+  - {fileID: 11400000, guid: b1075e7f85800b8448c3c1382375a9ba, type: 2}
+  - {fileID: 11400000, guid: 7093e02601d9bf647ad66f355b17547a, type: 2}
+  - {fileID: 11400000, guid: 4cbae21dc4578164dadba9aa7789a2a0, type: 2}
+  - {fileID: 11400000, guid: ca82467dbaf1da94a87c88ecc6507415, type: 2}
+  - {fileID: 11400000, guid: 7009bee1434370c45826dbdccb905652, type: 2}
+  - {fileID: 11400000, guid: 0f8728c0e50191546b62e39aa683d46c, type: 2}
+  - {fileID: 11400000, guid: 36abf126947547e498f435ff33f4e71a, type: 2}
+  - {fileID: 11400000, guid: 387e76c907ce94549a5fe276fde748c8, type: 2}
+  - {fileID: 11400000, guid: 75bb487923868f943ab5526dd2818bb3, type: 2}
+  - {fileID: 11400000, guid: f985dcbffe167c342a7d50f99cbeaf0a, type: 2}
+  - {fileID: 11400000, guid: 34616a3afc9a42f419658eeb83c459e0, type: 2}
+  - {fileID: 11400000, guid: 9c34a8671519d5540bad9b0fd5a89ab1, type: 2}
+  - {fileID: 11400000, guid: 0245ec2ff15fbe04d888d4c40b70501d, type: 2}
+  - {fileID: 11400000, guid: 9f42a7031a231c5429ef11b56bdbd7a1, type: 2}
+  - {fileID: 11400000, guid: 591f2b21cc493264bbb9661cf30925ab, type: 2}
   createdRiddles: []
   reorginizedRiddles: []
   currentSelectedRiddle: {fileID: 0}
@@ -4405,8 +4423,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PopUpWindow, Assembly-CSharp
+      - m_Target: {fileID: 1489402313}
+        m_TargetAssemblyTypeName: Riddles_PopUpWindow, Assembly-CSharp
         m_MethodName: DeactivateUIPanelForRightAnswer
         m_Mode: 1
         m_Arguments:
@@ -5621,6 +5639,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: SetRiddleIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2910820571736935641}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
         m_Mode: 1
         m_Arguments:
@@ -6677,6 +6707,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6828210668674912026}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: SetRiddleIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
@@ -6761,6 +6803,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6828210667434716980}
+        m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
+        m_MethodName: SetRiddleIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2910820571736935641}
         m_TargetAssemblyTypeName: AnswerButtonCheckerForRiddles, Assembly-CSharp
         m_MethodName: CheckTheRiddle
@@ -7069,7 +7123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708748dd9e347c43a739a80715b1989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  riddleIndex: 2
+  riddleIndex: 796
 --- !u!95 &6828210668674912025
 Animator:
   serializedVersion: 5
