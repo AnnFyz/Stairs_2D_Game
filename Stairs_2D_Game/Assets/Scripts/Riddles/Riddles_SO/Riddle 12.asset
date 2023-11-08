@@ -17,7 +17,5 @@ MonoBehaviour:
   - Triangulationssensor
   - Streifenlichtprojektion
   - Lichtschnittverfahren
-  indexOfTheRightOption: 0
-  indexOfTheSecondRightOption: 0
-  indexOfTheThirdRightOption: 0
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 1b8683521ced6744f888d21a5bd02ab7, type: 3}

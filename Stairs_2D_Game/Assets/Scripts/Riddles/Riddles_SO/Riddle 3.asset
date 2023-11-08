@@ -17,7 +17,5 @@ MonoBehaviour:
   - Lasertracer
   - Streulichtsensor
   - Fokusvariation
-  indexOfTheRightOption: 2
-  indexOfTheSecondRightOption: 2
-  indexOfTheThirdRightOption: 2
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 92dcaa0ccd348424e85721eb7fe9f9df, type: 3}

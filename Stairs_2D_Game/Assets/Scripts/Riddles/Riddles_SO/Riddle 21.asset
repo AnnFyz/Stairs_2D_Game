@@ -17,7 +17,5 @@ MonoBehaviour:
   - Lasertracer
   - Triangulationssensor
   - Streulichtsensor
-  indexOfTheRightOption: 0
-  indexOfTheSecondRightOption: 0
-  indexOfTheThirdRightOption: 0
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 5fa86379c3299b742bd6705e4b59624e, type: 3}

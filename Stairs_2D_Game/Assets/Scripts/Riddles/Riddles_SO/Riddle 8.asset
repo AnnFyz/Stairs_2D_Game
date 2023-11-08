@@ -17,7 +17,5 @@ MonoBehaviour:
   - Lasertracer
   - "Wei\xDFlichtinterferometrie"
   - Konfokale Mikroskopie
-  indexOfTheRightOption: 1
-  indexOfTheSecondRightOption: 2
-  indexOfTheThirdRightOption: 2
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 8c94d78bf3638a54491adb4ded56c6ea, type: 3}

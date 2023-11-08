@@ -6,7 +6,9 @@ using TMPro;
 
 public class AnswerButtonCheckerForRiddles : MonoBehaviour
 {
-    [SerializeField] int riddleIndex = -1;
+    [SerializeField] int riddleIndex;
+    int secondIndex;
+    int thirdIndex;
     public void SetRiddleIndex(int index)
     {
         riddleIndex = index;
@@ -15,6 +17,7 @@ public class AnswerButtonCheckerForRiddles : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            SetRiddleIndex(0);
             Debug.Log("riddleIndex: " + riddleIndex);
         }
     }
@@ -22,20 +25,25 @@ public class AnswerButtonCheckerForRiddles : MonoBehaviour
     {
 
         string text = gameObject.GetComponentInChildren<TextMeshProUGUI>().text;
-        int index = RiddleManager.selectedRiddle.riddle.indexOfTheRightOption;
-        int secondIndex = RiddleManager.selectedRiddle.riddle.indexOfTheSecondRightOption;
-        int thirdIndex = RiddleManager.selectedRiddle.riddle.indexOfTheThirdRightOption;
+        int index = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0];
+        if(RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 1)
+        {
+            secondIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[1];
+            if (RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 2)
+            {
+                thirdIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[2];
+            }
+        }
         if (riddleIndex == index) //|| currentRiddleIndex == secondIndex || currentRiddleIndex == thirdIndex)
         {
             Debug.Log("currentRiddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
             UI_Assignment_Riddle.Instance.RaiseOnOnRightAnswerEvent();
-            //UI_Assignment_With_Answers.Instance.RaiseOnAnsweredQuestionEvent();
         }
         //else if (cardIndex != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
         else if (riddleIndex != index && riddleIndex != secondIndex && riddleIndex != thirdIndex)
         {
             Debug.Log("currentRiddleIndex: " + riddleIndex);
-            Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexOfTheRightOption);
+            Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0]);
             UI_Assignment_Riddle.Instance.RaiseOnWrongAnswerEvent();
             //UI_Assignment_With_Answers.Instance.RaiseOnWrongAnswerEvent();
         }

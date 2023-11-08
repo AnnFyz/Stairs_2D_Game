@@ -14,6 +14,7 @@ public class Riddles_PopUpWindow : MonoBehaviour
     [SerializeField] TextMeshProUGUI answer_tmp;
     public Action OnClosedPopUpWindow;
 
+
     private void Awake()
     {
 

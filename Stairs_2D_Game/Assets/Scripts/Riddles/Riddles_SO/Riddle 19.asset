@@ -17,7 +17,5 @@ MonoBehaviour:
   - Konfokale Mikroskopie
   - "Wei\xDFlichtinterferometrie"
   - Streulichtsensor
-  indexOfTheRightOption: 0
-  indexOfTheSecondRightOption: 1
-  indexOfTheThirdRightOption: 1
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 6b24fd399a9633f4ab49125271370e03, type: 3}

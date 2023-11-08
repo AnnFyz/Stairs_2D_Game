@@ -20,6 +20,8 @@ public class UI_Assignment_Riddle : MonoBehaviour
     public Action OnAnsweredQuestion;
     public Action<string> OnWrongAnswer;
     public Action OnRightAnswer;
+    int secondIndex;
+    int thirdIndex;
     private void Awake()
     {
 
@@ -75,9 +77,15 @@ public class UI_Assignment_Riddle : MonoBehaviour
 
     public void RaiseOnWrongAnswerEvent()
     {
-        int index = RiddleManager.selectedRiddle.riddle.indexOfTheRightOption;
-        int secondIndex = RiddleManager.selectedRiddle.riddle.indexOfTheSecondRightOption;
-        int thirdIndex = RiddleManager.selectedRiddle.riddle.indexOfTheThirdRightOption;
+        int index = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0];
+        if (RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 1)
+        {
+            secondIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[1];
+            if (RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 2)
+            {
+                thirdIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[2];
+            }
+        }
         if (index != secondIndex)
         {
             if (index != secondIndex && index != thirdIndex)

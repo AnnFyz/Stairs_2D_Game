@@ -17,7 +17,5 @@ MonoBehaviour:
   - Lichtschnittverfahren
   - Streifenlichtprojektion
   - Streulichtsensor
-  indexOfTheRightOption: 0
-  indexOfTheSecondRightOption: 1
-  indexOfTheThirdRightOption: 1
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 6d2cf8eddcee60144934b3a2ca0e3722, type: 3}

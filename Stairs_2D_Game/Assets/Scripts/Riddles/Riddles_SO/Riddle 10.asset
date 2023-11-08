@@ -17,7 +17,5 @@ MonoBehaviour:
   - Fokusvariation
   - Lichtschnittverfahren
   - Streifenlichtprojektion
-  indexOfTheRightOption: 1
-  indexOfTheSecondRightOption: 2
-  indexOfTheThirdRightOption: 2
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: 76531c2666acf384daf8cf706e278589, type: 3}

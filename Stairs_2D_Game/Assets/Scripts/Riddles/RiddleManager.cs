@@ -38,7 +38,7 @@ public class RiddleManager : MonoBehaviour
 
     private void Start()
     {
-        UI_Assignment_Riddle.Instance.OnRightAnswer += SelectNextRiddle;
+       // UI_Assignment_Riddle.Instance.OnRightAnswer += SelectNextRiddle;
         Riddles_PopUpWindow.Instance.OnClosedPopUpWindow += SelectNextRiddle;
         HandleStart();
     }

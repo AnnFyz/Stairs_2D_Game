@@ -17,7 +17,5 @@ MonoBehaviour:
   - Konfokale Mikroskopie
   - Triangulationssensor
   - "Wei\xDFlichtinterferometrie"
-  indexOfTheRightOption: 1
-  indexOfTheSecondRightOption: 1
-  indexOfTheThirdRightOption: 1
+  indexesOfTheRightOption: 00000000
   sprite: {fileID: 21300000, guid: bee444cf495c51b40bde5db015e5ad0c, type: 3}
