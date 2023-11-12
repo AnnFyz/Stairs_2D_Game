@@ -12,7 +12,7 @@ public class UI_Assignment_Riddle : MonoBehaviour
 {
     public static UI_Assignment_Riddle Instance { get; private set; }
     [SerializeField] GameObject UIPanel;
-    [SerializeField] GameObject description; 
+    [SerializeField] GameObject description;
     [SerializeField] GameObject answer_1;
     [SerializeField] GameObject answer_2;
     [SerializeField] GameObject answer_3;
@@ -84,28 +84,30 @@ public class UI_Assignment_Riddle : MonoBehaviour
             if (RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 2)
             {
                 thirdIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[2];
+                if (index != secondIndex && index != thirdIndex)
+                {
+                    OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]} ");
+                }
+                else if (index != secondIndex)
+                {
+
+                    OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}");
+
+                }
+                else
+                {
+                    OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}");
+                }
             }
-        }
-        if (index != secondIndex)
-        {
-            if (index != secondIndex && index != thirdIndex)
+            else if (index != secondIndex)
             {
-                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]} ");
-            }
-            else
-            {
+
                 OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}");
-            }
-        }
-        else if(index != thirdIndex)
-        {
-            if (index != secondIndex && index != thirdIndex)
-            {
-                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[secondIndex]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]} ");
+
             }
             else
             {
-                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}, {RiddleManager.selectedRiddle.riddle.options[thirdIndex]}");
+                OnWrongAnswer?.Invoke($"{RiddleManager.selectedRiddle.riddle.options[index]}");
             }
         }
         else

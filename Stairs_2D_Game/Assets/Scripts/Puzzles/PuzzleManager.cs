@@ -22,6 +22,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] List <Transform> fullSchemeObjPos;
     [SerializeField] List <SpriteRenderer> startSchemes;
     [SerializeField] List <SpriteRenderer> fullSchemes;
+    public Action OnFinishedGame;
     private void Awake()
     {
 
@@ -124,6 +125,7 @@ public class PuzzleManager : MonoBehaviour
         {
            
             Debug.Log("All puzzles are solved");
+            RaiseOnFinishedGameEvent();
         }
 
 
@@ -132,5 +134,10 @@ public class PuzzleManager : MonoBehaviour
     public Puzzle_SO GetCurrentPuzzleSO()
     {
         return puzzles[puzzleIndex];
+    }
+
+    void RaiseOnFinishedGameEvent()
+    {
+        OnFinishedGame?.Invoke();
     }
 }
