@@ -17,5 +17,5 @@ MonoBehaviour:
   - Lichtschnittverfahren
   - Streifenlichtprojektion
   - Lasertracer
-  indexesOfTheRightOption: 00000000
+  indexesOfTheRightOption: 02000000
   sprite: {fileID: 21300000, guid: d60b168bab867a140939a470c62251b0, type: 3}

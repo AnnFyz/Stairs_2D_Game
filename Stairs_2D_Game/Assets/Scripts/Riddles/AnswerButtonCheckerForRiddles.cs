@@ -29,18 +29,41 @@ public class AnswerButtonCheckerForRiddles : MonoBehaviour
         if(RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 1)
         {
             secondIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[1];
+
             if (RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption.Length > 2)
             {
                 thirdIndex = RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[2];
+                if (riddleIndex == index || riddleIndex == secondIndex || riddleIndex == thirdIndex)
+                {
+                    Debug.Log("currentRiddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
+                    UI_Assignment_Riddle.Instance.RaiseOnOnRightAnswerEvent();
+                }
+                else
+                {
+                    Debug.Log("currentRiddleIndex: " + riddleIndex);
+                    Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0]);
+                    UI_Assignment_Riddle.Instance.RaiseOnWrongAnswerEvent();
+                }
+            }
+            else if (riddleIndex == index || riddleIndex == secondIndex)
+            {
+                Debug.Log("currentRiddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
+                UI_Assignment_Riddle.Instance.RaiseOnOnRightAnswerEvent();
+            }
+            else
+            {
+                Debug.Log("currentRiddleIndex: " + riddleIndex);
+                Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0]);
+                UI_Assignment_Riddle.Instance.RaiseOnWrongAnswerEvent();
             }
         }
-        if (riddleIndex == index) //|| currentRiddleIndex == secondIndex || currentRiddleIndex == thirdIndex)
+
+        else if (riddleIndex == index)
         {
             Debug.Log("currentRiddleIndex " + riddleIndex + " IndexOfRightAnswer " + index);
             UI_Assignment_Riddle.Instance.RaiseOnOnRightAnswerEvent();
         }
-        //else if (cardIndex != CardManager.selectedCard.assingnment.assignmentWithAnswers.Answers[index])
-        else if (riddleIndex != index && riddleIndex != secondIndex && riddleIndex != thirdIndex)
+        else 
         {
             Debug.Log("currentRiddleIndex: " + riddleIndex);
             Debug.Log("Wrong Answer, the right answer: " + RiddleManager.selectedRiddle.riddle.indexesOfTheRightOption[0]);
