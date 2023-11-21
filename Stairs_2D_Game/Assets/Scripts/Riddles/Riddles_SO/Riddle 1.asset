@@ -18,4 +18,4 @@ MonoBehaviour:
   - Streulichtsensor
   - Lichtschnittverfahren
   indexesOfTheRightOption: 0000000002000000
-  sprite: {fileID: 21300000, guid: 11a66c799b3fffa4884892d52099a4a9, type: 3}
+  sprite: {fileID: 21300000, guid: 500fded9c8107cd4ab2473193d43be01, type: 3}

@@ -18,4 +18,4 @@ MonoBehaviour:
   - Triangulationssensor
   - Streulichtsensor
   indexesOfTheRightOption: 02000000
-  sprite: {fileID: 21300000, guid: 77ab8f4c8198c184aa7fdc6ca5333888, type: 3}
+  sprite: {fileID: 21300000, guid: d385320274f9adf4485257b79d927a5d, type: 3}

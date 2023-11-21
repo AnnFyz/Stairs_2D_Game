@@ -30,9 +30,9 @@ public struct DiffAssignments
 public class CardGroup_SO : ScriptableObject
 {
     public string Title;
-    public int numberOfAssignmentGroup;
-    [Range(0, 100)]
-    public int Weight = 0;
+    //public int numberOfAssignmentGroup;
+    //[Range(0, 100)]
+    //public int Weight = 0;
     public Color groupColor;
     public Assignment TypeOfAssignment;
     public int currentAmountOfCardsOfThisType = 0;
