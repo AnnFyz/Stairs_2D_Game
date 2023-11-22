@@ -44,12 +44,12 @@ public class UI_Assignment_WithInput : MonoBehaviour
             if(CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Number_Input)
             {
                 UserInputWithNumbersHandler();
-                Debug.Log("UserInputWithNumbersHandler");
+                
             }
             else if (CardManager.selectedCard.assignmentType == Assignment.Assignment_With_Text_Input)
             {
                 UserInputWithTextHandler();
-                Debug.Log(" UserInputWithTextHandler");
+               
             }
             UIPanel.SetActive(false);
         }
@@ -92,7 +92,7 @@ public class UI_Assignment_WithInput : MonoBehaviour
             savedUserInputNumber = float.Parse(tmpInputField.text, new CultureInfo("de-DE"));
             if (tmpInputField.text != null)
             {
-                Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
+                //Debug.Log(inputFieldObj.GetComponent<TMP_InputField>().text);
             }
         }
 
