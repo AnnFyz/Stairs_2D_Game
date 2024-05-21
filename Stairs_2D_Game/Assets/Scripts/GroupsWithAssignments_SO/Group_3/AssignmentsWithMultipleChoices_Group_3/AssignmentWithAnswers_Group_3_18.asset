@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e912a3fc4981ed4eb7452367fc314a5, type: 3}
+  m_Name: AssignmentWithAnswers_Group_3_18
+  m_EditorClassIdentifier: 
+  currentAssignment: 0
+  Question: Welche Form hat diese Toleranzzone?
+  Answers:
+  - "Fl\xE4che zwischen 2 parallelen Kreisen, deren Mitte mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,05 mm zueinander haben "
+  - "Fl\xE4che zwischen 2 parallelen Kreisen, deren Mitte mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,1 mm zueinander haben "
+  - "Volumen zwischen 2 koaxialen Zylindern, deren Achse mit der Bezugsachse D \xFCbereinstimmt
+    und die einen Abstand von 0,1 mm zueinander haben"
+  IndexOfRightAnswer: 1
+  sprite: {fileID: 21300000, guid: e75f12706c0f5c54da2e40369858bbb0, type: 3}

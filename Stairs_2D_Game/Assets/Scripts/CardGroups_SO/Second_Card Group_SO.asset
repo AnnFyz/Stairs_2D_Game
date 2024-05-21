@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
+  m_Name: Second_Card Group_SO
+  m_EditorClassIdentifier: 
+  Title: Ebenenindikatoren
+  numberOfAssignmentGroup: 1
+  Weight: 42
+  groupColor: {r: 0.49474904, g: 0.9622642, b: 0.52417016, a: 1}
+  TypeOfAssignment: 0
+  currentAmountOfCardsOfThisType: 2
+  assignments:
+    AssignmentsWithAnswers:
+    - {fileID: 11400000, guid: d4cd33d1da3ab7a439797857ae8d38aa, type: 2}
+    - {fileID: 11400000, guid: 258f526955c85024c94838ff6435cd56, type: 2}
+    - {fileID: 11400000, guid: 72a4064d63daaa94e86d39fca81b7a9a, type: 2}
+    - {fileID: 11400000, guid: 03de453c50ba9b747abe41bb76431e44, type: 2}
+    - {fileID: 11400000, guid: 409eed77f3a644949b3479eeb9a3aaa3, type: 2}
+    - {fileID: 11400000, guid: e1d633be88042194aa940dd20dd1e078, type: 2}
+    - {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text: []
+    assignmentWithAnswers: {fileID: 11400000, guid: ebbf87e88a3b41940873a3bd2ab2c058, type: 2}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 0}
+  allCardsWithAnswersWereCreated: 1
+  allCardsWithUserInput_Numbers_WereCreated: 0
+  allCardsWithUserInput_Text_WereCreated: 0
+  allCardsWereCreated: 0
+  weightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0033493042
+      value: 0.0026855469
+      inSlope: 1.8418511
+      outSlope: 1.8418511
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.03141494
+    - serializedVersion: 3
+      time: 0.9906006
+      value: -0.0001301961
+      inSlope: -5.755677
+      outSlope: -5.755677
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.019973703
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  indexForAssignmentsWithAnswers: 2
+  indexForAssignmentsWithUserInput_Numbers: 0
+  indexForAssignmentsWithUserInput_Text: 0

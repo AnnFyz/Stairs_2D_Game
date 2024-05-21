@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e912a3fc4981ed4eb7452367fc314a5, type: 3}
+  m_Name: AssignmentWithAnswers_Group_3_10
+  m_EditorClassIdentifier: 
+  currentAssignment: 0
+  Question: Welche Form hat diese Toleranzzone?
+  Answers:
+  - 'Zylinder mit einem Durchmesser von 0,03 mm parallel zur Achse A '
+  - 'Zylinder mit einem Durchmesser von 0,015 mm parallel zur Achse A '
+  - 'Volumen zwischen zwei Zylindern, die einen radialen Abstand von 0,015 mm zueinander
+    haben und parallel zur Achse A sind '
+  IndexOfRightAnswer: 0
+  sprite: {fileID: 21300000, guid: d3ff110956245594bb23e6c3209b9abb, type: 3}

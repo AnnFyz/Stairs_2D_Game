@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e912a3fc4981ed4eb7452367fc314a5, type: 3}
+  m_Name: AssignmentWithAnswers_Group_3_6
+  m_EditorClassIdentifier: 
+  currentAssignment: 0
+  Question: Welche Form hat diese Toleranzzone?
+  Answers:
+  - "Volumen zwischen zwei Profilfl\xE4chen, die Kugeln mit einem Durchmesser von
+    0,01 mm einh\xFCllen"
+  - "Volumen zwischen zwei Profilfl\xE4chen, die Kugeln mit einem Durchmesser von
+    0,02 mm einh\xFCllen "
+  - "Fl\xE4che zwischen zwei parallelen Fl\xE4chen mit einem Abstand von 0,02 mm "
+  IndexOfRightAnswer: 1
+  sprite: {fileID: 21300000, guid: 77a414b550874f646b78b13abf1e4bb4, type: 3}

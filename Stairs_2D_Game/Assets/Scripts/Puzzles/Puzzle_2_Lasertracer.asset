@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7169e1788aa910b40876a86d21a6d03e, type: 3}
+  m_Name: Puzzle_2_Lasertracer
+  m_EditorClassIdentifier: 
+  nameOfPuzzle: Lasertracer
+  slotPref:
+  - {fileID: 3076531760233085634, guid: 54913c03d91e00e4e8e9fc06fa39b992, type: 3}
+  - {fileID: 3076531760233085634, guid: 4852dda982416f74aa09e150ec482045, type: 3}
+  - {fileID: 3076531760233085634, guid: 1372d34de4b83684f972695fc7e6497a, type: 3}
+  - {fileID: 3076531760233085634, guid: b08c29dbbcd3d194a9a23ba5d164dbcf, type: 3}
+  - {fileID: 3076531760233085634, guid: c7ffb04c94ca1354e9f9b2d0c2aa8ccb, type: 3}
+  - {fileID: 3076531760233085634, guid: ec2ff4f6c54bfef45b3755f4421a3b7e, type: 3}
+  startScheme: {fileID: 21300000, guid: 5d1a1e5f8f66b4849a64850f0b7cdde4, type: 3}
+  fullScheme: {fileID: 21300000, guid: b6ca3d86a05e068418babb5be33efb65, type: 3}
+  URL: https://mediathek.htw-berlin.de/album/373/getMedium/default/3994fbb95352aa2ddf2c5288d823d3e8.mp4

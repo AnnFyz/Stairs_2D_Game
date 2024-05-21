@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe2ba94ee349ee45a20624484b50020, type: 3}
+  m_Name: First_Card Group_SO
+  m_EditorClassIdentifier: 
+  Title: Geometrische Toleranzen
+  numberOfAssignmentGroup: 0
+  Weight: 80
+  groupColor: {r: 0, g: 0.10248383, b: 0.9245283, a: 1}
+  TypeOfAssignment: 2
+  currentAmountOfCardsOfThisType: 14
+  assignments:
+    AssignmentsWithAnswers: []
+    AssignmentsWithUserInput_Number: []
+    AssignmentsWithUserInput_Text:
+    - {fileID: 11400000, guid: 49d341590b5464949b15e2e873e43ba4, type: 2}
+    - {fileID: 11400000, guid: aef861fe84f09a14fa58d79ec4234eaf, type: 2}
+    - {fileID: 11400000, guid: 32b760a94e8ee76498e6848a04a3d292, type: 2}
+    - {fileID: 11400000, guid: 1d156e3fa6ab63d4d8a11361017bc172, type: 2}
+    - {fileID: 11400000, guid: 5e19413c2325af24e9ab798b0b7730f6, type: 2}
+    - {fileID: 11400000, guid: 05a26fc9e81276f4d80aac15473a7dc8, type: 2}
+    - {fileID: 11400000, guid: 38c2070ad2b8f6a4195f6b1b8d6e6a40, type: 2}
+    - {fileID: 11400000, guid: 5998b9466587fd3419f717bb940adc2d, type: 2}
+    - {fileID: 11400000, guid: b5318897bcb6a5c4f99175774f0582a8, type: 2}
+    - {fileID: 11400000, guid: a3d6c3ca2fe1dcc4eb5f1a353608add5, type: 2}
+    - {fileID: 11400000, guid: 829a565ecf1823c488137af634819772, type: 2}
+    - {fileID: 11400000, guid: 20d262691eb58e6479c84953681a3a0f, type: 2}
+    - {fileID: 11400000, guid: 0461e6f123717c74aa026bca511a4ead, type: 2}
+    - {fileID: 11400000, guid: 8d6c7b60ea56e474d80cd91f45eaef39, type: 2}
+    assignmentWithAnswers: {fileID: 0}
+    assignmentWithUserInput_Number: {fileID: 0}
+    assignmentWithUserInput_Text: {fileID: 11400000, guid: 8d6c7b60ea56e474d80cd91f45eaef39, type: 2}
+  allCardsWithAnswersWereCreated: 0
+  allCardsWithUserInput_Numbers_WereCreated: 0
+  allCardsWithUserInput_Text_WereCreated: 1
+  allCardsWereCreated: 0
+  weightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0022925977
+      value: 1.0027912
+      inSlope: -0.0028593508
+      outSlope: -0.0028593508
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.30798388
+    - serializedVersion: 3
+      time: 0.9951265
+      value: 0.0013961801
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  indexForAssignmentsWithAnswers: 0
+  indexForAssignmentsWithUserInput_Numbers: 0
+  indexForAssignmentsWithUserInput_Text: 14
